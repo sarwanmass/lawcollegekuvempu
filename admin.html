@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Console</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 p-4 md:p-8 text-slate-800 font-sans">
+    <div class="max-w-5xl mx-auto bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-slate-200">
+        
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 border-b border-slate-100 pb-6 gap-4">
+            <div>
+                <h1 class="text-2xl font-black text-slate-900 tracking-tight">Portal Configuration Engine</h1>
+                <p class="text-xs text-slate-400 font-semibold mt-0.5 uppercase tracking-wider text-indigo-600">Centre for inclusive social development</p>
+            </div>
+            <a href="index.html" class="bg-indigo-600 text-white font-bold px-5 py-2.5 rounded-xl text-xs hover:bg-indigo-700 transition shadow-sm">← View Live Site</a>
+        </div>
+
+        <div class="mb-10 p-6 bg-indigo-50/40 rounded-2xl border border-indigo-100">
+            <h3 class="font-bold text-slate-900 mb-1 text-base">🖼️ Upload Photos for Slideshow Carousel</h3>
+            <p class="text-xs text-slate-500 mb-4">Add images to build up your automated home frame slider module array.</p>
+            <div class="flex flex-col sm:flex-row gap-4 items-center bg-white p-4 rounded-xl border border-indigo-100/60 shadow-sm">
+                <input type="file" id="gallery-uploader" class="block w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:bg-indigo-50 file:text-indigo-700 font-bold">
+                <button onclick="addGalleryImage()" class="w-full sm:w-auto bg-indigo-600 text-white font-bold text-xs px-6 py-2.5 rounded-xl shrink-0 hover:bg-indigo-700 transition">Add To Slideshow</button>
+            </div>
+            <div class="grid grid-cols-4 sm:grid-cols-6 gap-4 mt-6" id="admin-gallery-preview"></div>
+        </div>
+
+        <div class="space-y-8">
+            <h3 class="text-xl font-extrabold text-slate-900 border-b pb-2">👤 Dedicated Member Portrait Management</h3>
+
+            <div class="p-4 bg-slate-50 border rounded-xl grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                <div>
+                    <h4 class="font-bold text-sm">Founder Chairman Portrait</h4>
+                    <p class="text-xs text-slate-400">Upload portrait photo for Mr. Shivanna B</p>
+                </div>
+                <input type="file" class="text-xs" onchange="mapPortrait(this, 'img-chairman-profile')">
+            </div>
+
+            <div class="p-5 bg-slate-50 border rounded-xl space-y-4">
+                <h4 class="font-bold text-sm text-indigo-700">Governing Council Portraits (5 Slots)</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                    <div class="bg-white p-3 rounded border">
+                        <label class="block font-bold mb-1">1. Prof. Ramesh B</label>
+                        <input type="file" onchange="mapPortrait(this, 'img-gov-profile-0')">
+                    </div>
+                    <div class="bg-white p-3 rounded border">
+                        <label class="block font-bold mb-1">2. Dr. Babasaheb L Jinaralkar</label>
+                        <input type="file" onchange="mapPortrait(this, 'img-gov-profile-1')">
+                    </div>
+                    <div class="bg-white p-3 rounded border">
+                        <label class="block font-bold mb-1">3. Sri. Mahadevaiah</label>
+                        <input type="file" onchange="mapPortrait(this, 'img-gov-profile-2')">
+                    </div>
+                    <div class="bg-white p-3 rounded border">
+                        <label class="block font-bold mb-1">4. Sri. B.N. Jagadeesh</label>
+                        <input type="file" onchange="mapPortrait(this, 'img-gov-profile-3')">
+                    </div>
+                    <div class="bg-white p-3 rounded border">
+                        <label class="block font-bold mb-1">5. Dr. Saravana K</label>
+                        <input type="file" onchange="mapPortrait(this, 'img-gov-profile-4')">
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-5 bg-slate-50 border rounded-xl space-y-4">
+                <h4 class="font-bold text-sm text-indigo-700">Academic Faculty Portraits (6 Slots)</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                    <div class="bg-white p-3 rounded border">
+                        <label class="block font-bold mb-1">1. Dr. Gurumurthy T.N (Principal)</label>
+                        <input type="file" onchange="mapPortrait(this, 'img-faculty-profile-0')">
+                    </div>
+                    <div class="bg-white p-3 rounded border">
+                        <label class="block font-bold mb-1">2. Dr. Muniraja M</label>
+                        <input type="file" onchange="mapPortrait(this, 'img-faculty-profile-1')">
+                    </div>
+                    <div class="bg-white p-3 rounded border">
+                        <label class="block font-bold mb-1">3. Sunil M.V</label>
+                        <input type="file" onchange="mapPortrait(this, 'img-faculty-profile-2')">
+                    </div>
+                    <div class="bg-white p-3 rounded border">
+                        <label class="block font-bold mb-1">4. Sushmitha K</label>
+                        <input type="file" onchange="mapPortrait(this, 'img-faculty-profile-3')">
+                    </div>
+                    <div class="bg-white p-3 rounded border">
+                        <label class="block font-bold mb-1">5. Dawood Baig K</label>
+                        <input type="file" onchange="mapPortrait(this, 'img-faculty-profile-4')">
+                    </div>
+                    <div class="bg-white p-3 rounded border">
+                        <label class="block font-bold mb-1">6. Geetha H.D</label>
+                        <input type="file" onchange="mapPortrait(this, 'img-faculty-profile-5')">
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-5 bg-slate-50 border rounded-xl space-y-4">
+                <h4 class="font-bold text-sm text-indigo-700">Non-Teaching Staff Portraits (4 Slots)</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                    <div class="bg-white p-3 rounded border">
+                        <label class="block font-bold mb-1">1. Dr. Narayanaswamy B.V (Librarian)</label>
+                        <input type="file" onchange="mapPortrait(this, 'img-nt-profile-0')">
+                    </div>
+                    <div class="bg-white p-3 rounded border">
+                        <label class="block font-bold mb-1">2. Dr. Santhosha M.S (Sports Director)</label>
+                        <input type="file" onchange="mapPortrait(this, 'img-nt-profile-1')">
+                    </div>
+                    <div class="bg-white p-3 rounded border">
+                        <label class="block font-bold mb-1">3. Deepak G. Appaji (FDA)</label>
+                        <input type="file" onchange="mapPortrait(this, 'img-nt-profile-2')">
+                    </div>
+                    <div class="bg-white p-3 rounded border">
+                        <label class="block font-bold mb-1">4. Gowrishankar H.S (SDA)</label>
+                        <input type="file" onchange="mapPortrait(this, 'img-nt-profile-3')">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-10 p-6 bg-slate-50 rounded-2xl border border-slate-200">
+            <button onclick="wipeData()" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs transition">Wipe Configuration Framework Data</button>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => { renderAdminGalleryPreviews(); });
+
+        function addGalleryImage() {
+            const input = document.getElementById('gallery-uploader');
+            const file = input.files[0]; if (!file) return;
+            const reader = new FileReader();
+            reader.onloadend = function() {
+                let currentGallery = JSON.parse(localStorage.getItem('db-gallery')) || [];
+                currentGallery.push(reader.result);
+                try {
+                    localStorage.setItem('db-gallery', JSON.stringify(currentGallery));
+                    alert("Image successfully pushed into carousel layout!");
+                    input.value = ""; renderAdminGalleryPreviews();
+                } catch(e) { alert("File footprint too large for internal local allocations."); }
+            }
+            reader.readAsDataURL(file);
+        }
+
+        function renderAdminGalleryPreviews() {
+            const gallery = JSON.parse(localStorage.getItem('db-gallery')) || [];
+            const previewBox = document.getElementById('admin-gallery-preview');
+            previewBox.innerHTML = "";
+            gallery.forEach((img, idx) => {
+                previewBox.innerHTML += `
+                    <div class="relative bg-white p-1 border rounded-xl overflow-hidden shadow-sm">
+                        <img src="${img}" class="w-full h-12 object-cover rounded-lg">
+                        <button onclick="removeGalleryImage(${idx})" class="absolute top-1 right-1 bg-red-600 text-white text-[9px] font-bold h-4 w-4 rounded-full flex items-center justify-center">×</button>
+                    </div>`;
+            });
+        }
+
+        function removeGalleryImage(index) {
+            let currentGallery = JSON.parse(localStorage.getItem('db-gallery')) || [];
+            currentGallery.splice(index, 1);
+            localStorage.setItem('db-gallery', JSON.stringify(currentGallery));
+            renderAdminGalleryPreviews();
+        }
+
+        function mapPortrait(input, uniqueKey) {
+            const file = input.files[0]; if (!file) return;
+            const reader = new FileReader();
+            reader.onloadend = function() {
+                localStorage.setItem(uniqueKey, reader.result);
+                alert("Target member portrait mapped to system successfully.");
+            }
+            reader.readAsDataURL(file);
+        }
+
+        function wipeData() {
+            if(confirm("Confirm system configuration purge?")) {
+                localStorage.clear(); window.location.reload();
+            }
+        }
+    </script>
+</body>
+</html>

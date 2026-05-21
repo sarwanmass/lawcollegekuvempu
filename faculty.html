@@ -1,0 +1,391 @@
+x<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Faculty & Staff Directory - Rashtrakavi Kuvempu College of Law. Explore our academic team of legal experts, practitioners, and administrative support personnel.">
+    <meta name="keywords" content="Faculty, Legal Educators, Law Professors, Rashtrakavi Kuvempu College of Law, Staff Directory, Law College Bangalore">
+    <title>Faculty Directory | Rashtrakavi Kuvempu College of Law</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Banner: Important Alerts -->
+    <div class="top-banner" id="banner-notification">
+        <div class="banner-content">
+            <span class="badge badge-warning">Affiliation Pending</span>
+            <p>Affiliation from Karnataka State Law University, Hubballi & approval from Bar Council of India are currently pending.</p>
+        </div>
+        <button class="close-banner-btn" onclick="closeBanner()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- Navigation Bar -->
+        <!-- Two-Tier Header -->
+    <header class="header">
+        <!-- Tier 1: Branding Header (Visible on Desktop) -->
+        <div class="header-top">
+            <div class="container header-top-container">
+                <a href="index.html" class="logo-area">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img">
+                    <div class="logo-text">
+                        <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
+                        <span class="trust-name">Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Tier 2: Navigation Bar -->
+        <div class="header-bottom">
+            <div class="container header-bottom-container">
+                <!-- Mobile Logo Area (visible on mobile) -->
+                <a href="index.html" class="logo-mobile">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img-mobile">
+                    <div class="logo-text">
+                        <span class="college-name-abbr">RKLC</span>
+                        <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
+                    </div>
+                </a>
+
+                <nav class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link ">Home</a>
+                    <a href="leadership.html" class="nav-link ">Leadership</a>
+                    <a href="governance.html" class="nav-link ">Governing Council</a>
+                    <a href="faculty.html" class="nav-link active">Faculties</a>
+                    <a href="course.html" class="nav-link ">Courses</a>
+                    <a href="library.html" class="nav-link ">Library &amp; Gallery</a>
+                    <a href="compliance.html" class="nav-link ">Statutory Committees</a>
+                    <a href="conduct.html" class="nav-link ">Code of Conduct</a>
+                    <a href="downloads.html" class="nav-link">Downloads</a>
+                    <a href="notifications.html" class="nav-link">Notifications</a>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="conduct.html" class="btn btn-outline btn-sm">Student Portal</a>
+                    <button class="theme-toggle" id="theme-btn" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Open Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero Banner -->
+    <section class="hero-section" style="min-height: 30vh; padding: 80px 0 40px; background-attachment: scroll;">
+        <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(10, 14, 23, 0.95) 0%, rgba(10, 14, 23, 0.98) 100%);"></div>
+        <div class="container hero-container" style="text-align: center;">
+            <div class="hero-tag">
+                <i class="fas fa-graduation-cap"></i> Academic Portal
+            </div>
+            <h1 class="hero-title" style="font-size: 2.2rem; margin-bottom: 8px;"><span class="highlight-text">Rashtrakavi Kuvempu College of Law</span></h1>
+            <p style="color: var(--text-primary); font-family: var(--font-heading); font-size: 1.6rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">Faculty Directory</p>
+        </div>
+    </section>
+
+    <!-- Faculty & Staff Grid Section -->
+    <section class="faculties-section" style="padding: 60px 0 100px;">
+        <div class="container">
+            <div class="section-header center-align">
+                <span class="section-tag">Educators & Mentors</span>
+                <h2 class="section-title">Our Academic & Administrative Team</h2>
+                <p class="section-subtitle">Dedicated legal scholars, experienced advocates, and administrative support driving legal education forward.</p>
+                <div class="section-divider center"></div>
+            </div>
+
+            <!-- Interactive Filters -->
+            <div class="faculty-tabs">
+                <button class="tab-btn active" onclick="filterFaculty('all')">All Personnel</button>
+                <button class="tab-btn" onclick="filterFaculty('teaching')">Teaching Faculty</button>
+                <button class="tab-btn" onclick="filterFaculty('non-teaching')">Non-Teaching Staff</button>
+            </div>
+
+            <!-- Live Search Bar -->
+            <div class="search-box-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="faculty-search" oninput="searchFaculties()" placeholder="Search by name, qualification, or role...">
+            </div>
+
+            <!-- Faculty Grid -->
+            <div class="faculty-grid">
+                
+                <!-- 1. Principal (Teaching, Highlighted) -->
+                <div class="faculty-card glass-card teaching principal-highlight">
+                    <div class="card-premium-glow"></div>
+                    <span class="badge-role badge-principal">Principal</span>
+                    <div class="faculty-avatar" style="padding: 0; overflow: hidden; border-style: solid;">
+                        <!-- EDIT_MEMBER_IMAGE: Principal Dr. Gurumurthy T.N -->
+                        <img src="assets/Dr. Gurumurthy T.N.jpg" alt="Dr. Gurumurthy T.N" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                    </div>
+                    <h3 class="fac-name">Dr. Gurumurthy T.N</h3>
+                    <span class="fac-qual">LL.M., Ph.D</span>
+                    <hr class="fac-sep">
+                    <div class="faculty-info">
+                        <div class="fac-meta">
+                            <p><i class="fas fa-briefcase"></i> 5 Yrs Teaching + 5 Yrs Legal Practice</p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:murthyguru1987@gmail.com">murthyguru1987@gmail.com</a></p>
+                            <p><i class="fas fa-phone"></i> +91 9916246833</p>
+                        </div>
+                        <div class="faculty-actions" style="margin-top: 20px; width: 100%;">
+                            <a href="faculty-gurumurthy.html" class="btn btn-outline btn-sm" style="width: 100%; display: block; text-align: center;">View UGC CV <i class="fas fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Assistant Professor Dr. Muniraja M -->
+                <div class="faculty-card glass-card teaching">
+                    <span class="badge-role">Assistant Professor</span>
+                    <div class="faculty-avatar" style="padding: 0; overflow: hidden; border-style: solid;">
+                        <!-- EDIT_MEMBER_IMAGE: Assistant Professor Dr. Muniraja M -->
+                        <img src="assets/dummy_member.png" alt="Dr. Muniraja M" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                    </div>
+                    <h3 class="fac-name">Dr. Muniraja M</h3>
+                    <span class="fac-qual">LL.M., Ph.D</span>
+                    <hr class="fac-sep">
+                    <div class="faculty-info">
+                        <div class="fac-meta">
+                            <p><i class="fas fa-briefcase"></i> 10 Years Teaching Experience</p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:munirajulc@gmail.com">munirajulc@gmail.com</a></p>
+                            <p><i class="fas fa-phone"></i> +91 98864 35787 / 99864 12178</p>
+                        </div>
+                        <div class="faculty-actions" style="margin-top: 20px; width: 100%;">
+                            <a href="faculty-muniraja.html" class="btn btn-outline btn-sm" style="width: 100%; display: block; text-align: center;">View UGC CV <i class="fas fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Assistant Professor Sunil M.V -->
+                <div class="faculty-card glass-card teaching">
+                    <span class="badge-role">Assistant Professor</span>
+                    <div class="faculty-avatar" style="padding: 0; overflow: hidden; border-style: solid;">
+                        <!-- EDIT_MEMBER_IMAGE: Assistant Professor Sunil M.V -->
+                        <img src="assets/dummy_member.png" alt="Sunil M.V" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                    </div>
+                    <h3 class="fac-name">Sunil M.V</h3>
+                    <span class="fac-qual">B.A., LL.B., LL.M</span>
+                    <hr class="fac-sep">
+                    <div class="faculty-info">
+                        <div class="fac-meta">
+                            <p><i class="fas fa-briefcase"></i> 5 Years Teaching Experience</p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:sunilmvmc@gmail.com">sunilmvmc@gmail.com</a></p>
+                            <p><i class="fas fa-phone"></i> +91 96861 40617</p>
+                        </div>
+                        <div class="faculty-actions" style="margin-top: 20px; width: 100%;">
+                            <a href="faculty-sunil.html" class="btn btn-outline btn-sm" style="width: 100%; display: block; text-align: center;">View UGC CV <i class="fas fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Assistant Professor Sushmitha K -->
+                <div class="faculty-card glass-card teaching">
+                    <span class="badge-role">Assistant Professor</span>
+                    <div class="faculty-avatar" style="padding: 0; overflow: hidden; border-style: solid;">
+                        <!-- EDIT_MEMBER_IMAGE: Assistant Professor Sushmitha K -->
+                        <img src="assets/dummy_member.png" alt="Sushmitha K" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                    </div>
+                    <h3 class="fac-name">Sushmitha K</h3>
+                    <span class="fac-qual">B.A., LL.B., LL.M</span>
+                    <hr class="fac-sep">
+                    <div class="faculty-info">
+                        <div class="fac-meta">
+                            <p><i class="fas fa-briefcase"></i> 5 Years Teaching Experience</p>
+                            <div class="info-missing"><i class="fas fa-circle-info"></i> Contact details handled via Registry Desk</div>
+                        </div>
+                        <div class="faculty-actions" style="margin-top: 20px; width: 100%;">
+                            <a href="faculty-sushmitha.html" class="btn btn-outline btn-sm" style="width: 100%; display: block; text-align: center;">View UGC CV <i class="fas fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Assistant Professor Dawood Baig K -->
+                <div class="faculty-card glass-card teaching">
+                    <span class="badge-role">Assistant Professor</span>
+                    <div class="faculty-avatar" style="padding: 0; overflow: hidden; border-style: solid;">
+                        <!-- EDIT_MEMBER_IMAGE: Assistant Professor Dawood Baig K -->
+                        <img src="assets/dummy_member.png" alt="Dawood Baig K" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                    </div>
+                    <h3 class="fac-name">Dawood Baig K</h3>
+                    <span class="fac-qual">B.A., LL.B., LL.M</span>
+                    <hr class="fac-sep">
+                    <div class="faculty-info">
+                        <div class="fac-meta">
+                            <p><i class="fas fa-briefcase"></i> Fresher / &lt;1 Year Experience</p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:dawoodbaig.k@gmail.com">dawoodbaig.k@gmail.com</a></p>
+                            <p><i class="fas fa-phone"></i> +91 96328 00538</p>
+                        </div>
+                        <div class="faculty-actions" style="margin-top: 20px; width: 100%;">
+                            <a href="faculty-dawood.html" class="btn btn-outline btn-sm" style="width: 100%; display: block; text-align: center;">View UGC CV <i class="fas fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Assistant Professor Geetha H.D -->
+                <div class="faculty-card glass-card teaching">
+                    <span class="badge-role">Assistant Professor</span>
+                    <div class="faculty-avatar" style="padding: 0; overflow: hidden; border-style: solid;">
+                        <!-- EDIT_MEMBER_IMAGE: Assistant Professor Geetha H.D -->
+                        <img src="assets/dummy_member.png" alt="Geetha H.D" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                    </div>
+                    <h3 class="fac-name">Geetha H.D</h3>
+                    <span class="fac-qual">B.A., LL.B., LL.M (Part-Time)</span>
+                    <hr class="fac-sep">
+                    <div class="faculty-info">
+                        <div class="fac-meta">
+                            <p><i class="fas fa-briefcase"></i> ~7 Years Professional Legal Practice</p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:geethahd26@gmail.com">geethahd26@gmail.com</a></p>
+                            <p><i class="fas fa-phone"></i> +91 81975 25759</p>
+                        </div>
+                        <div class="faculty-actions" style="margin-top: 20px; width: 100%;">
+                            <a href="faculty-geetha.html" class="btn btn-outline btn-sm" style="width: 100%; display: block; text-align: center;">View UGC CV <i class="fas fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Librarian Dr. Narayanaswamy B.V -->
+                <div class="faculty-card glass-card non-teaching">
+                    <span class="badge-role badge-admin">Librarian</span>
+                    <div class="faculty-avatar" style="padding: 0; overflow: hidden; border-style: solid;">
+                        <!-- EDIT_MEMBER_IMAGE: Librarian Dr. Narayanaswamy B.V -->
+                        <img src="assets/dummy_member.png" alt="Dr. Narayanaswamy B.V" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                    </div>
+                    <h3 class="fac-name">Dr. Narayanaswamy B.V</h3>
+                    <span class="fac-qual">M.LiSc., Ph.D</span>
+                    <hr class="fac-sep">
+                    <div class="faculty-info">
+                        <div class="fac-meta">
+                            <p><i class="fas fa-briefcase"></i> 10+ Years Library Management</p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:narayanaswamybv@gmail.com">narayanaswamybv@gmail.com</a></p>
+                            <div class="info-missing"><i class="fas fa-circle-info"></i> Contact details handled via Registry Desk</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Physical Education Director Mr. Shivakumar M -->
+                <div class="faculty-card glass-card non-teaching">
+                    <span class="badge-role badge-admin">P.E. Director</span>
+                    <div class="faculty-avatar" style="padding: 0; overflow: hidden; border-style: solid;">
+                        <!-- EDIT_MEMBER_IMAGE: P.E. Director Mr. Shivakumar M -->
+                        <img src="assets/dummy_member.png" alt="Mr. Shivakumar M" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                    </div>
+                    <h3 class="fac-name">Mr. Shivakumar M</h3>
+                    <span class="fac-qual">M.P.Ed.</span>
+                    <hr class="fac-sep">
+                    <div class="faculty-info">
+                        <div class="fac-meta">
+                            <p><i class="fas fa-briefcase"></i> 8 Years Athletic Administration</p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:shivakumarpe@gmail.com">shivakumarpe@gmail.com</a></p>
+                            <div class="info-missing"><i class="fas fa-circle-info"></i> Contact details handled via Registry Desk</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Mrs. Lakshmi Devi (FDA Office Assistant) -->
+                <div class="faculty-card glass-card non-teaching">
+                    <span class="badge-role badge-admin">Office Assistant</span>
+                    <div class="faculty-avatar" style="padding: 0; overflow: hidden; border-style: solid;">
+                        <!-- EDIT_MEMBER_IMAGE: Office Assistant Mrs. Lakshmi Devi -->
+                        <img src="assets/dummy_member.png" alt="Mrs. Lakshmi Devi" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                    </div>
+                    <h3 class="fac-name">Mrs. Lakshmi Devi</h3>
+                    <span class="fac-qual">B.Com (FDA)</span>
+                    <hr class="fac-sep">
+                    <div class="faculty-info">
+                        <div class="fac-meta">
+                            <p><i class="fas fa-briefcase"></i> Academic Registry &amp; Documentation</p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:lakshmidevi.rklc@gmail.com">lakshmidevi.rklc@gmail.com</a></p>
+                            <div class="info-missing"><i class="fas fa-circle-info"></i> Contact details handled via Registry Desk</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Mr. Chandrashekar B (SDA Clerk) -->
+                <div class="faculty-card glass-card non-teaching">
+                    <span class="badge-role badge-admin">SDA Clerk</span>
+                    <div class="faculty-avatar" style="padding: 0; overflow: hidden; border-style: solid;">
+                        <!-- EDIT_MEMBER_IMAGE: SDA Clerk Mr. Chandrashekar B -->
+                        <img src="assets/dummy_member.png" alt="Mr. Chandrashekar B" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                    </div>
+                    <h3 class="fac-name">Mr. Chandrashekar B</h3>
+                    <span class="fac-qual">B.A. (SDA)</span>
+                    <hr class="fac-sep">
+                    <div class="faculty-info">
+                        <div class="fac-meta">
+                            <p><i class="fas fa-briefcase"></i> Institutional Accounts &amp; Records</p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:chandru.rklc@gmail.com">chandru.rklc@gmail.com</a></p>
+                            <div class="info-missing"><i class="fas fa-circle-info"></i> Contact details handled via Registry Desk</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="footer-emblem">
+                    <h3>Rashtrakavi Kuvempu College of Law</h3>
+                </div>
+                <p class="footer-desc">
+                    Affiliation from Karnataka State Law University, Hubballi, Karnataka and approval from the Bar Council of India, New Delhi are pending. Operating under the visionary management of Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="leadership.html">Leadership Message</a></li>
+                    <li><a href="governance.html">Governing Council</a></li>
+                    <li><a href="faculty.html">Academic Faculty</a></li>
+                    <li><a href="course.html">Courses Offered</a></li>
+                    <li><a href="library.html">Library &amp; Gallery</a></li>
+                    <li><a href="compliance.html">Statutory Cells</a></li>
+                    <li><a href="conduct.html">Code of Conduct</a></li>
+                    <li><a href="downloads.html">Student Downloads</a></li>
+                    <li><a href="notifications.html">Notifications timeline</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Official Registry</h4>
+                <p><i class="fas fa-map-marker-alt"></i> No.10, Near Janapriya Apartment, Kadabagere, Bangalore – 562130</p>
+                <p><i class="fas fa-phone"></i> Principal Desk: +91 9916246833</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:murthyguru1987@gmail.com">murthyguru1987@gmail.com</a></p>
+                <p class="working-hours"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 4:00 PM</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p><span class="admin-gate" style="cursor: default; user-select: none;" title="Academic Portal">&copy;</span> 2026 Rashtrakavi Kuvempu College of Law. All Rights Reserved. Managed by Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka.</p>
+                <p>Designed for compliance & legal excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Script File -->
+    <script src="app.js"></script>
+</body>
+</html>

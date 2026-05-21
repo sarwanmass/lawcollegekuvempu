@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Statutory Committees Dashboard - Rashtrakavi Kuvempu College of Law. Explore our cells for compliance, student safety, and legal community outreach.">
+    <meta name="keywords" content="Statutory Committees, Anti Ragging Bangalore, Legal Aid Clinic, Moot Court, IQAC, Student Grievance, Law College Compliance">
+    <title>Statutory Committees | Rashtrakavi Kuvempu College of Law</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Banner: Important Alerts -->
+    <div class="top-banner" id="banner-notification">
+        <div class="banner-content">
+            <span class="badge badge-warning">Affiliation Pending</span>
+            <p>Affiliation from Karnataka State Law University, Hubballi & approval from Bar Council of India are currently pending.</p>
+        </div>
+        <button class="close-banner-btn" onclick="closeBanner()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- Navigation Bar -->
+        <!-- Two-Tier Header -->
+    <header class="header">
+        <!-- Tier 1: Branding Header (Visible on Desktop) -->
+        <div class="header-top">
+            <div class="container header-top-container">
+                <a href="index.html" class="logo-area">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img">
+                    <div class="logo-text">
+                        <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
+                        <span class="trust-name">Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Tier 2: Navigation Bar -->
+        <div class="header-bottom">
+            <div class="container header-bottom-container">
+                <!-- Mobile Logo Area (visible on mobile) -->
+                <a href="index.html" class="logo-mobile">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img-mobile">
+                    <div class="logo-text">
+                        <span class="college-name-abbr">RKLC</span>
+                        <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
+                    </div>
+                </a>
+
+                <nav class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link ">Home</a>
+                    <a href="leadership.html" class="nav-link ">Leadership</a>
+                    <a href="governance.html" class="nav-link ">Governing Council</a>
+                    <a href="faculty.html" class="nav-link ">Faculties</a>
+                    <a href="course.html" class="nav-link ">Courses</a>
+                    <a href="library.html" class="nav-link ">Library &amp; Gallery</a>
+                    <a href="compliance.html" class="nav-link active">Statutory Committees</a>
+                    <a href="conduct.html" class="nav-link ">Code of Conduct</a>
+                    <a href="downloads.html" class="nav-link">Downloads</a>
+                    <a href="notifications.html" class="nav-link">Notifications</a>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="conduct.html" class="btn btn-outline btn-sm">Student Portal</a>
+                    <button class="theme-toggle" id="theme-btn" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Open Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero Banner -->
+    <section class="hero-section" style="min-height: 30vh; padding: 80px 0 40px; background-attachment: scroll;">
+        <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(10, 14, 23, 0.95) 0%, rgba(10, 14, 23, 0.98) 100%);"></div>
+        <div class="container hero-container" style="text-align: center;">
+            <div class="hero-tag">
+                <i class="fas fa-shield-halved"></i> Statutory Compliance
+            </div>
+            <h1 class="hero-title" style="font-size: 2.2rem; margin-bottom: 8px;"><span class="highlight-text">Rashtrakavi Kuvempu College of Law</span></h1>
+            <p style="color: var(--text-primary); font-family: var(--font-heading); font-size: 1.6rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">Compliance Dashboard</p>
+        </div>
+    </section>
+
+    <!-- Committees Main Section -->
+    <section class="committees-section" style="padding: 80px 0 100px;">
+        <div class="container">
+            <div class="section-header center-align">
+                <span class="section-tag">Institutional Integrity</span>
+                <h2 class="section-title">Academic &amp; Welfare Committees</h2>
+                <p class="section-subtitle">A state-of-the-art overview of statutory panels, cells, and clubs safeguarding student interests and driving quality assurance.</p>
+                <div class="section-divider center"></div>
+            </div>
+
+            <div class="committees-container">
+                
+                <!-- Left Sidebar Nav Buttons -->
+                <aside class="committees-sidebar">
+                    <button class="committee-btn active" onclick="showCommittee('anti-ragging', this)">
+                        <i class="fas fa-shield-halved"></i> Anti-Ragging Committee
+                    </button>
+                    <button class="committee-btn" onclick="showCommittee('sc-st-cell', this)">
+                        <i class="fas fa-gavel"></i> SC/ST Grievance Cell
+                    </button>
+                    <button class="committee-btn" onclick="showCommittee('womens-grievance', this)">
+                        <i class="fas fa-venus"></i> Women's Grievance / ICC
+                    </button>
+                    <button class="committee-btn" onclick="showCommittee('legal-aid', this)">
+                        <i class="fas fa-scale-balanced"></i> Pro-Bono Legal Aid Clinic
+                    </button>
+                    <button class="committee-btn" onclick="showCommittee('moot-court', this)">
+                        <i class="fas fa-scale-unbalanced-flip"></i> Moot Court Society
+                    </button>
+                    <button class="committee-btn" onclick="showCommittee('iqac', this)">
+                        <i class="fas fa-chart-line"></i> IQAC Quality Assurance
+                    </button>
+                    <button class="committee-btn" onclick="showCommittee('nss-unit', this)">
+                        <i class="fas fa-hands-holding-child"></i> NSS Unit
+                    </button>
+                    <button class="committee-btn" onclick="showCommittee('grievance-redressal', this)">
+                        <i class="fas fa-clipboard-question"></i> Grievance Redressal
+                    </button>
+                    <button class="committee-btn" onclick="showCommittee('library-committee', this)">
+                        <i class="fas fa-book"></i> Library Committee
+                    </button>
+                    <button class="committee-btn" onclick="showCommittee('sports-cultural', this)">
+                        <i class="fas fa-masks-theater"></i> Sports &amp; Cultural Cell
+                    </button>
+                </aside>
+
+                <!-- Right Display Panel -->
+                <main class="committees-display-panel glass-card">
+
+                    <!-- Panel 1: Anti-Ragging -->
+                    <div class="committee-panel active" id="anti-ragging">
+                        <div class="panel-header">
+                            <div class="panel-icon"><i class="fas fa-shield-halved"></i></div>
+                            <h2>Anti-Ragging Committee</h2>
+                        </div>
+                        <p class="panel-desc">Mandated by the Hon'ble Supreme Court of India and UGC regulations to maintain a 100% ragging-free campus. Our dedicated anti-ragging squad ensures comprehensive student safety, dignity, and psychological peace.</p>
+                        <div class="panel-highlights">
+                            <h3>Key Operations &amp; Guidelines</h3>
+                            <ul>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Zero Tolerance Policy:</strong> Any verbal, written, or physical ragging triggers immediate rustication and FIR filing.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Anonymous Drop Boxes:</strong> Secured complaints can be dropped outside the Administrative Block.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Surprise Inspections:</strong> The squad conducts random check-ins at hostels, libraries, and surrounding cafes.</li>
+                                <li><i class="fas fa-user-shield text-gold"></i> <strong>Nodal Officer:</strong> Dr. Gurumurthy T.N (Principal Desk) | <a href="mailto:murthyguru1987@gmail.com" class="text-gold">murthyguru1987@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Panel 2: SC/ST Grievance Cell -->
+                    <div class="committee-panel" id="sc-st-cell">
+                        <div class="panel-header">
+                            <div class="panel-icon"><i class="fas fa-gavel"></i></div>
+                            <h2>SC/ST Grievance Cell</h2>
+                        </div>
+                        <p class="panel-desc">Established in strict accordance with the UGC guidelines to protect Scheduled Castes and Scheduled Tribes students from discrimination, ensuring an inclusive, equitable academic environment.</p>
+                        <div class="panel-highlights">
+                            <h3>Key Operations &amp; Guidelines</h3>
+                            <ul>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Welfare Liaison:</strong> Oversees equal distribution of academic resources and coordinates state scholarships.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Remedial Coaching:</strong> Holds specialized, free mentoring classes to strengthen core subject competencies.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Expedited Inquiries:</strong> Ensures swift, objective adjudication of identity-based harassment claims.</li>
+                                <li><i class="fas fa-user-shield text-gold"></i> <strong>Convenor:</strong> Dr. Muniraja M | <a href="mailto:munirajulc@gmail.com" class="text-gold">munirajulc@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Panel 3: Women's Grievance / ICC -->
+                    <div class="committee-panel" id="womens-grievance">
+                        <div class="panel-header">
+                            <div class="panel-icon"><i class="fas fa-venus"></i></div>
+                            <h2>Women's Grievance &amp; ICC</h2>
+                        </div>
+                        <p class="panel-desc">Configured under the POSH Act (Prevention of Sexual Harassment), 2013, to provide a secure, empowering environment for female students, academic staff, and administrative members.</p>
+                        <div class="panel-highlights">
+                            <h3>Key Operations &amp; Guidelines</h3>
+                            <ul>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Confidentiality Guarantee:</strong> All proceedings, hearings, and counselors' dialogue are strictly private.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Gender Sensitization:</strong> Hosts guest legal seminars on equal rights, workplace safety, and consent.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>CCTV &amp; Escorts:</strong> Oversees functional campus lighting, security camera feeds, and campus wardens.</li>
+                                <li><i class="fas fa-user-shield text-gold"></i> <strong>ICC Chairperson:</strong> Prof. Geetha H.D | <a href="mailto:geethahd26@gmail.com" class="text-gold">geethahd26@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Panel 4: Legal Aid Clinic -->
+                    <div class="committee-panel" id="legal-aid">
+                        <div class="panel-header">
+                            <div class="panel-icon"><i class="fas fa-scale-balanced"></i></div>
+                            <h2>Pro-Bono Legal Aid Clinic &amp; Literacy Club</h2>
+                        </div>
+                        <p class="panel-desc">Fulfilling our constitutional mandate of social engineering. The Legal Aid Clinic provides critical, free legal counseling and rights litigation counseling to weaker sections of Basavanagudi and surrounding neighborhoods.</p>
+                        <div class="panel-highlights">
+                            <h3>Key Operations &amp; Guidelines</h3>
+                            <ul>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Community Camps:</strong> Students under professor supervision handle real legal inquiries from local residents.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Rights Literacy:</strong> Conducts street plays (Nukkad Nataks), pamphlets distribution, and talks on basic consumer rights.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Conciliation Forum:</strong> Aids in alternative dispute resolution and mediation counselling.</li>
+                                <li><i class="fas fa-user-shield text-gold"></i> <strong>Director:</strong> Sunil M.V (Assistant Professor) | <a href="mailto:sunilmvmc@gmail.com" class="text-gold">sunilmvmc@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Panel 5: Moot Court Society -->
+                    <div class="committee-panel" id="moot-court">
+                        <div class="panel-header">
+                            <div class="panel-icon"><i class="fas fa-scale-unbalanced-flip"></i></div>
+                            <h2>Moot Court Society (MCS)</h2>
+                        </div>
+                        <p class="panel-desc">The core practical advocacy hub of Rashtrakavi Kuvempu College of Law. The MCS simulates appellate-level high court and supreme court chambers, molding students into fearless trial litigators.</p>
+                        <div class="panel-highlights">
+                            <h3>Key Operations &amp; Guidelines</h3>
+                            <ul>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Weekly Mock Trials:</strong> Simulates civil, criminal, and constitutional hearings in our dedicated Moot Court Hall.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Drafting Clinics:</strong> Special workshops on drafting court briefs, memorials, petitions, and legal opinions.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>National Representation:</strong> Prepares, finances, and coaches teams representing RKLC at national championships.</li>
+                                <li><i class="fas fa-user-shield text-gold"></i> <strong>Faculty In-Charge:</strong> Dawood Baig K (Assistant Professor) | <a href="mailto:dawoodbaig.k@gmail.com" class="text-gold">dawoodbaig.k@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Panel 6: IQAC -->
+                    <div class="committee-panel" id="iqac">
+                        <div class="panel-header">
+                            <div class="panel-icon"><i class="fas fa-chart-line"></i></div>
+                            <h2>Internal Quality Assurance Cell (IQAC)</h2>
+                        </div>
+                        <p class="panel-desc">A strategic statutory unit tasked with implementing NAAC-standard quality benchmarks, reviewing teaching methods, and overseeing continuous administrative enhancement.</p>
+                        <div class="panel-highlights">
+                            <h3>Key Operations &amp; Guidelines</h3>
+                            <ul>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Student Feedback loops:</strong> Drives quarterly feedback collections on teaching efficacy and library support.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Academic Audits:</strong> Periodic audits of syllabus coverage, internship journals, and research files.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Professional Seminars:</strong> Coordinates national conferences on constitutional law and human rights.</li>
+                                <li><i class="fas fa-user-shield text-gold"></i> <strong>IQAC Director:</strong> Dr. Gurumurthy T.N | <a href="mailto:murthyguru1987@gmail.com" class="text-gold">murthyguru1987@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Panel 7: NSS Unit -->
+                    <div class="committee-panel" id="nss-unit">
+                        <div class="panel-header">
+                            <div class="panel-icon"><i class="fas fa-hands-holding-child"></i></div>
+                            <h2>NSS Unit (National Service Scheme)</h2>
+                        </div>
+                        <p class="panel-desc">Nurturing civic empathy and communal responsibility. The NSS unit partners legal education with developmental service, engaging students in national development works.</p>
+                        <div class="panel-highlights">
+                            <h3>Key Operations &amp; Guidelines</h3>
+                            <ul>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Rural Camps:</strong> Coordinates annual 7-day developmental camps in adopted village communities.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Blood &amp; Health Drives:</strong> Collaborates with Bengaluru hospitals for blood donations and eye care camps.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Ecological Action:</strong> Manages campus waste minimization and tree-planting initiatives in Nagasandra areas.</li>
+                                <li><i class="fas fa-user-shield text-gold"></i> <strong>Program Officer:</strong> Mr. Shivakumar M | <a href="mailto:shivakumarpe@gmail.com" class="text-gold">shivakumarpe@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Panel 8: Grievance Redressal -->
+                    <div class="committee-panel" id="grievance-redressal">
+                        <div class="panel-header">
+                            <div class="panel-icon"><i class="fas fa-clipboard-question"></i></div>
+                            <h2>Grievance Redressal Cell</h2>
+                        </div>
+                        <p class="panel-desc">A democratic mechanism allowing students to voice, track, and resolve academic, infrastructure, and administrative concerns under fair-hearing protocols.</p>
+                        <div class="panel-highlights">
+                            <h3>Key Operations &amp; Guidelines</h3>
+                            <ul>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Tribunal Hearings:</strong> The cell meets fortnightly to review submitted grievances with student reps.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Objective Review:</strong> Grievances are assessed strictly based on institutional statutes and KSLU codes.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Transparency Reports:</strong> Publishes action-taken briefs for review by the Governing Council.</li>
+                                <li><i class="fas fa-user-shield text-gold"></i> <strong>Convenor:</strong> Dr. Muniraja M | <a href="mailto:munirajulc@gmail.com" class="text-gold">munirajulc@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Panel 9: Library Committee -->
+                    <div class="committee-panel" id="library-committee">
+                        <div class="panel-header">
+                            <div class="panel-icon"><i class="fas fa-book"></i></div>
+                            <h2>Library Committee</h2>
+                        </div>
+                        <p class="panel-desc">Guiding the operations, inventory growth, and digital asset acquisitions of the Law Library, ensuring resources for advanced legal research are robust.</p>
+                        <div class="panel-highlights">
+                            <h3>Key Operations &amp; Guidelines</h3>
+                            <ul>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Collection Audits:</strong> Advises on the subscription renewal of AIR, SCC, and legal research journals.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Book Bank Management:</strong> Oversees free core textbook lending setups for weaker section students.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Research Facilities:</strong> Directs layout expansions, Wi-Fi terminals, and quiet study room protocols.</li>
+                                <li><i class="fas fa-user-shield text-gold"></i> <strong>Chief Librarian:</strong> Dr. Narayanaswamy B.V | <a href="mailto:narayanaswamybv@gmail.com" class="text-gold">narayanaswamybv@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Panel 10: Sports & Cultural -->
+                    <div class="committee-panel" id="sports-cultural">
+                        <div class="panel-header">
+                            <div class="panel-icon"><i class="fas fa-masks-theater"></i></div>
+                            <h2>Sports &amp; Cultural Committee</h2>
+                        </div>
+                        <p class="panel-desc">Balancing rigorous legal scholarship with creativity and fitness. This committee handles the sports meets, debates, and theater works that enrich college life.</p>
+                        <div class="panel-highlights">
+                            <h3>Key Operations &amp; Guidelines</h3>
+                            <ul>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Athletic Tournaments:</strong> Conducts internal cricket, chess, and athletic meets under PE oversight.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Debates &amp; Drama:</strong> Hosts the annual legal theater festival simulating constitutional debates.</li>
+                                <li><i class="fas fa-circle-check text-gold"></i> <strong>Wellness Camps:</strong> Organizes regular stress relief, yoga, and physical fitness programs.</li>
+                                <li><i class="fas fa-user-shield text-gold"></i> <strong>Co-ordinators:</strong> Mrs. Sushmitha K (Cultural) &amp; Mr. Shivakumar M (Sports)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </main>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="footer-emblem">
+                    <h3>Rashtrakavi Kuvempu College of Law</h3>
+                </div>
+                <p class="footer-desc">
+                    Affiliation from Karnataka State Law University, Hubballi, Karnataka and approval from the Bar Council of India, New Delhi are pending. Operating under the visionary management of Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="leadership.html">Leadership Message</a></li>
+                    <li><a href="governance.html">Governing Council</a></li>
+                    <li><a href="faculty.html">Academic Faculty</a></li>
+                    <li><a href="course.html">Courses Offered</a></li>
+                    <li><a href="library.html">Library &amp; Gallery</a></li>
+                    <li><a href="compliance.html">Statutory Cells</a></li>
+                    <li><a href="conduct.html">Code of Conduct</a></li>
+                    <li><a href="downloads.html">Student Downloads</a></li>
+                    <li><a href="notifications.html">Notifications timeline</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Official Registry</h4>
+                <p><i class="fas fa-map-marker-alt"></i> No.10, Near Janapriya Apartment, Kadabagere, Bangalore – 562130</p>
+                <p><i class="fas fa-phone"></i> Principal Desk: +91 9916246833</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:murthyguru1987@gmail.com">murthyguru1987@gmail.com</a></p>
+                <p class="working-hours"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 4:00 PM</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p><span class="admin-gate" style="cursor: default; user-select: none;" title="Academic Portal">&copy;</span> 2026 Rashtrakavi Kuvempu College of Law. All Rights Reserved. Managed by Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka.</p>
+                <p>Designed for compliance & legal excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Script File -->
+    <script src="app.js"></script>
+</body>
+</html>

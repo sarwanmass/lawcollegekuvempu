@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notifications Timeline - Rashtrakavi Kuvempu College of Law. Real-time updates, university alerts, KSLU board schedules, and legal aid clinic timings.">
+    <meta name="keywords" content="Rashtrakavi Kuvempu College of Law, Notifications, Law College Announcements, KSLU Alerts, Legal Aid Schedule">
+    <title>Academic Notifications | Rashtrakavi Kuvempu College of Law</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Banner: Important Alerts -->
+    <div class="top-banner" id="banner-notification">
+        <div class="banner-content">
+            <span class="badge badge-warning">Admissions 2026-27</span>
+            <p>Empowering the social engineers of tomorrow. Explore our statutory cells & curriculum.</p>
+        </div>
+        <button class="close-banner-btn" onclick="closeBanner()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- Two-Tier Header -->
+    <header class="header">
+        <!-- Tier 1: Branding Header (Visible on Desktop) -->
+        <div class="header-top">
+            <div class="container header-top-container">
+                <a href="index.html" class="logo-area">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img">
+                    <div class="logo-text">
+                        <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
+                        <span class="trust-name">Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Tier 2: Navigation Bar -->
+        <div class="header-bottom">
+            <div class="container header-bottom-container">
+                <!-- Mobile Logo Area (visible on mobile) -->
+                <a href="index.html" class="logo-mobile">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img-mobile">
+                    <div class="logo-text">
+                        <span class="college-name-abbr">RKLC</span>
+                        <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
+                    </div>
+                </a>
+
+                <nav class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="leadership.html" class="nav-link">Leadership</a>
+                    <a href="governance.html" class="nav-link">Governing Council</a>
+                    <a href="faculty.html" class="nav-link">Faculties</a>
+                    <a href="course.html" class="nav-link">Courses</a>
+                    <a href="library.html" class="nav-link">Library &amp; Gallery</a>
+                    <a href="compliance.html" class="nav-link">Statutory Committees</a>
+                    <a href="conduct.html" class="nav-link">Code of Conduct</a>
+                    <a href="downloads.html" class="nav-link">Downloads</a>
+                    <a href="notifications.html" class="nav-link active">Notifications</a>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="conduct.html" class="btn btn-outline btn-sm">Student Portal</a>
+                    <button class="theme-toggle" id="theme-btn" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Open Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Scrolling Announcement Ticker -->
+    <div class="scrolling-ticker">
+        <div class="ticker-content">
+            <div class="ticker-item"><i class="fas fa-bullhorn"></i> <span class="badge badge-warning" style="padding: 2px 8px; font-size: 0.65rem;">Affiliation Pending</span> No affiliation from Karnataka State Law University, Hubballi, Karnataka and approval from the Bar Council of India, New Delhi is pending.</div>
+            <div class="ticker-item"><i class="fas fa-circle-info"></i> <span class="badge badge-info" style="padding: 2px 8px; font-size: 0.65rem;">Admissions 2026-27</span> Admissions are now open for our prestigious 3-Year & 5-Year LL.B programmes. Contact Registry Desk.</div>
+            <div class="ticker-item"><i class="fas fa-shield-halved"></i> <span class="badge badge-success" style="padding: 2px 8px; font-size: 0.65rem;">UGC Standard</span> All Statutory Committees, including Anti-Ragging and Grievance Cells, are fully active for compliance.</div>
+        </div>
+    </div>
+
+    <!-- Notifications Hero Section -->
+    <section class="hero-section" style="min-height: 30vh; padding: 80px 0 40px; background-attachment: scroll;">
+        <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(10, 14, 23, 0.9) 0%, rgba(10, 14, 23, 0.98) 100%);"></div>
+        <div class="container hero-container" style="text-align: center;">
+            <div class="hero-tag">
+                <i class="fas fa-bullhorn"></i> Bulletins &amp; Timeline
+            </div>
+            <h1 class="hero-title" style="font-size: 2.2rem; margin-bottom: 8px;"><span class="highlight-text">Live Academic Alerts</span></h1>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; font-size: 0.95rem;">
+                Stay updated with official bulletins from KSLU, Bar Council status briefings, and statutory board briefs.
+            </p>
+        </div>
+    </section>
+
+    <!-- Bulletin timeline Section -->
+    <section class="notifications-section">
+        <div class="container">
+            <!-- Timeline Filters -->
+            <div class="timeline-filters">
+                <button class="tab-btn active" onclick="filterTimelineCategory('all', this)">All Bulletins</button>
+                <button class="tab-btn" onclick="filterTimelineCategory('admissions', this)">Admissions Desk</button>
+                <button class="tab-btn" onclick="filterTimelineCategory('academic', this)">Academic Board</button>
+                <button class="tab-btn" onclick="filterTimelineCategory('compliance', this)">Statutory Compliance</button>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="timeline-container">
+                
+                <!-- Item 1: Admissions Open -->
+                <div class="timeline-item animate-item" data-category="admissions">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card glass-card">
+                        <div class="timeline-header">
+                            <div class="timeline-title-area">
+                                <span class="badge badge-warning" style="margin-bottom: 6px; width: fit-content;">Admissions 2026-27</span>
+                                <h3 class="timeline-title">Direct Enrollment Open for 3-Year LL.B</h3>
+                            </div>
+                            <span class="timeline-date"><i class="fas fa-calendar-day"></i> May 20, 2026</span>
+                        </div>
+                        <p class="timeline-summary">
+                            Applications are officially open at our Bengaluru campus registry desk. Read KSLU base merit minimums and documents check-list.
+                        </p>
+                        
+                        <div class="timeline-expand-btn">
+                            Click to expand guidelines <i class="fas fa-chevron-down"></i>
+                        </div>
+                        
+                        <!-- Accordion Expansion content -->
+                        <div class="timeline-details">
+                            <p><strong>KSLU Base Minimum Eligibility Marks:</strong></p>
+                            <ul>
+                                <li><i class="fas fa-shield-halved"></i> General Category Merit: 45% Minimum</li>
+                                <li><i class="fas fa-shield-halved"></i> OBC Category Merit: 42% Minimum</li>
+                                <li><i class="fas fa-shield-halved"></i> SC / ST Categories Merit: 40% Minimum</li>
+                            </ul>
+                            
+                            <p style="margin-top: 16px;"><strong>Mandatory Admission Certificates checklist:</strong></p>
+                            <ul>
+                                <li><i class="fas fa-circle-check"></i> SSLC / 10th Cumulative Marks Card</li>
+                                <li><i class="fas fa-circle-check"></i> PUC / 12th Cumulative Marks Card</li>
+                                <li><i class="fas fa-circle-check"></i> Degree Graduation Cumulative original transcripts</li>
+                                <li><i class="fas fa-circle-check"></i> Original Transfer Certificate (TC)</li>
+                                <li><i class="fas fa-circle-check"></i> Migration Certificate (For Non-Karnataka Graduates)</li>
+                                <li><i class="fas fa-circle-check"></i> 8 Recent Clear Passport Size Photos</li>
+                            </ul>
+                            
+                            <p style="margin-top: 16px; color: var(--accent-cyan); font-weight: 500;">
+                                For admissions support, visit us at No.10, Near Janapriya Apartment, Kadabagere, Bangalore or call +91 9916246833.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Affiliation pending status briefing -->
+                <div class="timeline-item animate-item" data-category="compliance">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card glass-card">
+                        <div class="timeline-header">
+                            <div class="timeline-title-area">
+                                <span class="badge badge-error" style="margin-bottom: 6px; width: fit-content;">Affiliation Briefing</span>
+                                <h3 class="timeline-title">Official Disclosure: KSLU &amp; BCI Status Pending</h3>
+                            </div>
+                            <span class="timeline-date"><i class="fas fa-calendar-day"></i> May 18, 2026</span>
+                        </div>
+                        <p class="timeline-summary">
+                            Important statutory disclaimer regarding our pending affiliation from Karnataka State Law University, Hubballi, Karnataka and approval from the Bar Council of India, New Delhi.
+                        </p>
+                        
+                        <div class="timeline-expand-btn">
+                            Click to view full transparency disclosure <i class="fas fa-chevron-down"></i>
+                        </div>
+                        
+                        <!-- Accordion Expansion content -->
+                        <div class="timeline-details">
+                            <p>
+                                At <strong>Rashtrakavi Kuvempu College of Law</strong>, transparency is a core pillar. We officially disclose that:
+                            </p>
+                            <blockquote style="border-left: 3px solid var(--color-error); padding-left: 16px; margin: 16px 0; color: var(--text-secondary); font-style: italic;">
+                                "Affiliation from Karnataka State Law University (KSLU), Hubballi, Karnataka and approval of affiliation from the Bar Council of India (BCI), New Delhi is pending."
+                            </blockquote>
+                            <p>
+                                The management of the trust is actively pursuing the processing tracks to ensure immediate regularizations before the commencement of formal classes. All applications will be registered provisionally. We request students to stay connected with the Counselor Desk for regular dossier briefings.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Syllabus and schedule -->
+                <div class="timeline-item animate-item" data-category="academic">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card glass-card">
+                        <div class="timeline-header">
+                            <div class="timeline-title-area">
+                                <span class="badge badge-info" style="margin-bottom: 6px; width: fit-content;">Curriculum</span>
+                                <h3 class="timeline-title">KSLU 3-Year LLB Core Syllabus Finalised</h3>
+                            </div>
+                            <span class="timeline-date"><i class="fas fa-calendar-day"></i> May 12, 2026</span>
+                        </div>
+                        <p class="timeline-summary">
+                            The academic board has published the curriculum mapping for the 3-Year professional LLB course spanning 6 semesters.
+                        </p>
+                        
+                        <div class="timeline-expand-btn">
+                            Click to view semester structures <i class="fas fa-chevron-down"></i>
+                        </div>
+                        
+                        <!-- Accordion Expansion content -->
+                        <div class="timeline-details">
+                            <p>
+                                The curriculum spans three functional academic years split into two semesters of 18 continuous teaching weeks apiece:
+                            </p>
+                            <ul>
+                                <li><i class="fas fa-book"></i> <strong>Semester I:</strong> Constitutional Law I, Law of Torts, Law of Contracts I, Family Law I.</li>
+                                <li><i class="fas fa-book"></i> <strong>Semester II:</strong> Constitutional Law II, Family Law II, Indian Penal Code (Criminal Law), Law of Contracts II.</li>
+                                <li><i class="fas fa-book"></i> <strong>Semester III:</strong> Jurisprudence, Property Law, Labour Law I, Administrative Law.</li>
+                                <li><i class="fas fa-book"></i> <strong>Semester IV:</strong> Public International Law, Environmental Law, Labour Law II, Banking Law.</li>
+                                <li><i class="fas fa-book"></i> <strong>Semester V:</strong> Law of Evidence, Civil Procedure Code (CPC), Intellectual Property Rights (IPR), Clinical Paper I.</li>
+                                <li><i class="fas fa-book"></i> <strong>Semester VI:</strong> Law of Taxation, Company Law, Drafting &amp; Pleading (Clinical Paper IV), Moot Court Hall Advocacy.</li>
+                            </ul>
+                            <p style="margin-top: 16px;">
+                                <a href="downloads.html" class="btn btn-outline btn-sm">Go to Downloads to get Syllabus PDF</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Compliance Cell Activeness -->
+                <div class="timeline-item animate-item" data-category="compliance">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card glass-card">
+                        <div class="timeline-header">
+                            <div class="timeline-title-area">
+                                <span class="badge badge-success" style="margin-bottom: 6px; width: fit-content;">UGC Standard</span>
+                                <h3 class="timeline-title">Statutory Anti-Ragging and Grievance Boards Activated</h3>
+                            </div>
+                            <span class="timeline-date"><i class="fas fa-calendar-day"></i> May 08, 2026</span>
+                        </div>
+                        <p class="timeline-summary">
+                            Pursuant to UGC regulations and KSLU directives, the statutory compliance boards have been officially formed for safety and campus dignity.
+                        </p>
+                        
+                        <div class="timeline-expand-btn">
+                            Click to view emergency contact lines <i class="fas fa-chevron-down"></i>
+                        </div>
+                        
+                        <!-- Accordion Expansion content -->
+                        <div class="timeline-details">
+                            <p>
+                                All cells are active and ready to support a zero-tolerance ragging policy at our Bangalore campus:
+                            </p>
+                            <ul>
+                                <li><i class="fas fa-shield-halved"></i> <strong>Anti-Ragging Committee:</strong> Chaired by the Principal. Toll-free support or Principal desk: +91 9916246833.</li>
+                                <li><i class="fas fa-shield-halved"></i> <strong>Internal Compliance Committee (ICC):</strong> Assuring gender equity and statutory respect.</li>
+                                <li><i class="fas fa-shield-halved"></i> <strong>Student Grievance Redressal Committee:</strong> A dedicated ombudsman portal for transparent resolutions.</li>
+                                <li><i class="fas fa-shield-halved"></i> <strong>Anti-Sexual Harassment Cell:</strong> Standardized legal cells complying with Supreme Court guidelines.</li>
+                            </ul>
+                            <p style="margin-top: 16px;">
+                                Detailed circulars, member indices, and compliance bylaws are posted on our statutory pages.
+                            </p>
+                            <p>
+                                <a href="compliance.html" class="btn btn-primary btn-sm">Explore Statutory Cell Panel</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="footer-emblem">
+                    <h3>Rashtrakavi Kuvempu College of Law</h3>
+                </div>
+                <p class="footer-desc">
+                    Affiliation from Karnataka State Law University, Hubballi, Karnataka and approval from the Bar Council of India, New Delhi are pending. Operating under the visionary management of Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="leadership.html">Leadership Message</a></li>
+                    <li><a href="governance.html">Governing Council</a></li>
+                    <li><a href="faculty.html">Academic Faculty</a></li>
+                    <li><a href="course.html">Courses Offered</a></li>
+                    <li><a href="library.html">Library &amp; Gallery</a></li>
+                    <li><a href="compliance.html">Statutory Cells</a></li>
+                    <li><a href="conduct.html">Code of Conduct</a></li>
+                    <li><a href="downloads.html">Student Downloads</a></li>
+                    <li><a href="notifications.html">Notifications timeline</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Official Registry</h4>
+                <p><i class="fas fa-map-marker-alt"></i> No.10, Near Janapriya Apartment, Kadabagere, Bangalore – 562130</p>
+                <p><i class="fas fa-phone"></i> Principal Desk: +91 9916246833</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:murthyguru1987@gmail.com">murthyguru1987@gmail.com</a></p>
+                <p class="working-hours"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 4:00 PM</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p><span class="admin-gate" style="cursor: default; user-select: none;" title="Academic Portal">&copy;</span> 2026 Rashtrakavi Kuvempu College of Law. All Rights Reserved. Managed by Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka.</p>
+                <p>Designed for compliance & legal excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Script File -->
+    <script src="app.js"></script>
+</body>
+</html>

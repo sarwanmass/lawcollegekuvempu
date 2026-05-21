@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Code of Conduct - Rashtrakavi Kuvempu College of Law. Explore the 12 primary directives for campus decorum, academic integrity, and dress code.">
+    <meta name="keywords" content="Code of Conduct, Student Rules, Dress Code Law College, Exam Rules, Campus Decorum, Bangalore Law School Rules">
+    <title>Student Code of Conduct | Rashtrakavi Kuvempu College of Law</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Banner: Important Alerts -->
+    <div class="top-banner" id="banner-notification">
+        <div class="banner-content">
+            <span class="badge badge-warning">Affiliation Pending</span>
+            <p>Affiliation from Karnataka State Law University, Hubballi & approval from Bar Council of India are currently pending.</p>
+        </div>
+        <button class="close-banner-btn" onclick="closeBanner()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- Navigation Bar -->
+        <!-- Two-Tier Header -->
+    <header class="header">
+        <!-- Tier 1: Branding Header (Visible on Desktop) -->
+        <div class="header-top">
+            <div class="container header-top-container">
+                <a href="index.html" class="logo-area">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img">
+                    <div class="logo-text">
+                        <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
+                        <span class="trust-name">Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Tier 2: Navigation Bar -->
+        <div class="header-bottom">
+            <div class="container header-bottom-container">
+                <!-- Mobile Logo Area (visible on mobile) -->
+                <a href="index.html" class="logo-mobile">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img-mobile">
+                    <div class="logo-text">
+                        <span class="college-name-abbr">RKLC</span>
+                        <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
+                    </div>
+                </a>
+
+                <nav class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link ">Home</a>
+                    <a href="leadership.html" class="nav-link ">Leadership</a>
+                    <a href="governance.html" class="nav-link ">Governing Council</a>
+                    <a href="faculty.html" class="nav-link ">Faculties</a>
+                    <a href="course.html" class="nav-link ">Courses</a>
+                    <a href="library.html" class="nav-link ">Library &amp; Gallery</a>
+                    <a href="compliance.html" class="nav-link ">Statutory Committees</a>
+                    <a href="conduct.html" class="nav-link active">Code of Conduct</a>
+                    <a href="downloads.html" class="nav-link">Downloads</a>
+                    <a href="notifications.html" class="nav-link">Notifications</a>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="conduct.html" class="btn btn-outline btn-sm">Student Portal</a>
+                    <button class="theme-toggle" id="theme-btn" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Open Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero Banner -->
+    <section class="hero-section" style="min-height: 30vh; padding: 80px 0 40px; background-attachment: scroll;">
+        <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(10, 14, 23, 0.95) 0%, rgba(10, 14, 23, 0.98) 100%);"></div>
+        <div class="container hero-container" style="text-align: center;">
+            <div class="hero-tag">
+                <i class="fas fa-scale-balanced"></i> Student Portal
+            </div>
+            <h1 class="hero-title" style="font-size: 2.2rem; margin-bottom: 8px;"><span class="highlight-text">Rashtrakavi Kuvempu College of Law</span></h1>
+            <p style="color: var(--text-primary); font-family: var(--font-heading); font-size: 1.6rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">Student Code of Conduct</p>
+        </div>
+    </section>
+
+    <!-- Code of Conduct Main Section -->
+    <section class="conduct-section" style="padding: 60px 0 100px;">
+        <div class="container">
+            <div class="section-header center-align">
+                <span class="section-tag">Campus Compliance</span>
+                <h2 class="section-title">Directives &amp; Ethical Standards</h2>
+                <p class="section-subtitle">To foster academic focus and build upright constitutional advocates, students must strictly adhere to the following 12 guidelines.</p>
+                <div class="section-divider center"></div>
+            </div>
+
+            <!-- Live Keyword Search Bar -->
+            <div class="rules-search-container">
+                <div style="position: relative; max-width: 600px; margin: 0 auto;">
+                    <i class="fas fa-search search-icon" style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--text-secondary); font-size: 1.1rem;"></i>
+                    <input type="text" id="conduct-search" oninput="filterConductRules()" placeholder="Search rules (e.g., attendance, dress, examinations)..." style="padding-left: 50px;">
+                </div>
+            </div>
+
+            <!-- Rules Grid -->
+            <div class="rules-grid">
+
+                <!-- Rule 1: Student Elections Ban -->
+                <div class="rule-card glass-card warning-card" data-keywords="elections, union, political, campaigns, ban, politics, strikes">
+                    <div class="rule-num">01</div>
+                    <div class="rule-content">
+                        <h3>No Student Elections <span class="badge badge-error">Strict Ban</span></h3>
+                        <p>Political activity, external canvassing, strikes, or student union election campaigns are strictly prohibited on campus to ensure academic peace, focus, and decorum.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 2: Attendance Requirements -->
+                <div class="rule-card glass-card" data-keywords="attendance, classes, percentage, lectures, absence, registry, kslu">
+                    <div class="rule-num">02</div>
+                    <div class="rule-content">
+                        <h3>75% Attendance <span class="badge badge-warning">Mandatory</span></h3>
+                        <p>Under KSLU guidelines, students must maintain a minimum of 75% attendance in both academic lectures and practical clinical papers to qualify for university examinations.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 3: Decorum & Silence -->
+                <div class="rule-card glass-card" data-keywords="decorum, loitering, noise, vandalism, corridors, shouting, properties">
+                    <div class="rule-num">03</div>
+                    <div class="rule-content">
+                        <h3>Campus Decorum &amp; Silence</h3>
+                        <p>Shouting, loitering in corridors, and acts of campus vandalism are strictly penalized. Students are expected to maintain professional decorum and treat college property with respect.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 4: Examination Malpractice -->
+                <div class="rule-card glass-card warning-card" data-keywords="exams, cheating, copying, plagiarism, malpractice, suspension, testing">
+                    <div class="rule-num">04</div>
+                    <div class="rule-content">
+                        <h3>Zero Exam Malpractice <span class="badge badge-error">Expulsion</span></h3>
+                        <p>Any form of copying, cheating, smuggling handwritten slips, using mobile phones in tests, or plagiarizing journals will result in immediate suspension and KSLU tribunal reporting.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 5: Identity Cards -->
+                <div class="rule-card glass-card" data-keywords="id card, badge, entry, security, library, checking">
+                    <div class="rule-num">05</div>
+                    <div class="rule-content">
+                        <h3>Mandatory ID Cards <span class="badge badge-info">Security</span></h3>
+                        <p>Students must wear their official college ID cards around their neck at all times. Security personnel are authorized to deny classroom or library access to students without badges.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 6: Track Notice Boards -->
+                <div class="rule-card glass-card" data-keywords="notice board, notifications, circulars, announcements, board, schedule">
+                    <div class="rule-num">06</div>
+                    <div class="rule-content">
+                        <h3>Monitor Notice Boards</h3>
+                        <p>It is the student's primary responsibility to review physical notice boards and official digital communications daily for critical circulars, exam timings, and administrative changes.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 7: Library Guidelines -->
+                <div class="rule-card glass-card" data-keywords="library, books, return, fine, damage, quiet, reading, journal">
+                    <div class="rule-num">07</div>
+                    <div class="rule-content">
+                        <h3>Library Protocols</h3>
+                        <p>Absolute silence is mandatory inside the Majestic Law Library. Borrowed books must be returned by due dates. Damaged or lost volumes must be replaced or paid for in full.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 8: Tours & Off-Campus Excursions -->
+                <div class="rule-card glass-card" data-keywords="tours, picnics, excursions, consent, parents, trips, principal">
+                    <div class="rule-num">08</div>
+                    <div class="rule-content">
+                        <h3>Authorized Tours Only</h3>
+                        <p>Educational tours, picnics, or legal aid field camps must be officially sanctioned by the Principal. Written parent/guardian consent is mandatory for participation.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 9: Parental Dialogues -->
+                <div class="rule-card glass-card" data-keywords="parents, meeting, summons, progress, dialogue, reports, parent">
+                    <div class="rule-num">09</div>
+                    <div class="rule-content">
+                        <h3>Parental Engagement</h3>
+                        <p>Parents and guardians are required to attend the college and interface with the faculty or Principal immediately upon receipt of official notifications regarding student progress.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 10: Respect for Authority -->
+                <div class="rule-card glass-card" data-keywords="respect, authority, professors, staff, dean, registry, courtesy">
+                    <div class="rule-num">10</div>
+                    <div class="rule-content">
+                        <h3>Respect for Authority</h3>
+                        <p>RKLC demands exemplary courtesy. Insolent, discourteous, or abusive behavior towards teaching professors, guest advocates, or registry clerks is subject to immediate disciplinary actions.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 11: Substance Ban -->
+                <div class="rule-card glass-card warning-card" data-keywords="drugs, tobacco, smoking, alcohol, substance, ban, illegal, liquor">
+                    <div class="rule-num">11</div>
+                    <div class="rule-content">
+                        <h3>Substance Abuse Ban <span class="badge badge-error">Criminal Charge</span></h3>
+                        <p>Possessing, consuming, or distributing tobacco, vapes, alcohol, or illicit narcotics within college premises is strictly banned. Violations trigger police handover and academic expulsion.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 12: Dress Code -->
+                <div class="rule-card glass-card" data-keywords="dress code, uniform, black coat, white shirt, legal uniform, attire, suit">
+                    <div class="rule-num">12</div>
+                    <div class="rule-content">
+                        <h3>Formal Legal Attire <span class="badge badge-info">Uniform</span></h3>
+                        <p>Students must strictly wear the official legal uniform: crisp white shirts, formal black trousers, black blazers/coats, and polished black formal shoes, emphasizing litigation readiness.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="footer-emblem">
+                    <h3>Rashtrakavi Kuvempu College of Law</h3>
+                </div>
+                <p class="footer-desc">
+                    Affiliation from Karnataka State Law University, Hubballi, Karnataka and approval from the Bar Council of India, New Delhi are pending. Operating under the visionary management of Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="leadership.html">Leadership Message</a></li>
+                    <li><a href="governance.html">Governing Council</a></li>
+                    <li><a href="faculty.html">Academic Faculty</a></li>
+                    <li><a href="course.html">Courses Offered</a></li>
+                    <li><a href="library.html">Library &amp; Gallery</a></li>
+                    <li><a href="compliance.html">Statutory Cells</a></li>
+                    <li><a href="conduct.html">Code of Conduct</a></li>
+                    <li><a href="downloads.html">Student Downloads</a></li>
+                    <li><a href="notifications.html">Notifications timeline</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Official Registry</h4>
+                <p><i class="fas fa-map-marker-alt"></i> No.10, Near Janapriya Apartment, Kadabagere, Bangalore – 562130</p>
+                <p><i class="fas fa-phone"></i> Principal Desk: +91 9916246833</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:murthyguru1987@gmail.com">murthyguru1987@gmail.com</a></p>
+                <p class="working-hours"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 4:00 PM</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p><span class="admin-gate" style="cursor: default; user-select: none;" title="Academic Portal">&copy;</span> 2026 Rashtrakavi Kuvempu College of Law. All Rights Reserved. Managed by Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka.</p>
+                <p>Designed for compliance & legal excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Script File -->
+    <script src="app.js"></script>
+</body>
+</html>

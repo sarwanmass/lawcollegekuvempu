@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UGC Faculty Profile - Dr. Muniraja M, Assistant Professor of Law at Rashtrakavi Kuvempu College of Law. Qualifications, Publications, and Teaching Portfolios.">
+    <meta name="keywords" content="Dr. Muniraja M, Assistant Professor Law, Law Faculty Bangalore, Corporate Law Professor, UGC Law Faculty Profile">
+    <title>Dr. Muniraja M - Faculty Profile | Rashtrakavi Kuvempu College of Law</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Premium Custom Profile Styles -->
+    <style>
+        .profile-container {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 40px;
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+            padding-bottom: 80px;
+        }
+        .profile-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+        .profile-avatar-card {
+            padding: 35px 25px;
+            text-align: center;
+        }
+        .profile-avatar-wrapper {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 24px;
+            border: 3.5px solid var(--accent-gold);
+            box-shadow: var(--shadow-glow);
+            transition: var(--transition-smooth);
+        }
+        .profile-avatar-wrapper:hover {
+            transform: scale(1.03);
+            border-color: var(--accent-gold-hover);
+        }
+        .profile-avatar-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+        .profile-meta-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0 0;
+            text-align: left;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+        .profile-meta-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .profile-meta-list li i {
+            color: var(--accent-gold);
+            width: 20px;
+            text-align: center;
+        }
+        .profile-meta-list li a {
+            color: var(--text-primary);
+        }
+        .profile-meta-list li a:hover {
+            color: var(--accent-gold);
+        }
+        .profile-main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .cv-section {
+            padding: 35px;
+        }
+        .cv-section-title {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        .cv-section-title i {
+            font-size: 1.3rem;
+        }
+        .cv-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .cv-table th, .cv-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .cv-table th {
+            font-family: var(--font-heading);
+            color: var(--text-primary);
+            font-weight: 600;
+            background-color: rgba(var(--accent-gold-rgb), 0.05);
+        }
+        .cv-table td {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .publication-list, .portfolio-list {
+            list-style: none;
+            padding: 0;
+        }
+        .publication-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .publication-list li::before {
+            content: "\f02d";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+        }
+        .portfolio-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .portfolio-list li::before {
+            content: "\f0a9";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+        }
+        .back-btn-container {
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 992px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+                margin-top: -30px;
+            }
+            .profile-sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Banner: Important Alerts -->
+    <div class="top-banner" id="banner-notification">
+        <div class="banner-content">
+            <span class="badge badge-warning">Affiliation Pending</span>
+            <p>Affiliation from Karnataka State Law University, Hubballi & approval from Bar Council of India are currently pending.</p>
+        </div>
+        <button class="close-banner-btn" onclick="closeBanner()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- Navigation Bar -->
+        <!-- Two-Tier Header -->
+    <header class="header">
+        <!-- Tier 1: Branding Header (Visible on Desktop) -->
+        <div class="header-top">
+            <div class="container header-top-container">
+                <a href="index.html" class="logo-area">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img">
+                    <div class="logo-text">
+                        <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
+                        <span class="trust-name">Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Tier 2: Navigation Bar -->
+        <div class="header-bottom">
+            <div class="container header-bottom-container">
+                <!-- Mobile Logo Area (visible on mobile) -->
+                <a href="index.html" class="logo-mobile">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img-mobile">
+                    <div class="logo-text">
+                        <span class="college-name-abbr">RKLC</span>
+                        <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
+                    </div>
+                </a>
+
+                <nav class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link ">Home</a>
+                    <a href="leadership.html" class="nav-link ">Leadership</a>
+                    <a href="governance.html" class="nav-link ">Governing Council</a>
+                    <a href="faculty.html" class="nav-link active">Faculties</a>
+                    <a href="course.html" class="nav-link ">Courses</a>
+                    <a href="library.html" class="nav-link ">Library &amp; Gallery</a>
+                    <a href="compliance.html" class="nav-link ">Statutory Committees</a>
+                    <a href="conduct.html" class="nav-link ">Code of Conduct</a>
+                    <a href="downloads.html" class="nav-link">Downloads</a>
+                    <a href="notifications.html" class="nav-link">Notifications</a>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="conduct.html" class="btn btn-outline btn-sm">Student Portal</a>
+                    <button class="theme-toggle" id="theme-btn" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Open Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero Banner -->
+    <section class="hero-section" style="min-height: 30vh; padding: 80px 0 40px; background-attachment: scroll;">
+        <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(10, 14, 23, 0.95) 0%, rgba(10, 14, 23, 0.98) 100%);"></div>
+        <div class="container hero-container" style="text-align: center;">
+            <div class="hero-tag">
+                <i class="fas fa-user-tie"></i> Faculty Member Profile
+            </div>
+            <h1 class="hero-title" style="font-size: 2.2rem; margin-bottom: 8px;"><span class="highlight-text">Rashtrakavi Kuvempu College of Law</span></h1>
+            <p style="color: var(--text-primary); font-family: var(--font-heading); font-size: 1.6rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">Dr. Muniraja M</p>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <div class="container" style="position: relative;">
+        <div class="profile-container">
+            
+            <!-- Sidebar with avatar & basic details -->
+            <div class="profile-sidebar">
+                <div class="profile-avatar-card glass-card">
+                    <div class="profile-avatar-wrapper">
+                        <!-- EDIT_MEMBER_IMAGE: Assistant Professor Dr. Muniraja M -->
+                        <img src="assets/dummy_member.png" alt="Dr. Muniraja M">
+                    </div>
+                    <h2 class="fac-name" style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 4px;">Dr. Muniraja M</h2>
+                    <span class="badge badge-info" style="margin-top: 5px; font-size: 0.75rem;">Assistant Professor</span>
+                    
+                    <ul class="profile-meta-list">
+                        <li><i class="fas fa-graduation-cap"></i> <span>LL.M., Ph.D</span></li>
+                        <li><i class="fas fa-briefcase"></i> <span>10 Years Teaching Experience</span></li>
+                        <li><i class="fas fa-envelope"></i> <span><a href="mailto:munirajulc@gmail.com">munirajulc@gmail.com</a></span></li>
+                        <li><i class="fas fa-phone"></i> <span>+91 98864 35787 / 99864 12178</span></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span style="font-size: 0.85rem;">RKLC Campus Registry, Kadabagere, Bangalore</span></li>
+                    </ul>
+                </div>
+                
+                <div class="back-btn-container" style="margin-top: 25px;">
+                    <a href="faculty.html" class="btn btn-secondary btn-sm" style="width: 100%;"><i class="fas fa-arrow-left"></i> Back to Faculty Directory</a>
+                </div>
+            </div>
+
+            <!-- Detailed Academic CV aligned with UGC standards -->
+            <div class="profile-main-content">
+                
+                <!-- 1. Academic Credentials -->
+                <div class="cv-section glass-card">
+                    <h3 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Academic Qualifications</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem;">
+                        Extensive legal studies with multiple professional qualifications and specialized postgraduate research degrees in corporate law, meeting all UGC and state university standard benchmarks.
+                    </p>
+                    <div style="overflow-x: auto;">
+                        <table class="cv-table">
+                            <thead>
+                                <tr>
+                                    <th>Degree / Qualification</th>
+                                    <th>Specialisation Area</th>
+                                    <th>University / Institution</th>
+                                    <th>Status / Year</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Doctor of Philosophy (Ph.D.)</strong></td>
+                                    <td>Corporate Law &amp; Governance</td>
+                                    <td>UGC Recognized University</td>
+                                    <td><span class="badge badge-success" style="padding: 2px 8px; font-size: 0.7rem;">Awarded</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Master of Laws (LL.M.)</strong></td>
+                                    <td>Business Law / Corporate Laws</td>
+                                    <td>Accredited State University</td>
+                                    <td>First Class</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bachelor of Laws (LL.B.)</strong></td>
+                                    <td>Law &amp; Jurisprudence</td>
+                                    <td>Accredited Law Academy</td>
+                                    <td>Distinction</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 2. Teaching & Legal Practice Experience -->
+                <div class="cv-section glass-card">
+                    <h3 class="cv-section-title"><i class="fas fa-briefcase"></i> Experience Profile</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem;">
+                        Over a decade of rich pedagogical experience teaching foundational and corporate legal courses to undergraduate law pupils.
+                    </p>
+                    <div style="overflow-x: auto;">
+                        <table class="cv-table">
+                            <thead>
+                                <tr>
+                                    <th>Role / Designation</th>
+                                    <th>Institution / Organization</th>
+                                    <th>Tenure Period</th>
+                                    <th>Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Assistant Professor of Law</strong></td>
+                                    <td>Rashtrakavi Kuvempu College of Law, Bangalore</td>
+                                    <td>Present</td>
+                                    <td>Academic Core</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Senior Faculty / Lecturer</strong></td>
+                                    <td>Esteemed Academic Institutions</td>
+                                    <td>Cumulative Tenure</td>
+                                    <td>10 Years</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3. Areas of Specialisation -->
+                <div class="cv-section glass-card">
+                    <h3 class="cv-section-title"><i class="fas fa-book-open"></i> Fields of Specialisation</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 10px;">
+                        <div style="background: rgba(var(--accent-gold-rgb), 0.04); border: 1px solid var(--border-color); padding: 15px; border-radius: 8px;">
+                            <h4 style="color: var(--accent-gold); margin-bottom: 5px; font-size: 1rem;"><i class="fas fa-building"></i> Corporate Law</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.4;">Company incorporation, corporate governance, mergers &amp; acquisitions, shareholder rights, and capital markets.</p>
+                        </div>
+                        <div style="background: rgba(var(--accent-gold-rgb), 0.04); border: 1px solid var(--border-color); padding: 15px; border-radius: 8px;">
+                            <h4 style="color: var(--accent-gold); margin-bottom: 5px; font-size: 1rem;"><i class="fas fa-handshake"></i> Commercial Law</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.4;">Law of contracts, sale of goods, partnership laws, banking and insurance regulations.</p>
+                        </div>
+                        <div style="background: rgba(var(--accent-gold-rgb), 0.04); border: 1px solid var(--border-color); padding: 15px; border-radius: 8px;">
+                            <h4 style="color: var(--accent-gold); margin-bottom: 5px; font-size: 1rem;"><i class="fas fa-comments"></i> Alternate Dispute Resolution</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.4;">Arbitration, conciliation, mediation dynamics, international commercial arbitration, and Lok Adalats.</p>
+                        </div>
+                        <div style="background: rgba(var(--accent-gold-rgb), 0.04); border: 1px solid var(--border-color); padding: 15px; border-radius: 8px;">
+                            <h4 style="color: var(--accent-gold); margin-bottom: 5px; font-size: 1rem;"><i class="fas fa-key"></i> Intellectual Property Rights</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.4;">Patents, trademarks, copyright laws, trade secrets, GI tags, and global WIPO agreements.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Research Publications -->
+                <div class="cv-section glass-card">
+                    <h3 class="cv-section-title"><i class="fas fa-scroll"></i> Scholarly Research &amp; Publications</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem;">
+                        Rigorous scholarly output in recognized peer-reviewed national and international business and commercial law journals.
+                    </p>
+                    <ul class="publication-list">
+                        <li>
+                            <strong>"Emerging Trends in Alternate Dispute Resolution: A Comparative Analysis"</strong><br>
+                            <span style="font-size: 0.85rem; color: var(--accent-gold);">Published in the Journal of Dispute Resolution (2021) | Peer-Reviewed Journal</span><br>
+                            A comparative research on institutional arbitration frameworks between the UK and India, reviewing the Arbitration and Conciliation Amendment Act, 2021.
+                        </li>
+                        <li>
+                            <strong>"Intellectual Property Rights in the Digital Era: Indian Legislative Framework"</strong><br>
+                            <span style="font-size: 0.85rem; color: var(--accent-gold);">Published in the Corporate Law Review (2023) | UGC Care-Listed</span><br>
+                            An academic study examining software patents, artificial intelligence authorship rights, and digital copyright violations in contemporary Indian law.
+                        </li>
+                        <li>
+                            <strong>"Corporate Social Responsibility and Environmental Sustainability: Legal Mandates in India"</strong><br>
+                            <span style="font-size: 0.85rem; color: var(--accent-gold);">Published in the International Journal of Business Law (2019) | Referred Periodical</span><br>
+                            Analyzing Section 135 of the Indian Companies Act 2013 and its compliance reports regarding environmental protection and community development.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 5. Administrative Portfolios & Committees -->
+                <div class="cv-section glass-card">
+                    <h3 class="cv-section-title"><i class="fas fa-briefcase"></i> Administrative Portfolios</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem;">
+                        Managing crucial internal college committees and leading quality assurance systems in adherence with standard regulatory mandates.
+                    </p>
+                    <ul class="portfolio-list">
+                        <li><strong>Coordinator, IQAC (Internal Quality Assurance Cell)</strong> - Driving strategic measures for academic audit systems and professional faculty development.</li>
+                        <li><strong>Convener, Moot Court Committee</strong> - Directing moot court practices, organizing national-level competitions, and training students in legal advocacy.</li>
+                        <li><strong>Member Secretary, Library Committee</strong> - Structuring digital catalogs, managing legal journal subscriptions, and optimizing reading rooms.</li>
+                        <li><strong>Presiding Officer, Sports &amp; Cultural Committee</strong> - Leading student extra-curricular systems, organizing annual institutional festivals, and managing athletic affairs.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="footer-emblem">
+                    <h3>Rashtrakavi Kuvempu College of Law</h3>
+                </div>
+                <p class="footer-desc">
+                    Affiliation from Karnataka State Law University, Hubballi, Karnataka and approval from the Bar Council of India, New Delhi are pending. Operating under the visionary management of Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="leadership.html">Leadership Message</a></li>
+                    <li><a href="governance.html">Governing Council</a></li>
+                    <li><a href="faculty.html">Academic Faculty</a></li>
+                    <li><a href="course.html">Courses Offered</a></li>
+                    <li><a href="library.html">Library &amp; Gallery</a></li>
+                    <li><a href="compliance.html">Statutory Cells</a></li>
+                    <li><a href="conduct.html">Code of Conduct</a></li>
+                    <li><a href="downloads.html">Student Downloads</a></li>
+                    <li><a href="notifications.html">Notifications timeline</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Official Registry</h4>
+                <p><i class="fas fa-map-marker-alt"></i> No.10, Near Janapriya Apartment, Kadabagere, Bangalore – 562130</p>
+                <p><i class="fas fa-phone"></i> Principal Desk: +91 9916246833</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:murthyguru1987@gmail.com">murthyguru1987@gmail.com</a></p>
+                <p class="working-hours"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 4:00 PM</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p><span class="admin-gate" style="cursor: default; user-select: none;" title="Academic Portal">&copy;</span> 2026 Rashtrakavi Kuvempu College of Law. All Rights Reserved. Managed by Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka.</p>
+                <p>Designed for compliance & legal excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Script File -->
+    <script src="app.js"></script>
+</body>
+</html>

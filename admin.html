@@ -3,179 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Management Console</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="Registry Admissions Desk - Rashtrakavi Kuvempu College of Law. Administrative dashboard console to view, search, and compile admission enquiries.">
+    <title>Registry Admissions Desk Console | Rashtrakavi Kuvempu College of Law</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 p-4 md:p-8 text-slate-800 font-sans">
-    <div class="max-w-5xl mx-auto bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-slate-200">
+<body>
+
+    <!-- Top Banner: Important Alerts -->
+    <div class="top-banner" id="banner-notification">
+        <div class="banner-content">
+            <span class="badge badge-warning">Admissions 2026-27</span>
+            <p>Empowering the social engineers of tomorrow. Explore our statutory cells & curriculum.</p>
+        </div>
+        <button class="close-banner-btn" onclick="closeBanner()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- Two-Tier Header -->
+    <header class="header">
+        <!-- Tier 1: Branding Header (Visible on Desktop) -->
+        <div class="header-top">
+            <div class="container header-top-container">
+                <a href="index.html" class="logo-area">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img">
+                    <div class="logo-text">
+                        <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
+                        <span class="trust-name">Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka</span>
+                    </div>
+                </a>
+            </div>
+        </div>
         
-        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 border-b border-slate-100 pb-6 gap-4">
-            <div>
-                <h1 class="text-2xl font-black text-slate-900 tracking-tight">Portal Configuration Engine</h1>
-                <p class="text-xs text-slate-400 font-semibold mt-0.5 uppercase tracking-wider text-indigo-600">Centre for inclusive social development</p>
-            </div>
-            <a href="index.html" class="bg-indigo-600 text-white font-bold px-5 py-2.5 rounded-xl text-xs hover:bg-indigo-700 transition shadow-sm">← View Live Site</a>
-        </div>
+        <!-- Tier 2: Navigation Bar -->
+        <div class="header-bottom">
+            <div class="container header-bottom-container">
+                <!-- Mobile Logo Area (visible on mobile) -->
+                <a href="index.html" class="logo-mobile">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img-mobile">
+                    <div class="logo-text">
+                        <span class="college-name-abbr">RKLC</span>
+                        <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
+                    </div>
+                </a>
 
-        <div class="mb-10 p-6 bg-indigo-50/40 rounded-2xl border border-indigo-100">
-            <h3 class="font-bold text-slate-900 mb-1 text-base">🖼️ Upload Photos for Slideshow Carousel</h3>
-            <p class="text-xs text-slate-500 mb-4">Add images to build up your automated home frame slider module array.</p>
-            <div class="flex flex-col sm:flex-row gap-4 items-center bg-white p-4 rounded-xl border border-indigo-100/60 shadow-sm">
-                <input type="file" id="gallery-uploader" class="block w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:bg-indigo-50 file:text-indigo-700 font-bold">
-                <button onclick="addGalleryImage()" class="w-full sm:w-auto bg-indigo-600 text-white font-bold text-xs px-6 py-2.5 rounded-xl shrink-0 hover:bg-indigo-700 transition">Add To Slideshow</button>
-            </div>
-            <div class="grid grid-cols-4 sm:grid-cols-6 gap-4 mt-6" id="admin-gallery-preview"></div>
-        </div>
+                <nav class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="leadership.html" class="nav-link">Leadership</a>
+                    <a href="governance.html" class="nav-link">Governing Council</a>
+                    <a href="faculty.html" class="nav-link">Faculties</a>
+                    <a href="course.html" class="nav-link">Courses</a>
+                    <a href="library.html" class="nav-link">Library &amp; Gallery</a>
+                    <a href="compliance.html" class="nav-link">Statutory Committees</a>
+                    <a href="conduct.html" class="nav-link">Code of Conduct</a>
+                    <a href="downloads.html" class="nav-link">Downloads</a>
+                    <a href="notifications.html" class="nav-link">Notifications</a>
+                </nav>
 
-        <div class="space-y-8">
-            <h3 class="text-xl font-extrabold text-slate-900 border-b pb-2">👤 Dedicated Member Portrait Management</h3>
-
-            <div class="p-4 bg-slate-50 border rounded-xl grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-                <div>
-                    <h4 class="font-bold text-sm">Founder Chairman Portrait</h4>
-                    <p class="text-xs text-slate-400">Upload portrait photo for Mr. Shivanna B</p>
-                </div>
-                <input type="file" class="text-xs" onchange="mapPortrait(this, 'img-chairman-profile')">
-            </div>
-
-            <div class="p-5 bg-slate-50 border rounded-xl space-y-4">
-                <h4 class="font-bold text-sm text-indigo-700">Governing Council Portraits (5 Slots)</h4>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                    <div class="bg-white p-3 rounded border">
-                        <label class="block font-bold mb-1">1. Prof. Ramesh B</label>
-                        <input type="file" onchange="mapPortrait(this, 'img-gov-profile-0')">
-                    </div>
-                    <div class="bg-white p-3 rounded border">
-                        <label class="block font-bold mb-1">2. Dr. Babasaheb L Jinaralkar</label>
-                        <input type="file" onchange="mapPortrait(this, 'img-gov-profile-1')">
-                    </div>
-                    <div class="bg-white p-3 rounded border">
-                        <label class="block font-bold mb-1">3. Sri. Mahadevaiah</label>
-                        <input type="file" onchange="mapPortrait(this, 'img-gov-profile-2')">
-                    </div>
-                    <div class="bg-white p-3 rounded border">
-                        <label class="block font-bold mb-1">4. Sri. B.N. Jagadeesh</label>
-                        <input type="file" onchange="mapPortrait(this, 'img-gov-profile-3')">
-                    </div>
-                    <div class="bg-white p-3 rounded border">
-                        <label class="block font-bold mb-1">5. Dr. Saravana K</label>
-                        <input type="file" onchange="mapPortrait(this, 'img-gov-profile-4')">
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-5 bg-slate-50 border rounded-xl space-y-4">
-                <h4 class="font-bold text-sm text-indigo-700">Academic Faculty Portraits (6 Slots)</h4>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                    <div class="bg-white p-3 rounded border">
-                        <label class="block font-bold mb-1">1. Dr. Gurumurthy T.N (Principal)</label>
-                        <input type="file" onchange="mapPortrait(this, 'img-faculty-profile-0')">
-                    </div>
-                    <div class="bg-white p-3 rounded border">
-                        <label class="block font-bold mb-1">2. Dr. Muniraja M</label>
-                        <input type="file" onchange="mapPortrait(this, 'img-faculty-profile-1')">
-                    </div>
-                    <div class="bg-white p-3 rounded border">
-                        <label class="block font-bold mb-1">3. Sunil M.V</label>
-                        <input type="file" onchange="mapPortrait(this, 'img-faculty-profile-2')">
-                    </div>
-                    <div class="bg-white p-3 rounded border">
-                        <label class="block font-bold mb-1">4. Sushmitha K</label>
-                        <input type="file" onchange="mapPortrait(this, 'img-faculty-profile-3')">
-                    </div>
-                    <div class="bg-white p-3 rounded border">
-                        <label class="block font-bold mb-1">5. Dawood Baig K</label>
-                        <input type="file" onchange="mapPortrait(this, 'img-faculty-profile-4')">
-                    </div>
-                    <div class="bg-white p-3 rounded border">
-                        <label class="block font-bold mb-1">6. Geetha H.D</label>
-                        <input type="file" onchange="mapPortrait(this, 'img-faculty-profile-5')">
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-5 bg-slate-50 border rounded-xl space-y-4">
-                <h4 class="font-bold text-sm text-indigo-700">Non-Teaching Staff Portraits (4 Slots)</h4>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                    <div class="bg-white p-3 rounded border">
-                        <label class="block font-bold mb-1">1. Dr. Narayanaswamy B.V (Librarian)</label>
-                        <input type="file" onchange="mapPortrait(this, 'img-nt-profile-0')">
-                    </div>
-                    <div class="bg-white p-3 rounded border">
-                        <label class="block font-bold mb-1">2. Dr. Santhosha M.S (Sports Director)</label>
-                        <input type="file" onchange="mapPortrait(this, 'img-nt-profile-1')">
-                    </div>
-                    <div class="bg-white p-3 rounded border">
-                        <label class="block font-bold mb-1">3. Deepak G. Appaji (FDA)</label>
-                        <input type="file" onchange="mapPortrait(this, 'img-nt-profile-2')">
-                    </div>
-                    <div class="bg-white p-3 rounded border">
-                        <label class="block font-bold mb-1">4. Gowrishankar H.S (SDA)</label>
-                        <input type="file" onchange="mapPortrait(this, 'img-nt-profile-3')">
-                    </div>
+                <div class="header-actions">
+                    <a href="conduct.html" class="btn btn-outline btn-sm">Student Portal</a>
+                    <button class="theme-toggle" id="theme-btn" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Open Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
             </div>
         </div>
+    </header>
 
-        <div class="mt-10 p-6 bg-slate-50 rounded-2xl border border-slate-200">
-            <button onclick="wipeData()" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs transition">Wipe Configuration Framework Data</button>
+    <!-- Scrolling Announcement Ticker -->
+    <div class="scrolling-ticker">
+        <div class="ticker-content">
+            <div class="ticker-item"><i class="fas fa-bullhorn"></i> <span class="badge badge-warning" style="padding: 2px 8px; font-size: 0.65rem;">Affiliation Pending</span> No affiliation from Karnataka State Law University, Hubballi, Karnataka and approval from the Bar Council of India, New Delhi is pending.</div>
+            <div class="ticker-item"><i class="fas fa-circle-info"></i> <span class="badge badge-info" style="padding: 2px 8px; font-size: 0.65rem;">Admissions 2026-27</span> Admissions are now open for our prestigious 3-Year & 5-Year LL.B programmes. Contact Registry Desk.</div>
+            <div class="ticker-item"><i class="fas fa-shield-halved"></i> <span class="badge badge-success" style="padding: 2px 8px; font-size: 0.65rem;">UGC Standard</span> All Statutory Committees, including Anti-Ragging and Grievance Cells, are fully active for compliance.</div>
         </div>
     </div>
 
-    <script>
-        window.addEventListener('DOMContentLoaded', () => { renderAdminGalleryPreviews(); });
+    <!-- Admin Login Screen -->
+    <div id="admin-login-section" class="container" style="padding: 100px 0 140px; display: flex; justify-content: center; align-items: center; min-height: 60vh;">
+        <!-- Admin Login Card -->
+        <div class="glass-card login-card" style="max-width: 420px; width: 100%; padding: 40px; border-radius: 20px; border: 1px solid rgba(var(--accent-gold-rgb), 0.2); box-shadow: var(--shadow-glow), var(--shadow-soft);">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <div style="width: 70px; height: 70px; background: rgba(37, 99, 235, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; border: 1.5px solid var(--accent-gold);">
+                    <i class="fas fa-lock" style="font-size: 1.8rem; color: var(--accent-gold);"></i>
+                </div>
+                <h2 style="font-family: var(--font-heading); color: var(--text-primary); font-size: 1.6rem; font-weight: 700; margin-bottom: 6px;">Admin Security Gate</h2>
+                <p style="color: var(--text-secondary); font-size: 0.85rem;">Authenticating Admissions Registry Ledger</p>
+            </div>
+            
+            <form id="admin-login-form" onsubmit="authenticateAdmin(event)">
+                <div class="form-group" style="margin-bottom: 24px;">
+                    <label for="admin-password" class="form-label">Administrative Password</label>
+                    <div style="position: relative;">
+                        <i class="fas fa-key" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-secondary);"></i>
+                        <input type="password" id="admin-password" class="form-input" style="padding-left: 45px; background: rgba(10, 14, 23, 0.4);" placeholder="Enter administrative password..." required>
+                    </div>
+                    <div id="login-error" style="color: var(--color-error); font-size: 0.82rem; margin-top: 8px; font-weight: 600; display: none; align-items: center; gap: 6px;">
+                        <i class="fas fa-circle-exclamation"></i> Invalid password. Access denied.
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
+                    Access Dashboard <i class="fas fa-arrow-right-to-bracket" style="margin-left: 8px;"></i>
+                </button>
+            </form>
+        </div>
+    </div>
 
-        function addGalleryImage() {
-            const input = document.getElementById('gallery-uploader');
-            const file = input.files[0]; if (!file) return;
-            const reader = new FileReader();
-            reader.onloadend = function() {
-                let currentGallery = JSON.parse(localStorage.getItem('db-gallery')) || [];
-                currentGallery.push(reader.result);
-                try {
-                    localStorage.setItem('db-gallery', JSON.stringify(currentGallery));
-                    alert("Image successfully pushed into carousel layout!");
-                    input.value = ""; renderAdminGalleryPreviews();
-                } catch(e) { alert("File footprint too large for internal local allocations."); }
-            }
-            reader.readAsDataURL(file);
-        }
+    <!-- Admin Secured Content Container (Hidden by default) -->
+    <div id="admin-secured-content" style="display: none;">
+        <!-- Admin Hero Banner -->
+        <section class="hero-section" style="min-height: 30vh; padding: 80px 0 40px; background-attachment: scroll;">
+            <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(10, 14, 23, 0.9) 0%, rgba(10, 14, 23, 0.98) 100%);"></div>
+            <div class="container hero-container" style="text-align: center;">
+                <div class="hero-tag">
+                    <i class="fas fa-database"></i> Database Console
+                </div>
+                <h1 class="hero-title" style="font-size: 2.2rem; margin-bottom: 8px;"><span class="highlight-text">Admissions Registry Desk</span></h1>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 16px; font-size: 0.95rem;">
+                    Internal database ledger logging real-time candidates, caste categories and merit records.
+                </p>
+                <button class="btn btn-outline btn-sm" onclick="logoutAdmin()" style="margin-top: 10px; border-color: rgba(239, 68, 68, 0.4); color: var(--color-error);">
+                    <i class="fas fa-power-off" style="margin-right: 6px;"></i> Secure Sign Out
+                </button>
+            </div>
+        </section>
 
-        function renderAdminGalleryPreviews() {
-            const gallery = JSON.parse(localStorage.getItem('db-gallery')) || [];
-            const previewBox = document.getElementById('admin-gallery-preview');
-            previewBox.innerHTML = "";
-            gallery.forEach((img, idx) => {
-                previewBox.innerHTML += `
-                    <div class="relative bg-white p-1 border rounded-xl overflow-hidden shadow-sm">
-                        <img src="${img}" class="w-full h-12 object-cover rounded-lg">
-                        <button onclick="removeGalleryImage(${idx})" class="absolute top-1 right-1 bg-red-600 text-white text-[9px] font-bold h-4 w-4 rounded-full flex items-center justify-center">×</button>
-                    </div>`;
-            });
-        }
+        <!-- Admin Main Ledger Content -->
+        <section class="admin-section">
+            <div class="container">
+            
+            <!-- Statistics Counters Grid -->
+            <div class="admin-stats-grid">
+                <div class="admin-stat-card glass-card">
+                    <div class="admin-stat-icon"><i class="fas fa-user-graduate"></i></div>
+                    <div class="admin-stat-info">
+                        <h3 id="stat-total-enquiries">0</h3>
+                        <p>Total Leads Captured</p>
+                    </div>
+                </div>
+                <div class="admin-stat-card glass-card">
+                    <div class="admin-stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="admin-stat-info">
+                        <h3 id="stat-sc-st-enquiries">0 candidates</h3>
+                        <p>SC &amp; ST Demographics</p>
+                    </div>
+                </div>
+                <div class="admin-stat-card glass-card">
+                    <div class="admin-stat-icon"><i class="fas fa-medal"></i></div>
+                    <div class="admin-stat-info">
+                        <h3 id="stat-high-merit">0 merit entries</h3>
+                        <p>High Merit (>=60% UG)</p>
+                    </div>
+                </div>
+            </div>
 
-        function removeGalleryImage(index) {
-            let currentGallery = JSON.parse(localStorage.getItem('db-gallery')) || [];
-            currentGallery.splice(index, 1);
-            localStorage.setItem('db-gallery', JSON.stringify(currentGallery));
-            renderAdminGalleryPreviews();
-        }
+            <!-- Controls Panel -->
+            <div class="admin-controls-card glass-card">
+                <div class="admin-controls-grid">
+                    <!-- Search Input -->
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label for="admin-search" class="form-label">Search Ledger Records</label>
+                        <div style="position: relative; width: 100%;">
+                            <i class="fas fa-search" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-secondary);"></i>
+                            <input type="text" id="admin-search" oninput="filterAdminTable()" class="form-input" style="padding-left: 45px;" placeholder="Search candidate names, emails, phones, marks or messages...">
+                        </div>
+                    </div>
+                    
+                    <!-- Category Selection filter -->
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label for="admin-category-filter" class="form-label">Filter Caste Category</label>
+                        <select id="admin-category-filter" onchange="filterAdminTable()" class="form-select">
+                            <option value="all" selected>All Categories</option>
+                            <option value="General">General Merit (GM)</option>
+                            <option value="OBC">OBC Categories</option>
+                            <option value="SC">Scheduled Caste (SC)</option>
+                            <option value="ST">Scheduled Tribe (ST)</option>
+                        </select>
+                    </div>
 
-        function mapPortrait(input, uniqueKey) {
-            const file = input.files[0]; if (!file) return;
-            const reader = new FileReader();
-            reader.onloadend = function() {
-                localStorage.setItem(uniqueKey, reader.result);
-                alert("Target member portrait mapped to system successfully.");
-            }
-            reader.readAsDataURL(file);
-        }
+                    <!-- Spreadsheet Export utility -->
+                    <div class="admin-utilities" style="display: flex; gap: 12px; width: 100%;">
+                        <button class="btn btn-primary" style="flex: 1; padding: 12px 16px;" onclick="downloadEnquiriesCSV()">
+                            <i class="fas fa-file-excel"></i> Export Ledger
+                        </button>
+                        <button class="btn btn-danger" style="padding: 12px 16px;" onclick="purgeEnquiriesDatabase()" title="Purge admissions database log file">
+                            <i class="fas fa-trash-can"></i> Purge
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-        function wipeData() {
-            if(confirm("Confirm system configuration purge?")) {
-                localStorage.clear(); window.location.reload();
-            }
-        }
-    </script>
+            <!-- Database Table Grid -->
+            <div class="admin-table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">Timestamp</th>
+                            <th style="width: 18%;">Candidate Name</th>
+                            <th style="width: 18%;">Email Address</th>
+                            <th style="width: 12%;">Phone Number</th>
+                            <th style="width: 12%;">Category</th>
+                            <th style="width: 10%;">UG Marks %</th>
+                            <th style="width: 25%;">Career Objective / Message</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-ledger-table-body">
+                        <!-- Populated dynamically via JS -->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+    </div> <!-- Close #admin-secured-content -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="footer-emblem">
+                    <h3>Rashtrakavi Kuvempu College of Law</h3>
+                </div>
+                <p class="footer-desc">
+                    Affiliation from Karnataka State Law University, Hubballi, Karnataka and approval from the Bar Council of India, New Delhi are pending. Operating under the visionary management of Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="leadership.html">Leadership Message</a></li>
+                    <li><a href="governance.html">Governing Council</a></li>
+                    <li><a href="faculty.html">Academic Faculty</a></li>
+                    <li><a href="course.html">Courses Offered</a></li>
+                    <li><a href="library.html">Library &amp; Gallery</a></li>
+                    <li><a href="compliance.html">Statutory Cells</a></li>
+                    <li><a href="conduct.html">Code of Conduct</a></li>
+                    <li><a href="downloads.html">Student Downloads</a></li>
+                    <li><a href="notifications.html">Notifications timeline</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Official Registry</h4>
+                <p><i class="fas fa-map-marker-alt"></i> No.10, Near Janapriya Apartment, Kadabagere, Bangalore – 562130</p>
+                <p><i class="fas fa-phone"></i> Principal Desk: +91 9916246833</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:murthyguru1987@gmail.com">murthyguru1987@gmail.com</a></p>
+                <p class="working-hours"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 4:00 PM</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p><span class="admin-gate" style="cursor: default; user-select: none;" title="Academic Portal">&copy;</span> 2026 Rashtrakavi Kuvempu College of Law. All Rights Reserved. Managed by Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka.</p>
+                <p>Designed for compliance & legal excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Script File -->
+    <script src="app.js"></script>
 </body>
 </html>

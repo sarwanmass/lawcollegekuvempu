@@ -1,11 +1,23 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Netlify Deployment Configuration
+# Rashtrakavi Kuvempu College of Law Portal
 
-[history.headers]
+[build]
+  # Publish the root directory since it is a pure static site
+  publish = "."
+
+# Custom HTTP Headers for Security & Optimization
+[[headers]]
   for = "/*"
-  [history.headers.values]
+  [headers.values]
     X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "same-origin"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Allow necessary third-party assets (Google Fonts, FontAwesome Icons)
+    Content-Security-Policy = "default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; frame-ancestors 'none';"
+
+# Cache-Control optimization for static assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

@@ -35,7 +35,7 @@
         <div class="header-top">
             <div class="container header-top-container">
                 <a href="index.html" class="logo-area">
-                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img">
+                    <img src="assets/branding/images/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img">
                     <div class="logo-text">
                         <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
                         <span class="trust-name">Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka</span>
@@ -49,7 +49,7 @@
             <div class="container header-bottom-container">
                 <!-- Mobile Logo Area (visible on mobile) -->
                 <a href="index.html" class="logo-mobile">
-                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img-mobile">
+                    <img src="assets/branding/images/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img-mobile">
                     <div class="logo-text">
                         <span class="college-name-abbr">RKLC</span>
                         <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
@@ -58,14 +58,14 @@
 
                 <nav class="nav-menu" id="nav-menu">
                     <a href="index.html" class="nav-link active">Home</a>
-                    <a href="leadership.html" class="nav-link ">Leadership</a>
                     <a href="governance.html" class="nav-link ">Governing Council</a>
                     <a href="faculty.html" class="nav-link ">Faculties</a>
                     <a href="course.html" class="nav-link ">Courses</a>
-                    <a href="library.html" class="nav-link ">Library &amp; Gallery</a>
+                    <a href="library.html" class="nav-link">Library</a>
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <a href="sports.html" class="nav-link">Sports</a>
                     <a href="compliance.html" class="nav-link ">Statutory Committees</a>
-                    <a href="conduct.html" class="nav-link ">Code of Conduct</a>
-                    <a href="downloads.html" class="nav-link">Downloads</a>
+<a href="downloads.html" class="nav-link">Downloads</a>
                     <a href="notifications.html" class="nav-link">Notifications</a>
                 </nav>
 
@@ -93,35 +93,111 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero-section" id="hero" style="min-height: 80vh;">
-        <div class="hero-overlay"></div>
+    <section class="hero-section split-hero" id="hero">
         <div class="container hero-container">
-            <div class="hero-content">
-                <div class="hero-tag">
-                    <i class="fas fa-balance-scale"></i> Nurturing Social Engineers
-                </div>
-                <h1 class="hero-title">Shaping the Future of <span class="highlight-text">Justice & Law</span></h1>
-                <p class="hero-subtitle">
-                    <span class="badge badge-warning" style="vertical-align: middle; margin-right: 8px;">Affiliation Pending</span> Affiliation from Karnataka State Law University, Hubballi, Karnataka and approval from the Bar Council of India, New Delhi are currently pending. Committed to academic rigor, clinical legal education, and the absolute defense of human rights.
-                </p>
-                <div class="hero-buttons">
-                    <a href="compliance.html" class="btn btn-primary btn-lg">Explore Our Cells <i class="fas fa-arrow-right"></i></a>
-                    <a href="leadership.html" class="btn btn-secondary btn-lg">President's Message</a>
-                </div>
+            <div class="hero-split-grid">
                 
-                <!-- Quick Stats -->
-                <div class="hero-stats">
-                    <div class="stat-card">
-                        <span class="stat-num" id="stat-faculty">10+</span>
-                        <span class="stat-lbl">Expert Educators</span>
+                <!-- Left Side: Interactive Image Slider Card (Bright & Clear) -->
+                <div class="hero-split-left animate-on-scroll">
+                    <div class="hero-slider-wrapper">
+                        <div class="hero-slider">
+                            <div class="hero-slide active" style="background-image: url('assets/library/images/law_library_hero.png');"></div>
+                            <div class="hero-slide" style="background-image: url('assets/gallery/images/moot-court/national_competition.png');"></div>
+                            <div class="hero-slide" style="background-image: url('assets/gallery/images/legal-aid/rural_camp.png');"></div>
+                            <div class="hero-slide" style="background-image: url('assets/gallery/images/sports/championship.png');"></div>
+                        </div>
+                        <!-- Slider Navigation Controls (inside the card for elegance) -->
+                        <div class="slider-controls">
+                            <button class="slider-arrow prev" onclick="moveHeroSlide(-1)" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+                            <button class="slider-arrow next" onclick="moveHeroSlide(1)" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="slider-dots">
+                            <span class="slider-dot active" onclick="setHeroSlide(0)" aria-label="Slide 1"></span>
+                            <span class="slider-dot" onclick="setHeroSlide(1)" aria-label="Slide 2"></span>
+                            <span class="slider-dot" onclick="setHeroSlide(2)" aria-label="Slide 3"></span>
+                            <span class="slider-dot" onclick="setHeroSlide(3)" aria-label="Slide 4"></span>
+                        </div>
                     </div>
-                    <div class="stat-card">
-                        <span class="stat-num" id="stat-committees">10</span>
-                        <span class="stat-lbl">Statutory Committees</span>
+                </div>
+
+                <!-- Right Side: Content Area (Shaping the Future of Justice & Law) -->
+                <div class="hero-split-right animate-on-scroll">
+                    <div class="hero-content">
+                        <div class="hero-tag">
+                            <i class="fas fa-balance-scale"></i> Nurturing Social Engineers
+                        </div>
+                        <h1 class="hero-title">Shaping the Future of <span class="highlight-text">Justice & Law</span></h1>
+                        <p class="hero-subtitle">
+                            <span class="badge badge-warning" style="vertical-align: middle; margin-right: 8px;">Affiliation Pending</span> Affiliation from Karnataka State Law University, Hubballi, Karnataka and approval from the Bar Council of India, New Delhi are currently pending. Committed to academic rigor, clinical legal education, and the absolute defense of human rights.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="compliance.html" class="btn btn-primary btn-lg">Explore Our Cells <i class="fas fa-arrow-right"></i></a>
+                            <a href="#president-message" class="btn btn-secondary btn-lg">President's Message</a>
+                        </div>
+                        
+                        <!-- Quick Stats -->
+                        <div class="hero-stats" style="max-width: 100%;">
+                            <div class="stat-card">
+                                <span class="stat-num" id="stat-faculty">10+</span>
+                                <span class="stat-lbl">Expert Educators</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-num" id="stat-committees">10</span>
+                                <span class="stat-lbl">Statutory Committees</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-num" id="stat-experience">5+</span>
+                                <span class="stat-lbl">Years Average Exp.</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="stat-card">
-                        <span class="stat-num" id="stat-experience">5+</span>
-                        <span class="stat-lbl">Years Average Exp.</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- President's Message Section -->
+    <section class="president-section" id="president-message" style="padding: 100px 0; border-top: 1px solid var(--border-color); background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.03) 0%, transparent 50%);">
+        <div class="container">
+            <div class="section-header center-align">
+                <span class="section-tag">Trust Message</span>
+                <h2 class="section-title">President's Vision</h2>
+                <p class="section-subtitle">Nurturing legal minds with rigorous intellectual discipline and social responsibility.</p>
+                <div class="section-divider center"></div>
+            </div>
+
+            <div class="president-grid" style="margin-top: 50px;">
+                <div class="president-image-wrapper">
+                    <div class="president-card-frame" style="justify-content: flex-end;">
+                        <!-- EDIT_MEMBER_IMAGE: President Mr. Shivanna B -->
+                        <img src="assets/leadership/images/shivanna.jpg" alt="Mr. Shivanna B" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; opacity: 0.85;">
+                        <div class="hero-overlay" style="background: linear-gradient(180deg, transparent 50%, rgba(7, 11, 19, 0.95) 95%); z-index: 2;"></div>
+                        <div class="president-title-badge" style="position: relative; z-index: 3; width: 100%;">
+                            <h3>Mr. Shivanna B</h3>
+                            <p>President & Founder Trustee</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="president-message-content">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <h3 class="message-headline">"Empowering Society Through Legal Integrity and Knowledge"</h3>
+                    <p class="message-para">
+                        Welcome to <strong>Rashtrakavi Kuvempu College of Law</strong>, a premier institution of legal scholarship established under the aegis of the <strong>Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka</strong>. 
+                    </p>
+                    <p class="message-para">
+                        Our institution was founded with a profound academic and social mission: to nurture legal minds that possess both rigorous intellectual discipline and a deep sense of social responsibility. We firmly believe that legal education is not merely a pathway to a profession, but a sacred commitment to upholding the rule of law and safeguarding the democratic ideals enshrined in the <strong>Constitution of India</strong>. Our curriculum is designed to cultivate sharp analytical reasoning, advanced research capabilities, and an unyielding commitment to constitutional morality, justice, and human rights.
+                    </p>
+                    <p class="message-para">
+                        At this academy, we train our students to become ethical "social engineers" equipped to address the complex legal, technological, and sociological challenges of the modern era. Through our active <strong>Legal Aid Cell</strong>, we bridge the gap between advanced academic theory and the lived realities of the underprivileged, providing free legal advocacy to local communities and instilling a lifelong dedication to public service. Every academic program, simulation in our Moot Court Hall, and community camp under the NSS is directed toward fostering civic responsibility, equity, and constitutional justice.
+                    </p>
+                    <p class="message-para">
+                        We strictly adhere to the regulatory frameworks of the University Grants Commission (UGC), Karnataka State Law University, and the Bar Council of India (BCI) to maintain a secure, progressive, and intellectually vibrant campus. I invite you to join us in this noble pursuit of academic excellence, ethical practice, and constitutional integrity.
+                    </p>
+                    <div class="president-signature">
+                        <div class="sig-line"></div>
+                        <h4 class="sig-name">Mr. Shivanna B</h4>
+                        <p class="sig-title">Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka</p>
                     </div>
                 </div>
             </div>
@@ -129,7 +205,7 @@
     </section>
 
     <!-- Quick Highlights / Features -->
-    <section class="highlights-section" style="padding: 100px 0;">
+    <section class="highlights-section" style="padding: 100px 0; border-top: 1px solid var(--border-color);">
         <div class="container">
             <div class="section-header center-align">
                 <span class="section-tag">Key Features</span>
@@ -261,7 +337,7 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="footer-emblem">
+                    <img src="assets/branding/images/college_emblem.png" alt="RKLC Emblem" class="footer-emblem">
                     <h3>Rashtrakavi Kuvempu College of Law</h3>
                 </div>
                 <p class="footer-desc">
@@ -279,11 +355,12 @@
                 <h4>Quick Navigation</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="leadership.html">Leadership Message</a></li>
                     <li><a href="governance.html">Governing Council</a></li>
                     <li><a href="faculty.html">Academic Faculty</a></li>
                     <li><a href="course.html">Courses Offered</a></li>
-                    <li><a href="library.html">Library &amp; Gallery</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="gallery.html">Photo Gallery</a></li>
+                    <li><a href="sports.html">Sports &amp; Athletics</a></li>
                     <li><a href="compliance.html">Statutory Cells</a></li>
                     <li><a href="conduct.html">Code of Conduct</a></li>
                     <li><a href="downloads.html">Student Downloads</a></li>
@@ -297,6 +374,20 @@
                 <p><i class="fas fa-phone"></i> Principal Desk: +91 9916246833</p>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:murthyguru1987@gmail.com">murthyguru1987@gmail.com</a></p>
                 <p class="working-hours"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 4:00 PM</p>
+                <div class="footer-map-wrapper">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=12.9976252,77.4418476&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <a href="https://www.google.com/maps/place/12%C2%B059'51.5%22N+77%C2%B026'30.7%22E/@12.9976252,77.4392834,17z/data=!4m4!3m3!8m2!3d12.9976252!4d77.4418476?hl=en&entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top: 12px; display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; padding: 6px 12px; width: 100%; justify-content: center;">
+                    <i class="fas fa-external-link-alt"></i> View Larger Map
+                </a>
             </div>
         </div>
 

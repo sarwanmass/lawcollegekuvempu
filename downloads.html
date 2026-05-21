@@ -35,7 +35,7 @@
         <div class="header-top">
             <div class="container header-top-container">
                 <a href="index.html" class="logo-area">
-                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img">
+                    <img src="assets/branding/images/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img">
                     <div class="logo-text">
                         <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
                         <span class="trust-name">Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka</span>
@@ -49,7 +49,7 @@
             <div class="container header-bottom-container">
                 <!-- Mobile Logo Area (visible on mobile) -->
                 <a href="index.html" class="logo-mobile">
-                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img-mobile">
+                    <img src="assets/branding/images/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img-mobile">
                     <div class="logo-text">
                         <span class="college-name-abbr">RKLC</span>
                         <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
@@ -58,14 +58,14 @@
 
                 <nav class="nav-menu" id="nav-menu">
                     <a href="index.html" class="nav-link">Home</a>
-                    <a href="leadership.html" class="nav-link">Leadership</a>
                     <a href="governance.html" class="nav-link">Governing Council</a>
                     <a href="faculty.html" class="nav-link">Faculties</a>
                     <a href="course.html" class="nav-link">Courses</a>
-                    <a href="library.html" class="nav-link">Library &amp; Gallery</a>
+                    <a href="library.html" class="nav-link">Library</a>
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <a href="sports.html" class="nav-link">Sports</a>
                     <a href="compliance.html" class="nav-link">Statutory Committees</a>
-                    <a href="conduct.html" class="nav-link">Code of Conduct</a>
-                    <a href="downloads.html" class="nav-link active">Downloads</a>
+<a href="downloads.html" class="nav-link active">Downloads</a>
                     <a href="notifications.html" class="nav-link">Notifications</a>
                 </nav>
 
@@ -92,16 +92,17 @@
     </div>
 
     <!-- Downloads Hero Section -->
-    <section class="hero-section" style="min-height: 30vh; padding: 80px 0 40px; background-attachment: scroll;">
-        <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(10, 14, 23, 0.9) 0%, rgba(10, 14, 23, 0.98) 100%);"></div>
+    <!-- Page Hero Banner -->
+    <section class="hero-section subpage-hero" style="background-attachment: scroll;">
+        <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(10, 14, 23, 0.95) 0%, rgba(10, 14, 23, 0.98) 100%);"></div>
         <div class="container hero-container" style="text-align: center;">
-            <div class="hero-tag">
-                <i class="fas fa-file-arrow-down"></i> Academic Resources
+            <div class="hero-tag" style="margin-bottom: 15px; margin-left: auto; margin-right: auto; width: fit-content;">
+                <i class="fas fa-file-arrow-down"></i> Student Resources
             </div>
-            <h1 class="hero-title" style="font-size: 2.2rem; margin-bottom: 8px;"><span class="highlight-text">Student Downloads Desk</span></h1>
-            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; font-size: 0.95rem;">
-                Access institutional guides, academic bylaws, and KSLU past board question papers.
-            </p>
+            <div class="page-title-wrap">
+                <h1 class="page-title">Downloads & Forms</h1>
+            </div>
+            <p class="page-subtitle-college" style="color: var(--accent-gold); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 10px; font-weight: 600;">Rashtrakavi Kuvempu College of Law</p>
         </div>
     </section>
 
@@ -128,9 +129,9 @@
                     <p class="download-desc">
                         Full prospectus containing the trust profile, principal's message, faculty biography indices, campus environment overview, and code of conduct details.
                     </p>
-                    <button class="btn btn-primary download-action-btn" onclick="downloadMockFile('RKLC_Official_College_Brochure_2026-27.pdf', 'Institutional Prospectus & Brochure')">
+                    <a href="assets/downloads/pdf/RKLC_Official_College_Brochure_2026-27.pdf" download class="btn btn-primary download-action-btn">
                         Download Brochure <i class="fas fa-download" style="margin-left: 8px;"></i>
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Syllabus -->
@@ -145,9 +146,9 @@
                     <p class="download-desc">
                         Detailed layout of all 6 semesters as mandated by Karnataka State Law University (KSLU). Includes subject listings, recommended reading lists, and grading scales.
                     </p>
-                    <a href="assets/RKLC_3_Year_LLB_Syllabus.pdf" button class="btn btn-primary download-action-btn" onclick="downloadMockFile('RKLC_3_Year_LLB_Syllabus.pdf', '3-Year LL.B Core Syllabus Curriculum')">
+                    <a href="assets/downloads/pdf/RKLC_3_Year_LLB_Syllabus_Layout.pdf" download class="btn btn-primary download-action-btn">
                         Download Syllabus <i class="fas fa-download" style="margin-left: 8px;"></i>
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Statutes -->
@@ -162,9 +163,9 @@
                     <p class="download-desc">
                         Rules regarding attendance minimums (75%), legal aid internship schedules, library codes, BCI regulatory compliances, and anti-ragging penalties.
                     </p>
-                    <button class="btn btn-primary download-action-btn" onclick="downloadMockFile('RKLC_Student_Regulations_Handbook.pdf', 'Academic Bylaws & Student Regulations')">
+                    <a href="assets/downloads/pdf/RKLC_Student_Regulations_Handbook.pdf" download class="btn btn-primary download-action-btn">
                         Download Regulations <i class="fas fa-download" style="margin-left: 8px;"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -188,9 +189,9 @@
                     <p class="download-desc">
                         Core legal paper examining Fundamental Rights, Directive Principles of State Policy, emergency powers, and judicial review dynamics.
                     </p>
-                    <button class="btn btn-outline download-action-btn" onclick="downloadMockFile('KSLU_Exam_Paper_Constitutional_Law.pdf', 'Constitutional Law - KSLU Board Paper')">
+                    <a href="assets/downloads/pdf/KSLU_Exam_Paper_Constitutional_Law.pdf" download class="btn btn-outline download-action-btn">
                         Download Exam Paper <i class="fas fa-download" style="margin-left: 8px;"></i>
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Law of Torts -->
@@ -205,9 +206,9 @@
                     <p class="download-desc">
                         Covers general principles of tortious liability, consumer protection regulations, motor vehicle accident liabilities, and strict/absolute liability doctrines.
                     </p>
-                    <button class="btn btn-outline download-action-btn" onclick="downloadMockFile('KSLU_Exam_Paper_Law_of_Torts.pdf', 'Law of Torts & Consumer Protection - KSLU')">
+                    <a href="assets/downloads/pdf/KSLU_Exam_Paper_Law_of_Torts.pdf" download class="btn btn-outline download-action-btn">
                         Download Exam Paper <i class="fas fa-download" style="margin-left: 8px;"></i>
-                    </button>
+                    </a>
                 </div>
 
                 <!-- IPC -->
@@ -222,9 +223,9 @@
                     <p class="download-desc">
                         Covers general exceptions, offenses against the human body, property crimes, inchoate offenses, and theoretical dimensions of criminal liabilities.
                     </p>
-                    <button class="btn btn-outline download-action-btn" onclick="downloadMockFile('KSLU_Exam_Paper_IPC_Criminal_Law.pdf', 'Indian Penal Code (IPC) - KSLU Board Paper')">
+                    <a href="assets/downloads/pdf/KSLU_Exam_Paper_IPC_Criminal_Law.pdf" download class="btn btn-outline download-action-btn">
                         Download Exam Paper <i class="fas fa-download" style="margin-left: 8px;"></i>
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Law of Contracts -->
@@ -239,9 +240,9 @@
                     <p class="download-desc">
                         Studies offer, acceptance, consideration, breach of contract, remedies, damages assessment, and general legal dimensions of commercial agreements.
                     </p>
-                    <button class="btn btn-outline download-action-btn" onclick="downloadMockFile('KSLU_Exam_Paper_Law_of_Contracts.pdf', 'Law of Contracts - I - KSLU Board Paper')">
+                    <a href="assets/downloads/pdf/KSLU_Exam_Paper_Law_of_Contracts.pdf" download class="btn btn-outline download-action-btn">
                         Download Exam Paper <i class="fas fa-download" style="margin-left: 8px;"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -252,7 +253,7 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="footer-emblem">
+                    <img src="assets/branding/images/college_emblem.png" alt="RKLC Emblem" class="footer-emblem">
                     <h3>Rashtrakavi Kuvempu College of Law</h3>
                 </div>
                 <p class="footer-desc">
@@ -270,11 +271,12 @@
                 <h4>Quick Navigation</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="leadership.html">Leadership Message</a></li>
                     <li><a href="governance.html">Governing Council</a></li>
                     <li><a href="faculty.html">Academic Faculty</a></li>
                     <li><a href="course.html">Courses Offered</a></li>
-                    <li><a href="library.html">Library &amp; Gallery</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="gallery.html">Photo Gallery</a></li>
+                    <li><a href="sports.html">Sports &amp; Athletics</a></li>
                     <li><a href="compliance.html">Statutory Cells</a></li>
                     <li><a href="conduct.html">Code of Conduct</a></li>
                     <li><a href="downloads.html">Student Downloads</a></li>
@@ -288,6 +290,20 @@
                 <p><i class="fas fa-phone"></i> Principal Desk: +91 9916246833</p>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:murthyguru1987@gmail.com">murthyguru1987@gmail.com</a></p>
                 <p class="working-hours"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 4:00 PM</p>
+                <div class="footer-map-wrapper">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=12.9976252,77.4418476&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <a href="https://www.google.com/maps/place/12%C2%B059'51.5%22N+77%C2%B026'30.7%22E/@12.9976252,77.4392834,17z/data=!4m4!3m3!8m2!3d12.9976252!4d77.4418476?hl=en&entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top: 12px; display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; padding: 6px 12px; width: 100%; justify-content: center;">
+                    <i class="fas fa-external-link-alt"></i> View Larger Map
+                </a>
             </div>
         </div>
 

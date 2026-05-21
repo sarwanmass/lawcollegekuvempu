@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sports &amp; Athletics Desk - Rashtrakavi Kuvempu College of Law. Explore our state-of-the-art indoor and outdoor physical education programs, overseen by Director Sunil Kumar B.">
+    <meta name="keywords" content="Rashtrakavi Kuvempu College of Law, Law College Sports, Cricket, Chess, Physical Education, Sunil Kumar B">
+    <title>Sports &amp; Athletics | Rashtrakavi Kuvempu College of Law</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Scoped Page Specific CSS -->
+    <style>
+        .sports-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 992px) {
+            .sports-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .sports-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sports-card {
+            background: rgba(15, 23, 42, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(16px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sports-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .sports-card:hover::before {
+            opacity: 1;
+        }
+
+        .sports-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 12px 30px rgba(0, 242, 254, 0.1);
+        }
+
+        .sports-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 20px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .sports-card:hover .sports-icon-wrapper {
+            background: var(--accent-cyan);
+            color: #0a0f1d;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+            transform: rotateY(180deg);
+        }
+
+        .sports-card-title {
+            font-family: var(--font-header);
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .sports-card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .director-profile-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 40px;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(16px);
+            margin-bottom: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .director-profile-grid {
+                grid-template-columns: 1fr;
+                padding: 30px;
+                text-align: center;
+            }
+        }
+
+        .director-img-wrapper {
+            width: 100%;
+            height: 320px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid rgba(0, 242, 254, 0.2);
+            position: relative;
+            background: #0d1527;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .director-img-placeholder {
+            font-size: 5rem;
+            color: var(--accent-cyan);
+            opacity: 0.25;
+        }
+
+        .director-info h3 {
+            font-family: var(--font-header);
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            font-weight: 800;
+        }
+
+        .director-title-sub {
+            color: var(--accent-cyan);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .director-bio {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .director-stats {
+            display: flex;
+            gap: 30px;
+        }
+
+        @media (max-width: 576px) {
+            .director-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        .dir-stat-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dir-stat-icon {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+        }
+
+        .dir-stat-text {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .milestones-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto 80px;
+            padding-left: 30px;
+            border-left: 2px solid rgba(0, 242, 254, 0.15);
+        }
+
+        .milestone-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .milestone-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .milestone-marker {
+            position: absolute;
+            left: -41px;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #0a0f1d;
+            border: 3px solid var(--accent-cyan);
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+            z-index: 2;
+        }
+
+        .milestone-card {
+            background: rgba(15, 23, 42, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 24px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+
+        .milestone-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateX(6px);
+        }
+
+        .milestone-year {
+            display: inline-block;
+            font-family: var(--font-header);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            background: rgba(0, 242, 254, 0.1);
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .milestone-title {
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .milestone-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Banner: Important Alerts -->
+    <div class="top-banner" id="banner-notification">
+        <div class="banner-content">
+            <span class="badge badge-warning">Admissions 2026-27</span>
+            <p>Empowering the social engineers of tomorrow. Explore our statutory cells & curriculum.</p>
+        </div>
+        <button class="close-banner-btn" onclick="closeBanner()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- Two-Tier Header -->
+    <header class="header">
+        <!-- Tier 1: Branding Header (Visible on Desktop) -->
+        <div class="header-top">
+            <div class="container header-top-container">
+                <a href="index.html" class="logo-area">
+                    <img src="assets/branding/images/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img">
+                    <div class="logo-text">
+                        <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
+                        <span class="trust-name">Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Tier 2: Navigation Bar -->
+        <div class="header-bottom">
+            <div class="container header-bottom-container">
+                <!-- Mobile Logo Area (visible on mobile) -->
+                <a href="index.html" class="logo-mobile">
+                    <img src="assets/branding/images/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img-mobile">
+                    <div class="logo-text">
+                        <span class="college-name-abbr">RKLC</span>
+                        <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
+                    </div>
+                </a>
+
+                <nav class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="governance.html" class="nav-link">Governing Council</a>
+                    <a href="faculty.html" class="nav-link">Faculties</a>
+                    <a href="course.html" class="nav-link">Courses</a>
+                    <a href="library.html" class="nav-link">Library</a>
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <a href="sports.html" class="nav-link active">Sports</a>
+                    <a href="compliance.html" class="nav-link">Statutory Committees</a>
+<a href="downloads.html" class="nav-link">Downloads</a>
+                    <a href="notifications.html" class="nav-link">Notifications</a>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="conduct.html" class="btn btn-outline btn-sm">Student Portal</a>
+                    <button class="theme-toggle" id="theme-btn" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Open Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Scrolling Announcement Ticker -->
+    <div class="scrolling-ticker">
+        <div class="ticker-content">
+            <div class="ticker-item"><i class="fas fa-bullhorn"></i> <span class="badge badge-warning" style="padding: 2px 8px; font-size: 0.65rem;">Affiliation Pending</span> No affiliation from Karnataka State Law University, Hubballi, Karnataka and approval from the Bar Council of India, New Delhi is pending.</div>
+            <div class="ticker-item"><i class="fas fa-circle-info"></i> <span class="badge badge-info" style="padding: 2px 8px; font-size: 0.65rem;">Admissions 2026-27</span> Admissions are now open for our prestigious 3-Year & 5-Year LL.B programmes. Contact Registry Desk.</div>
+            <div class="ticker-item"><i class="fas fa-shield-halved"></i> <span class="badge badge-success" style="padding: 2px 8px; font-size: 0.65rem;">UGC Standard</span> All Statutory Committees, including Anti-Ragging and Grievance Cells, are fully active for compliance.</div>
+        </div>
+    </div>
+
+    <!-- Sports Hero Section -->
+    <!-- Page Hero Banner -->
+    <section class="hero-section subpage-hero" style="background-attachment: scroll;">
+        <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(10, 14, 23, 0.95) 0%, rgba(10, 14, 23, 0.98) 100%);"></div>
+        <div class="container hero-container" style="text-align: center;">
+            <div class="hero-tag" style="margin-bottom: 15px; margin-left: auto; margin-right: auto; width: fit-content;">
+                <i class="fas fa-trophy"></i> Athletics & Excellence
+            </div>
+            <div class="page-title-wrap">
+                <h1 class="page-title">Sports & Games</h1>
+            </div>
+            <p class="page-subtitle-college" style="color: var(--accent-gold); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 10px; font-weight: 600;">Rashtrakavi Kuvempu College of Law</p>
+        </div>
+    </section>
+
+    <!-- Main Sports Sections -->
+    <section style="padding: 60px 0; position: relative;">
+        <div class="container">
+            
+            <div class="section-header center-align">
+                <span class="section-tag">Healthy Mind, Healthy Body</span>
+                <h2 class="section-title">Athletic Disciplines</h2>
+                <p class="section-subtitle">Our comprehensive physical education programs designed to build leadership skills outside classrooms.</p>
+                <div class="section-divider center"></div>
+            </div>
+
+            <!-- Sports Disciplines Grid -->
+            <div class="sports-grid">
+                
+                <!-- Indoor Strategy -->
+                <div class="sports-card">
+                    <div class="sports-icon-wrapper"><i class="fas fa-chess"></i></div>
+                    <h3 class="sports-card-title">Indoor Chess &amp; Strategy</h3>
+                    <p class="sports-card-desc">Training foresight, focus, and analytical strategies through tournament chess, carrom boards, and indoor strategy matrices.</p>
+                </div>
+
+                <!-- Outdoor Athletics -->
+                <div class="sports-card">
+                    <div class="sports-icon-wrapper"><i class="fas fa-person-running"></i></div>
+                    <h3 class="sports-card-title">Outdoor Athletics</h3>
+                    <p class="sports-card-desc">Dedicated zones for track relays, long jumps, volleyball courts, and physical stamina regimens to promote student fitness.</p>
+                </div>
+
+                <!-- Cricket -->
+                <div class="sports-card">
+                    <div class="sports-icon-wrapper"><i class="fas fa-baseball-bat-ball"></i></div>
+                    <h3 class="sports-card-title">Cricket Club</h3>
+                    <p class="sports-card-desc">The pride of Kuvempu Law! Regular practice sessions, university-level matches, nets, and comprehensive team practice calendars.</p>
+                </div>
+
+            </div>
+
+            <!-- Director Profile Section -->
+            <div class="section-header">
+                <span class="section-tag">Mentorship Desk</span>
+                <h2 class="section-title">Physical Education Leadership</h2>
+                <p class="section-subtitle">Directing athletic careers, student welfare, fitness regimens, and sports compliance guidelines.</p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="director-profile-grid">
+                <div class="director-img-wrapper">
+                    <!-- Placeholder representing Director Sunil Kumar B -->
+                    <i class="fas fa-user-shield director-img-placeholder"></i>
+                </div>
+                <div class="director-info">
+                    <h3>Sunil Kumar B.</h3>
+                    <div class="director-title-sub">Director of Physical Education</div>
+                    <p class="director-bio">
+                        Overseeing all indoor and outdoor athletic training at Rashtrakavi Kuvempu College of Law. Sunil Kumar B. believes in bridging legal analytical logic with physical strategy. Under his rigorous mentorship, student-athletes have successfully represented the college in Karnataka State Law University (KSLU) inter-collegiate sports meets, securing honors in strategic and track challenges.
+                    </p>
+                    <div class="director-stats">
+                        <div class="dir-stat-item">
+                            <i class="fas fa-award dir-stat-icon"></i>
+                            <span class="dir-stat-text">10+ Years Experience</span>
+                        </div>
+                        <div class="dir-stat-item">
+                            <i class="fas fa-star dir-stat-icon"></i>
+                            <span class="dir-stat-text">KSLU Representative Coach</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trophies Timeline Section -->
+            <div class="section-header center-align">
+                <span class="section-tag">Legacy of Achievements</span>
+                <h2 class="section-title">Sports Milestones</h2>
+                <p class="section-subtitle">A chronological record of our institutional triumphs in inter-collegiate and state athletic tournaments.</p>
+                <div class="section-divider center"></div>
+            </div>
+
+            <div class="milestones-timeline">
+                
+                <!-- Milestone 1 -->
+                <div class="milestone-item">
+                    <div class="milestone-marker"></div>
+                    <div class="milestone-card">
+                        <span class="milestone-year">2024-25</span>
+                        <h4 class="milestone-title">KSLU Inter-Collegiate Chess Finalist</h4>
+                        <p class="milestone-desc">Our chess team secured the third position in the highly competitive Karnataka State Law University zonal strategy meet held in Dharwad.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 2 -->
+                <div class="milestone-item">
+                    <div class="milestone-marker"></div>
+                    <div class="milestone-card">
+                        <span class="milestone-year">2023-24</span>
+                        <h4 class="milestone-title">Bangalore Rural Volleyball Runners-Up</h4>
+                        <p class="milestone-desc">Demonstrating supreme coordination and endurance, our volleyball squad emerged as runners-up in the Bangalore Inter-College Legal League.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 3 -->
+                <div class="milestone-item">
+                    <div class="milestone-marker"></div>
+                    <div class="milestone-card">
+                        <span class="milestone-year">2022-23</span>
+                        <h4 class="milestone-title">Annual Track &amp; Field Gold Medalist</h4>
+                        <p class="milestone-desc">Student representative secured gold in the 400m sprint and silver in high jump during the state-level athletic championship meet.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Athlete Registration Form -->
+            <div class="section-header center-align" id="registration">
+                <span class="section-tag">Represent Kuvempu Law</span>
+                <h2 class="section-title">Athlete Registration Desk</h2>
+                <p class="section-subtitle">Apply to represent the Rashtrakavi Kuvempu College of Law sports squads in upcoming KSLU matches.</p>
+                <div class="section-divider center"></div>
+            </div>
+
+            <div class="glass-card" style="max-width: 700px; margin: 0 auto; padding: 40px; border-radius: 20px;">
+                <form id="sports-registration-form" onsubmit="submitSportsRegistration(event)">
+                    <div class="form-group-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div>
+                            <label for="sports-name" style="display: block; color: var(--text-primary); font-weight: 500; margin-bottom: 8px; font-size: 0.9rem;">Full Name *</label>
+                            <input type="text" id="sports-name" required placeholder="Enter your full name" style="width: 100%; padding: 12px; background: rgba(10, 15, 30, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: #ffffff; font-family: var(--font-body);">
+                        </div>
+                        <div>
+                            <label for="sports-roll" style="display: block; color: var(--text-primary); font-weight: 500; margin-bottom: 8px; font-size: 0.9rem;">College Roll No. *</label>
+                            <input type="text" id="sports-roll" required placeholder="e.g. RKLC-26-045" style="width: 100%; padding: 12px; background: rgba(10, 15, 30, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: #ffffff; font-family: var(--font-body);">
+                        </div>
+                    </div>
+
+                    <div class="form-group-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div>
+                            <label for="sports-email" style="display: block; color: var(--text-primary); font-weight: 500; margin-bottom: 8px; font-size: 0.9rem;">Email Address *</label>
+                            <input type="email" id="sports-email" required placeholder="your.name@gmail.com" style="width: 100%; padding: 12px; background: rgba(10, 15, 30, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: #ffffff; font-family: var(--font-body);">
+                        </div>
+                        <div>
+                            <label for="sports-discipline" style="display: block; color: var(--text-primary); font-weight: 500; margin-bottom: 8px; font-size: 0.9rem;">Select Discipline *</label>
+                            <select id="sports-discipline" required style="width: 100%; padding: 12px; background: rgba(10, 15, 30, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: #ffffff; font-family: var(--font-body);">
+                                <option value="Chess">Chess &amp; Mind Strategy</option>
+                                <option value="Cricket">Cricket Squad</option>
+                                <option value="Volleyball">Volleyball</option>
+                                <option value="Athletics">Track &amp; Field Athletics</option>
+                                <option value="Carrom">Carrom &amp; Table Tennis</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <label for="sports-exp" style="display: block; color: var(--text-primary); font-weight: 500; margin-bottom: 8px; font-size: 0.9rem;">Previous Sports Achievements / Experience</label>
+                        <textarea id="sports-exp" placeholder="Tell us about your achievements, school team participation, or state board titles..." style="width: 100%; height: 120px; padding: 12px; background: rgba(10, 15, 30, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: #ffffff; font-family: var(--font-body); resize: none;"></textarea>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn btn-primary" style="padding: 14px 40px; border-radius: 30px;">
+                            Submit Registration <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/branding/images/college_emblem.png" alt="RKLC Emblem" class="footer-emblem">
+                    <h3>Rashtrakavi Kuvempu College of Law</h3>
+                </div>
+                <p class="footer-desc">
+                    Affiliation from Karnataka State Law University, Hubballi, Karnataka and approval from the Bar Council of India, New Delhi are pending. Operating under the visionary management of Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="governance.html">Governing Council</a></li>
+                    <li><a href="faculty.html">Academic Faculty</a></li>
+                    <li><a href="course.html">Courses Offered</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="gallery.html">Photo Gallery</a></li>
+                    <li><a href="sports.html">Sports &amp; Athletics</a></li>
+                    <li><a href="compliance.html">Statutory Cells</a></li>
+                    <li><a href="conduct.html">Code of Conduct</a></li>
+                    <li><a href="downloads.html">Student Downloads</a></li>
+                    <li><a href="notifications.html">Notifications timeline</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Official Registry</h4>
+                <p><i class="fas fa-map-marker-alt"></i> No.10, Near Janapriya Apartment, Kadabagere, Bangalore – 562130</p>
+                <p><i class="fas fa-phone"></i> Principal Desk: +91 9916246833</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:murthyguru1987@gmail.com">murthyguru1987@gmail.com</a></p>
+                <p class="working-hours"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 4:00 PM</p>
+                <div class="footer-map-wrapper">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=12.9976252,77.4418476&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <a href="https://www.google.com/maps/place/12%C2%B059'51.5%22N+77%C2%B026'30.7%22E/@12.9976252,77.4392834,17z/data=!4m4!3m3!8m2!3d12.9976252!4d77.4418476?hl=en&entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top: 12px; display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; padding: 6px 12px; width: 100%; justify-content: center;">
+                    <i class="fas fa-external-link-alt"></i> View Larger Map
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p><span class="admin-gate" style="cursor: default; user-select: none;" title="Academic Portal">&copy;</span> 2026 Rashtrakavi Kuvempu College of Law. All Rights Reserved. Managed by Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka.</p>
+                <p>Designed for compliance & legal excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Script File -->
+    <script src="app.js"></script>
+
+    <!-- Page Specific Script -->
+    <script>
+        // Athlete Registration Form Submission Handler
+        function submitSportsRegistration(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('sports-name').value.trim();
+            const roll = document.getElementById('sports-roll').value.trim();
+            const email = document.getElementById('sports-email').value.trim();
+            const discipline = document.getElementById('sports-discipline').value;
+            const experience = document.getElementById('sports-exp').value.trim();
+
+            if (!name || !roll || !email) {
+                alert('Please fill out all required fields.');
+                return;
+            }
+
+            const newRegistration = {
+                timestamp: new Date().toLocaleString(),
+                name,
+                roll,
+                email,
+                discipline,
+                experience: experience || 'None provided.'
+            };
+
+            // Save to localStorage
+            const existingRegs = JSON.parse(localStorage.getItem('sports_registrations') || '[]');
+            existingRegs.push(newRegistration);
+            localStorage.setItem('sports_registrations', JSON.stringify(existingRegs));
+
+            // Show a premium visual success toast
+            showSportsToast();
+
+            // Reset form
+            document.getElementById('sports-registration-form').reset();
+        }
+
+        function showSportsToast() {
+            const notification = document.createElement('div');
+            notification.style.position = 'fixed';
+            notification.style.bottom = '30px';
+            notification.style.right = '30px';
+            notification.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+            notification.style.color = '#ffffff';
+            notification.style.padding = '16px 24px';
+            notification.style.borderRadius = '12px';
+            notification.style.boxShadow = '0 10px 25px rgba(16, 185, 129, 0.3)';
+            notification.style.zIndex = '9999';
+            notification.style.display = 'flex';
+            notification.style.alignItems = 'center';
+            notification.style.gap = '12px';
+            notification.style.fontFamily = 'var(--font-body)';
+            notification.style.fontSize = '0.95rem';
+            notification.style.fontWeight = '600';
+            notification.style.transition = 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+            notification.style.transform = 'translateY(100px)';
+            notification.style.opacity = '0';
+            
+            notification.innerHTML = `
+                <i class="fas fa-circle-check" style="font-size: 1.2rem;"></i>
+                <div>
+                    <div style="font-weight: 700; margin-bottom: 2px;">Registration Successful!</div>
+                    <div style="font-weight: 400; font-size: 0.85rem; opacity: 0.9;">PE Director Sunil Kumar will review soon.</div>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateY(0)';
+                notification.style.opacity = '1';
+            }, 100);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateY(30px)';
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 400);
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

@@ -21,7 +21,7 @@
     <!-- Premium Custom Styles for Library & Gallery Page -->
     <style>
         .library-hero {
-            background-image: url('assets/law_library_hero.png');
+            background-image: url('assets/library/images/law_library_hero.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -492,7 +492,7 @@
         <div class="header-top">
             <div class="container header-top-container">
                 <a href="index.html" class="logo-area">
-                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img">
+                    <img src="assets/branding/images/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img">
                     <div class="logo-text">
                         <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
                         <span class="trust-name">Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka</span>
@@ -506,7 +506,7 @@
             <div class="container header-bottom-container">
                 <!-- Mobile Logo Area (visible on mobile) -->
                 <a href="index.html" class="logo-mobile">
-                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img-mobile">
+                    <img src="assets/branding/images/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img-mobile">
                     <div class="logo-text">
                         <span class="college-name-abbr">RKLC</span>
                         <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
@@ -515,14 +515,14 @@
 
                 <nav class="nav-menu" id="nav-menu">
                     <a href="index.html" class="nav-link ">Home</a>
-                    <a href="leadership.html" class="nav-link ">Leadership</a>
                     <a href="governance.html" class="nav-link ">Governing Council</a>
                     <a href="faculty.html" class="nav-link ">Faculties</a>
                     <a href="course.html" class="nav-link ">Courses</a>
-                    <a href="library.html" class="nav-link active">Library &amp; Gallery</a>
+                    <a href="library.html" class="nav-link active">Library</a>
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <a href="sports.html" class="nav-link">Sports</a>
                     <a href="compliance.html" class="nav-link ">Statutory Committees</a>
-                    <a href="conduct.html" class="nav-link ">Code of Conduct</a>
-                    <a href="downloads.html" class="nav-link">Downloads</a>
+<a href="downloads.html" class="nav-link">Downloads</a>
                     <a href="notifications.html" class="nav-link">Notifications</a>
                 </nav>
 
@@ -540,14 +540,16 @@
     </header>
 
     <!-- Library Hero Banner -->
-    <section class="library-hero" id="hero">
+    <section class="library-hero" id="hero" style="min-height: 45vh; padding: 120px 0 60px; text-align: center;">
         <div class="library-hero-overlay"></div>
         <div class="container library-hero-content">
-            <div class="hero-tag">
+            <div class="hero-tag" style="margin: 0 auto 16px; width: fit-content;">
                 <i class="fas fa-book-open"></i> Scholar Sanctuary
             </div>
-            <h1 class="hero-title" style="font-size: 2.2rem; margin-bottom: 8px;"><span class="highlight-text">Rashtrakavi Kuvempu College of Law</span></h1>
-            <p style="color: var(--text-primary); font-family: var(--font-heading); font-size: 1.6rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px;">The Law Library &amp; Archives</p>
+            <div class="page-title-wrap">
+                <h1 class="page-title" style="font-size: 2.8rem; margin-bottom: 0;">The Law Library</h1>
+            </div>
+            <p class="page-subtitle-college" style="color: var(--accent-gold); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 10px; font-weight: 600; margin-bottom: 15px;">Rashtrakavi Kuvempu College of Law</p>
             <p class="hero-subtitle" style="max-width: 700px; margin: 0 auto 30px;">
                 Delve into an expansive repository of classical jurisprudence, modern digital search portals, and historical legal commentaries. Our library is the intellectual engine of the college.
             </p>
@@ -756,85 +758,12 @@
         </div>
     </section>
 
-    <!-- Photo Gallery Section -->
-    <section class="gallery-section" id="gallery">
-        <div class="container">
-            <div class="section-header center-align">
-                <span class="section-tag">Visual Chronicles</span>
-                <h2 class="section-title">Institutional Photo Gallery</h2>
-                <p class="section-subtitle">A visual tour showcasing moot court competitions, legal aid outreach camps, sports meets, and seminar sessions.</p>
-                <div class="section-divider center"></div>
-            </div>
-
-            <div class="gallery-grid">
-                
-                <!-- 1. Moot Court Session -->
-                <div class="gallery-item" onclick="openGalleryLightbox('moot-court')">
-                    <div class="gallery-zoom-indicator"><i class="fas fa-expand"></i></div>
-                    <div class="gallery-img-placeholder">
-                        <i class="fas fa-scale-balanced gallery-icon-bg"></i>
-                        <!-- Gradient placeholder layout with high premium style -->
-                        <div style="background: radial-gradient(circle at center, rgba(59, 130, 246, 0.25) 0%, transparent 80%); width:100%; height:100%; position:absolute;"></div>
-                    </div>
-                    <div class="gallery-details">
-                        <span class="gallery-tag">Advocacy Training</span>
-                        <h3 class="gallery-title"><i class="fas fa-gavel"></i> Moot Court Society Auditions</h3>
-                        <p class="gallery-desc">Students simulating appellate legal advocacy inside our customized Moot Court Hall, practicing arguments before distinguished panels of legal practitioners.</p>
-                    </div>
-                </div>
-
-                <!-- 2. Legal Aid Camp -->
-                <div class="gallery-item" onclick="openGalleryLightbox('legal-aid')">
-                    <div class="gallery-zoom-indicator"><i class="fas fa-expand"></i></div>
-                    <div class="gallery-img-placeholder">
-                        <i class="fas fa-hand-holding-hand gallery-icon-bg"></i>
-                        <div style="background: radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 0%, transparent 80%); width:100%; height:100%; position:absolute;"></div>
-                    </div>
-                    <div class="gallery-details">
-                        <span class="gallery-tag">Community Service</span>
-                        <h3 class="gallery-title"><i class="fas fa-users-viewfinder"></i> Community Legal Aid Camp</h3>
-                        <p class="gallery-desc">Pro-bono legal counseling and literacy drive held in surrounding rural sectors, bridging law school expertise with grassroots legal assistance needs.</p>
-                    </div>
-                </div>
-
-                <!-- 3. Annual Sports Meet -->
-                <div class="gallery-item" onclick="openGalleryLightbox('sports-meet')">
-                    <div class="gallery-zoom-indicator"><i class="fas fa-expand"></i></div>
-                    <div class="gallery-img-placeholder">
-                        <i class="fas fa-circle-nodes gallery-icon-bg"></i>
-                        <div style="background: radial-gradient(circle at center, rgba(239, 68, 68, 0.18) 0%, transparent 80%); width:100%; height:100%; position:absolute;"></div>
-                    </div>
-                    <div class="gallery-details">
-                        <span class="gallery-tag">Campus Life</span>
-                        <h3 class="gallery-title"><i class="fas fa-trophy"></i> Annual Athletic &amp; Sports Meet</h3>
-                        <p class="gallery-desc">Highlighting sportsmanship, raw stamina, and collaborative team bonding as students compete across diverse field activities, relays, and indoor tournaments.</p>
-                    </div>
-                </div>
-
-                <!-- 4. Legal Literacy Seminar -->
-                <div class="gallery-item" onclick="openGalleryLightbox('seminar')">
-                    <div class="gallery-zoom-indicator"><i class="fas fa-expand"></i></div>
-                    <div class="gallery-img-placeholder">
-                        <i class="fas fa-chalkboard-user gallery-icon-bg"></i>
-                        <div style="background: radial-gradient(circle at center, rgba(245, 158, 11, 0.2) 0%, transparent 80%); width:100%; height:100%; position:absolute;"></div>
-                    </div>
-                    <div class="gallery-details">
-                        <span class="gallery-tag">Academic Seminars</span>
-                        <h3 class="gallery-title"><i class="fas fa-landmark"></i> Constitutional Literacy NSS Unit</h3>
-                        <p class="gallery-desc">National Service Scheme (NSS) awareness seminars led by eminent judges, reviewing basic rights and duties enshrined in the Indian Constitution.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <img src="assets/college_emblem.png" alt="RKLC Emblem" class="footer-emblem">
+                    <img src="assets/branding/images/college_emblem.png" alt="RKLC Emblem" class="footer-emblem">
                     <h3>Rashtrakavi Kuvempu College of Law</h3>
                 </div>
                 <p class="footer-desc">
@@ -852,11 +781,12 @@
                 <h4>Quick Navigation</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="leadership.html">Leadership Message</a></li>
                     <li><a href="governance.html">Governing Council</a></li>
                     <li><a href="faculty.html">Academic Faculty</a></li>
                     <li><a href="course.html">Courses Offered</a></li>
-                    <li><a href="library.html">Library &amp; Gallery</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="gallery.html">Photo Gallery</a></li>
+                    <li><a href="sports.html">Sports &amp; Athletics</a></li>
                     <li><a href="compliance.html">Statutory Cells</a></li>
                     <li><a href="conduct.html">Code of Conduct</a></li>
                     <li><a href="downloads.html">Student Downloads</a></li>
@@ -870,6 +800,20 @@
                 <p><i class="fas fa-phone"></i> Principal Desk: +91 9916246833</p>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:murthyguru1987@gmail.com">murthyguru1987@gmail.com</a></p>
                 <p class="working-hours"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 4:00 PM</p>
+                <div class="footer-map-wrapper">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=12.9976252,77.4418476&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <a href="https://www.google.com/maps/place/12%C2%B059'51.5%22N+77%C2%B026'30.7%22E/@12.9976252,77.4392834,17z/data=!4m4!3m3!8m2!3d12.9976252!4d77.4418476?hl=en&entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top: 12px; display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; padding: 6px 12px; width: 100%; justify-content: center;">
+                    <i class="fas fa-external-link-alt"></i> View Larger Map
+                </a>
             </div>
         </div>
 
@@ -883,12 +827,5 @@
 
     <!-- Custom Script File -->
     <script src="app.js"></script>
-    <script>
-        // Simple visual lightbox feedback for gallery previewing
-        function openGalleryLightbox(topic) {
-            console.log("Opening gallery showcase for:", topic);
-            alert("Rashtrakavi Kuvempu College of Law Portal:\n\nYou triggered the interactive zoom-in for the " + topic.replace('-', ' ') + " showcase! In the production release, this initiates a beautiful premium masonry slider overlay showing high-resolution campus activities.");
-        }
-    </script>
 </body>
 </html>

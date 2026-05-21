@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Photo Gallery - Rashtrakavi Kuvempu College of Law. Explore visual chronicles of moot court society simulations, community legal aid camps, athletic meets, and academic seminars.">
+    <meta name="keywords" content="Rashtrakavi Kuvempu College of Law, Law College Gallery, Moot Court Photos, Legal Aid Images, Law College Life">
+    <title>Photo Gallery | Rashtrakavi Kuvempu College of Law</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Scoped Page Specific CSS -->
+    <style>
+        .gallery-filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-filter-btn {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-secondary);
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(12px);
+        }
+        
+        .gallery-filter-btn:hover {
+            border-color: var(--accent-cyan);
+            color: #ffffff;
+            background: rgba(0, 242, 254, 0.05);
+            transform: translateY(-2px);
+        }
+        
+        .gallery-filter-btn.active {
+            background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--primary-light) 100%);
+            color: #0a0f1d;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.35);
+        }
+
+        .gallery-masonry {
+            column-count: 3;
+            column-gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 992px) {
+            .gallery-masonry {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-masonry {
+                column-count: 1;
+            }
+        }
+
+        .gallery-card {
+            break-inside: avoid;
+            margin-bottom: 24px;
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(16px);
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Modern Gradient Border Overlay */
+        .gallery-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 16px;
+            border: 1px solid transparent;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--primary-light), var(--accent-gold)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 242, 254, 0.15);
+        }
+
+        .gallery-card:hover::after {
+            opacity: 1;
+        }
+
+        /* Tactile click active highlight */
+        .gallery-card.card-clicked {
+            transform: scale(0.96) translateY(-2px) !important;
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.6) !important;
+            transition: all 0.15s ease-in-out;
+        }
+
+        /* Active Persistent Highlight Glow */
+        .gallery-card.active-card-highlight {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.25);
+            background: rgba(15, 23, 42, 0.75);
+        }
+
+        .gallery-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            background: #0d1527;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Large card has bigger height */
+        .gallery-card.size-lg .gallery-img-wrapper {
+            height: 320px;
+        }
+
+        .gallery-photo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+        }
+
+        .gallery-card:hover .gallery-photo-img {
+            transform: scale(1.08);
+            filter: brightness(0.85) contrast(1.05);
+        }
+
+        .gallery-hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(10, 15, 30, 0.9) 0%, rgba(10, 15, 30, 0.2) 100%);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+        }
+
+        .gallery-card:hover .gallery-hover-overlay {
+            opacity: 1;
+        }
+
+        .gallery-zoom-btn {
+            background: var(--accent-cyan);
+            color: #0a0f1d;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transform: scale(0.8);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);
+        }
+
+        .gallery-card:hover .gallery-zoom-btn {
+            transform: scale(1);
+        }
+
+        .gallery-card-content {
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-card-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            color: var(--accent-cyan);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .gallery-card-title {
+            font-family: var(--font-header);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .gallery-card-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Lightbox modal styles */
+        .lightbox-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(3, 7, 18, 0.96);
+            backdrop-filter: blur(15px);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-container {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+            transform: scale(0.9);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .lightbox-modal.active .lightbox-container {
+            transform: scale(1);
+        }
+
+        .lightbox-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            z-index: 110;
+        }
+
+        .lightbox-close-btn:hover {
+            background: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            color: #0a0f1d;
+            transform: rotate(90deg);
+        }
+
+        .lightbox-viewer {
+            width: 100%;
+            height: 440px;
+            background: #060913;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .lightbox-viewer {
+                height: 280px;
+            }
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            z-index: 5;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+        }
+
+        .lightbox-bg-blur {
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            object-fit: cover;
+            filter: blur(25px) brightness(0.25) saturate(1.2);
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        .lightbox-content-area {
+            padding: 30px;
+            background: rgba(10, 15, 30, 0.95);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            z-index: 10;
+        }
+
+        .lightbox-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            color: var(--accent-cyan);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .lightbox-title {
+            font-family: var(--font-header);
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .lightbox-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Glassmorphic Lightbox Navigation Buttons */
+        .lightbox-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.3rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 105;
+            backdrop-filter: blur(8px);
+        }
+
+        .lightbox-btn:hover {
+            background: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            color: #0a0f1d;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
+        }
+
+        .lightbox-btn:active {
+            transform: translateY(-50%) scale(0.9);
+        }
+
+        .prev-btn {
+            left: 24px;
+        }
+
+        .next-btn {
+            right: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .lightbox-btn {
+                width: 46px;
+                height: 46px;
+                font-size: 1rem;
+            }
+            .prev-btn {
+                left: 10px;
+            }
+            .next-btn {
+                right: 10px;
+            }
+        }
+
+        /* Horizontal Slide Carousel Transition Styles */
+        .lightbox-slider-wrapper {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+        }
+
+        .slide-out-left {
+            transform: translateX(-50px);
+            opacity: 0;
+        }
+
+        .slide-out-right {
+            transform: translateX(50px);
+            opacity: 0;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Banner: Important Alerts -->
+    <div class="top-banner" id="banner-notification">
+        <div class="banner-content">
+            <span class="badge badge-warning">Admissions 2026-27</span>
+            <p>Empowering the social engineers of tomorrow. Explore our statutory cells & curriculum.</p>
+        </div>
+        <button class="close-banner-btn" onclick="closeBanner()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- Two-Tier Header -->
+    <header class="header">
+        <!-- Tier 1: Branding Header (Visible on Desktop) -->
+        <div class="header-top">
+            <div class="container header-top-container">
+                <a href="index.html" class="logo-area">
+                    <img src="assets/branding/images/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img">
+                    <div class="logo-text">
+                        <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
+                        <span class="trust-name">Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Tier 2: Navigation Bar -->
+        <div class="header-bottom">
+            <div class="container header-bottom-container">
+                <!-- Mobile Logo Area (visible on mobile) -->
+                <a href="index.html" class="logo-mobile">
+                    <img src="assets/branding/images/college_emblem.png" alt="RKLC Emblem" class="college-logo" id="logo-img-mobile">
+                    <div class="logo-text">
+                        <span class="college-name-abbr">RKLC</span>
+                        <span class="college-name-full">Rashtrakavi Kuvempu College of Law</span>
+                    </div>
+                </a>
+
+                <nav class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="governance.html" class="nav-link">Governing Council</a>
+                    <a href="faculty.html" class="nav-link">Faculties</a>
+                    <a href="course.html" class="nav-link">Courses</a>
+                    <a href="library.html" class="nav-link">Library</a>
+                    <a href="gallery.html" class="nav-link active">Gallery</a>
+                    <a href="sports.html" class="nav-link">Sports</a>
+                    <a href="compliance.html" class="nav-link">Statutory Committees</a>
+<a href="downloads.html" class="nav-link">Downloads</a>
+                    <a href="notifications.html" class="nav-link">Notifications</a>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="conduct.html" class="btn btn-outline btn-sm">Student Portal</a>
+                    <button class="theme-toggle" id="theme-btn" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Open Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Scrolling Announcement Ticker -->
+    <div class="scrolling-ticker">
+        <div class="ticker-content">
+            <div class="ticker-item"><i class="fas fa-bullhorn"></i> <span class="badge badge-warning" style="padding: 2px 8px; font-size: 0.65rem;">Affiliation Pending</span> No affiliation from Karnataka State Law University, Hubballi, Karnataka and approval from the Bar Council of India, New Delhi is pending.</div>
+            <div class="ticker-item"><i class="fas fa-circle-info"></i> <span class="badge badge-info" style="padding: 2px 8px; font-size: 0.65rem;">Admissions 2026-27</span> Admissions are now open for our prestigious 3-Year & 5-Year LL.B programmes. Contact Registry Desk.</div>
+            <div class="ticker-item"><i class="fas fa-shield-halved"></i> <span class="badge badge-success" style="padding: 2px 8px; font-size: 0.65rem;">UGC Standard</span> All Statutory Committees, including Anti-Ragging and Grievance Cells, are fully active for compliance.</div>
+        </div>
+    </div>
+
+    <!-- Gallery Hero Section -->
+    <!-- Page Hero Banner -->
+    <section class="hero-section subpage-hero" style="background-attachment: scroll;">
+        <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(10, 14, 23, 0.95) 0%, rgba(10, 14, 23, 0.98) 100%);"></div>
+        <div class="container hero-container" style="text-align: center;">
+            <div class="hero-tag" style="margin-bottom: 15px; margin-left: auto; margin-right: auto; width: fit-content;">
+                <i class="fas fa-images"></i> Campus Life
+            </div>
+            <div class="page-title-wrap">
+                <h1 class="page-title">Photo Gallery</h1>
+            </div>
+            <p class="page-subtitle-college" style="color: var(--accent-gold); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 10px; font-weight: 600;">Rashtrakavi Kuvempu College of Law</p>
+        </div>
+    </section>
+
+    <!-- Gallery Content Section -->
+    <section style="padding: 60px 0 80px; position: relative;">
+        <div class="container">
+            
+            <!-- Filters -->
+            <div class="gallery-filter-container">
+                <button class="gallery-filter-btn active" onclick="filterGallery('all', this)">All Memories</button>
+                <button class="gallery-filter-btn" onclick="filterGallery('moot-court', this)">Moot Court</button>
+                <button class="gallery-filter-btn" onclick="filterGallery('legal-aid', this)">Legal Aid Outreach</button>
+                <button class="gallery-filter-btn" onclick="filterGallery('sports', this)">Sports &amp; Athletics</button>
+                <button class="gallery-filter-btn" onclick="filterGallery('cultural', this)">Cultural Seminars</button>
+            </div>
+
+            <!-- Masonry Grid -->
+            <div class="gallery-masonry" id="gallery-grid">
+                
+                <!-- Item 1 (Moot Court) -->
+                <div class="gallery-card size-lg" data-category="moot-court" data-title="Appellate Audition Simulators" data-desc="Preparing law students in advocacy briefs, trial ethics, and appellate pleadings under the scrutiny of senior jurists. Inside our custom-styled Moot Court Hall, this simulates the standard appellate legal process and trains legal scholarship with actual trials." data-src="assets/gallery/images/moot-court/auditions.png" data-icon="fa-scale-balanced">
+                    <div class="gallery-img-wrapper">
+                        <div class="gallery-hover-overlay">
+                            <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <img src="assets/gallery/images/moot-court/auditions.png" alt="Appellate Audition Simulators" class="gallery-photo-img">
+                    </div>
+                    <div class="gallery-card-content">
+                        <span class="gallery-card-tag">Moot Court</span>
+                        <h3 class="gallery-card-title">Appellate Audition Simulators</h3>
+                        <p class="gallery-card-desc">Preparing law students in advocacy briefs, trial ethics, and appellate pleadings under the scrutiny of senior jurists.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 (Legal Aid) -->
+                <div class="gallery-card" data-category="legal-aid" data-title="Rural Advocacy Literacy Camp" data-desc="Bridging scholarly resources with pro-bono assistance, spreading awareness on basic consumer rights. Student volunteers organize legal advice outreach clinics in rural sectors to assist citizens with standard services." data-src="assets/gallery/images/legal-aid/rural_camp.png" data-icon="fa-hand-holding-hand">
+                    <div class="gallery-img-wrapper">
+                        <div class="gallery-hover-overlay">
+                            <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <img src="assets/gallery/images/legal-aid/rural_camp.png" alt="Rural Advocacy Literacy Camp" class="gallery-photo-img">
+                    </div>
+                    <div class="gallery-card-content">
+                        <span class="gallery-card-tag">Legal Aid</span>
+                        <h3 class="gallery-card-title">Rural Advocacy Literacy Camp</h3>
+                        <p class="gallery-card-desc">Bridging scholarly resources with pro-bono assistance, spreading awareness on basic consumer rights.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 (Sports) -->
+                <div class="gallery-card size-lg" data-category="sports" data-title="Athletic Track &amp; Field Trophies" data-desc="Showcasing institutional sportsmanship, physical endurance, and active leadership outside standard lecture rooms during track championship relays, strategy tables, and field runs." data-src="assets/gallery/images/sports/championship.png" data-icon="fa-trophy">
+                    <div class="gallery-img-wrapper">
+                        <div class="gallery-hover-overlay">
+                            <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <img src="assets/gallery/images/sports/championship.png" alt="Athletic Track &amp; Field Trophies" class="gallery-photo-img">
+                    </div>
+                    <div class="gallery-card-content">
+                        <span class="gallery-card-tag">Sports Meet</span>
+                        <h3 class="gallery-card-title">Athletic Track &amp; Field Trophies</h3>
+                        <p class="gallery-card-desc">Showcasing institutional sportsmanship, physical endurance, and active leadership outside standard lecture rooms.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 (Cultural) -->
+                <div class="gallery-card" data-category="cultural" data-title="NSS Unit Literacy Seminars" data-desc="Reviewing core structures of our Constitution and hosting interactive assemblies for social responsibilities. Eminent legal figures, including judges and academics, discuss modern reforms during our summits." data-src="assets/gallery/images/cultural/seminar.png" data-icon="fa-chalkboard-user">
+                    <div class="gallery-img-wrapper">
+                        <div class="gallery-hover-overlay">
+                            <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <img src="assets/gallery/images/cultural/seminar.png" alt="NSS Unit Literacy Seminars" class="gallery-photo-img">
+                    </div>
+                    <div class="gallery-card-content">
+                        <span class="gallery-card-tag">Cultural Seminar</span>
+                        <h3 class="gallery-card-title">NSS Unit Literacy Seminars</h3>
+                        <p class="gallery-card-desc">Reviewing core structures of our Constitution and hosting interactive assemblies for social responsibilities.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 (Moot Court Extra) -->
+                <div class="gallery-card" data-category="moot-court" data-title="National Advocacy Arenas" data-desc="Strengthening cross-examination methods, critical textual arguments, and dynamic jurisprudential analysis inside national debate championships. Our elite teams secure top positions representing Kuvempu." data-src="assets/gallery/images/moot-court/national_competition.png" data-icon="fa-gavel">
+                    <div class="gallery-img-wrapper">
+                        <div class="gallery-hover-overlay">
+                            <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <img src="assets/gallery/images/moot-court/national_competition.png" alt="National Advocacy Arenas" class="gallery-photo-img">
+                    </div>
+                    <div class="gallery-card-content">
+                        <span class="gallery-card-tag">Moot Court</span>
+                        <h3 class="gallery-card-title">National Advocacy Arenas</h3>
+                        <p class="gallery-card-desc">Strengthening cross-examination methods, critical textual arguments, and dynamic jurisprudential analysis.</p>
+                    </div>
+                </div>
+
+                <!-- Item 6 (Sports Extra) -->
+                <div class="gallery-card size-lg" data-category="sports" data-title="Indoor Chess Strategic Arenas" data-desc="Training foresight, concentration, and mental focus under the guidance of our physical education coaches during chess strategy meets. Strategy and absolute concentration collide at the tables." data-src="assets/gallery/images/sports/chess_arena.png" data-icon="fa-chess">
+                    <div class="gallery-img-wrapper">
+                        <div class="gallery-hover-overlay">
+                            <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <img src="assets/gallery/images/sports/chess_arena.png" alt="Indoor Chess Strategic Arenas" class="gallery-photo-img">
+                    </div>
+                    <div class="gallery-card-content">
+                        <span class="gallery-card-tag">Sports Meet</span>
+                        <h3 class="gallery-card-title">Indoor Chess Strategic Arenas</h3>
+                        <p class="gallery-card-desc">Training foresight and mental focus under the guidance of our physical education coaches.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox-modal">
+        <!-- Close Button -->
+        <button class="lightbox-close-btn" onclick="closeLightbox()" aria-label="Close Lightbox"><i class="fas fa-times"></i></button>
+        
+        <!-- Navigation Buttons -->
+        <button class="lightbox-btn prev-btn" id="lightbox-prev-btn" onclick="slidePrev(event)" aria-label="Previous Slide">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-btn next-btn" id="lightbox-next-btn" onclick="slideNext(event)" aria-label="Next Slide">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Lightbox Central Container -->
+        <div class="lightbox-container">
+            <div class="lightbox-slider-wrapper" id="lightbox-slider-wrapper">
+                <div class="lightbox-viewer" id="lightbox-viewer">
+                    <!-- Image and blur backdrop will be injected dynamically -->
+                </div>
+                <div class="lightbox-content-area">
+                    <span class="lightbox-tag" id="lightbox-tag">Tag</span>
+                    <h3 class="lightbox-title" id="lightbox-title">Title</h3>
+                    <p class="lightbox-desc" id="lightbox-desc">Description details...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/branding/images/college_emblem.png" alt="RKLC Emblem" class="footer-emblem">
+                    <h3>Rashtrakavi Kuvempu College of Law</h3>
+                </div>
+                <p class="footer-desc">
+                    Affiliation from Karnataka State Law University, Hubballi, Karnataka and approval from the Bar Council of India, New Delhi are pending. Operating under the visionary management of Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="governance.html">Governing Council</a></li>
+                    <li><a href="faculty.html">Academic Faculty</a></li>
+                    <li><a href="course.html">Courses Offered</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="gallery.html">Photo Gallery</a></li>
+                    <li><a href="sports.html">Sports &amp; Athletics</a></li>
+                    <li><a href="compliance.html">Statutory Cells</a></li>
+                    <li><a href="conduct.html">Code of Conduct</a></li>
+                    <li><a href="downloads.html">Student Downloads</a></li>
+                    <li><a href="notifications.html">Notifications timeline</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Official Registry</h4>
+                <p><i class="fas fa-map-marker-alt"></i> No.10, Near Janapriya Apartment, Kadabagere, Bangalore – 562130</p>
+                <p><i class="fas fa-phone"></i> Principal Desk: +91 9916246833</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:murthyguru1987@gmail.com">murthyguru1987@gmail.com</a></p>
+                <p class="working-hours"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 4:00 PM</p>
+                <div class="footer-map-wrapper">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=12.9976252,77.4418476&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <a href="https://www.google.com/maps/place/12%C2%B059'51.5%22N+77%C2%B026'30.7%22E/@12.9976252,77.4392834,17z/data=!4m4!3m3!8m2!3d12.9976252!4d77.4418476?hl=en&entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top: 12px; display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; padding: 6px 12px; width: 100%; justify-content: center;">
+                    <i class="fas fa-external-link-alt"></i> View Larger Map
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p><span class="admin-gate" style="cursor: default; user-select: none;" title="Academic Portal">&copy;</span> 2026 Rashtrakavi Kuvempu College of Law. All Rights Reserved. Managed by Rashtrakavi Kuvempu Education Cultural and charitable Trust (R.), Bengaluru, Karnataka.</p>
+                <p>Designed for compliance & legal excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Script File -->
+    <script src="app.js"></script>
+
+    <!-- Page Specific Script -->
+    <script>
+        // Gallery category filtering
+        function filterGallery(category, btnElement) {
+            // Update active button
+            const buttons = document.querySelectorAll('.gallery-filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if (btnElement) {
+                btnElement.classList.add('active');
+            }
+            
+            // Filter cards
+            const cards = document.querySelectorAll('.gallery-card');
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.3s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                    card.classList.remove('active-card-highlight'); // Remove highlight on filtered cards
+                }
+            });
+        }
+
+        // Global State for Lightbox Carousel
+        let activeSlides = [];
+        let currentSlideIndex = 0;
+        let isTransitioning = false;
+
+        // Compile and load cards via Modern Event Listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.gallery-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    // Trigger dynamic click scale & neon ripple feedback
+                    card.classList.add('card-clicked');
+                    
+                    // Compile the array of only currently visible cards based on the filter
+                    const activeFilterBtn = document.querySelector('.gallery-filter-btn.active');
+                    let activeCategory = 'all';
+                    if (activeFilterBtn) {
+                        // Extract category name from onclick attribute
+                        const match = activeFilterBtn.getAttribute('onclick').match(/'([^']+)'/);
+                        if (match) activeCategory = match[1];
+                    }
+                    
+                    activeSlides = Array.from(document.querySelectorAll('.gallery-card')).filter(c => {
+                        const cat = c.getAttribute('data-category');
+                        return activeCategory === 'all' || cat === activeCategory;
+                    });
+                    
+                    currentSlideIndex = activeSlides.indexOf(card);
+                    
+                    // Highlight the card persistently in the grid
+                    cards.forEach(c => c.classList.remove('active-card-highlight'));
+                    card.classList.add('active-card-highlight');
+                    
+                    // Open the lightbox after a small delay for tactical click feel
+                    setTimeout(() => {
+                        card.classList.remove('card-clicked');
+                        openLightboxAtIndex(currentSlideIndex);
+                    }, 150);
+                });
+            });
+        });
+
+        // Lightbox modal logic
+        const lightbox = document.getElementById('lightbox-modal');
+        const lSliderWrapper = document.getElementById('lightbox-slider-wrapper');
+        const lViewer = document.getElementById('lightbox-viewer');
+        const lTag = document.getElementById('lightbox-tag');
+        const lTitle = document.getElementById('lightbox-title');
+        const lDesc = document.getElementById('lightbox-desc');
+
+        function openLightboxAtIndex(index) {
+            if (index < 0 || index >= activeSlides.length) return;
+            currentSlideIndex = index;
+            const slide = activeSlides[currentSlideIndex];
+            
+            const tag = slide.getAttribute('data-category').replace('-', ' ');
+            const title = slide.getAttribute('data-title');
+            const desc = slide.getAttribute('data-desc');
+            const src = slide.getAttribute('data-src');
+            
+            // Set matching text content
+            lTag.textContent = tag;
+            lTitle.textContent = title;
+            lDesc.textContent = desc;
+            
+            // Inject structural layout into viewer
+            lViewer.innerHTML = `
+                <img src="${src}" alt="${title}" class="lightbox-img">
+                <img src="${src}" alt="${title}" class="lightbox-bg-blur">
+            `;
+            
+            // Sync current active card persistent glow in background
+            document.querySelectorAll('.gallery-card').forEach(c => c.classList.remove('active-card-highlight'));
+            slide.classList.add('active-card-highlight');
+
+            // Scroll the active card into viewport focus so the user sees it backgrounded
+            slide.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // Show modal
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // stop parent scrolling
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Slide navigation controller (direction: 'next' or 'prev')
+        function slideTo(direction) {
+            if (isTransitioning || activeSlides.length <= 1) return;
+            isTransitioning = true;
+            
+            let nextIndex;
+            if (direction === 'next') {
+                nextIndex = (currentSlideIndex + 1) % activeSlides.length;
+            } else {
+                nextIndex = (currentSlideIndex - 1 + activeSlides.length) % activeSlides.length;
+            }
+            
+            // Determine exit / entrance animation classes based on direction
+            const exitClass = direction === 'next' ? 'slide-out-left' : 'slide-out-right';
+            const enterClass = direction === 'next' ? 'slide-in-right' : 'slide-in-left';
+            
+            // Start exit slide transition
+            lSliderWrapper.classList.add(exitClass);
+            
+            setTimeout(() => {
+                // Clear exit classes and transition to next slide
+                lSliderWrapper.classList.remove(exitClass);
+                
+                currentSlideIndex = nextIndex;
+                const slide = activeSlides[currentSlideIndex];
+                
+                const tag = slide.getAttribute('data-category').replace('-', ' ');
+                const title = slide.getAttribute('data-title');
+                const desc = slide.getAttribute('data-desc');
+                const src = slide.getAttribute('data-src');
+                
+                // Swap media content
+                lTag.textContent = tag;
+                lTitle.textContent = title;
+                lDesc.textContent = desc;
+                lViewer.innerHTML = `
+                    <img src="${src}" alt="${title}" class="lightbox-img">
+                    <img src="${src}" alt="${title}" class="lightbox-bg-blur">
+                `;
+                
+                // Keep grid persistent highlight synchronized
+                document.querySelectorAll('.gallery-card').forEach(c => c.classList.remove('active-card-highlight'));
+                slide.classList.add('active-card-highlight');
+                slide.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                
+                // Trigger entry slide transition
+                lSliderWrapper.classList.add(enterClass);
+                
+                // Finished slide transition lifecycle
+                setTimeout(() => {
+                    lSliderWrapper.classList.remove(enterClass);
+                    isTransitioning = false;
+                }, 350);
+                
+            }, 200);
+        }
+
+        // Inline event wrappers for chevrons
+        function slidePrev(e) {
+            if (e) e.stopPropagation();
+            slideTo('prev');
+        }
+
+        function slideNext(e) {
+            if (e) e.stopPropagation();
+            slideTo('next');
+        }
+
+        // Close lightbox on backdrop click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard navigation listeners
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'ArrowRight' || e.key === 'Right') {
+                slideTo('next');
+            } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
+                slideTo('prev');
+            } else if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

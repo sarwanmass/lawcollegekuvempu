@@ -813,5 +813,76 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'admin.html';
         });
     });
-});
 
+    // -----------------------------------------------------------------
+    // 12. DYNAMIC MOBILE PORTAL INJECTION & RESPONSIVE MENU CLARITY
+    // -----------------------------------------------------------------
+    const mobileNavMenu = document.getElementById('nav-menu');
+    if (mobileNavMenu) {
+        if (!document.querySelector('.mobile-portal-wrapper')) {
+            const portalWrapper = document.createElement('div');
+            portalWrapper.className = 'mobile-portal-wrapper';
+            portalWrapper.innerHTML = `
+                <a href="conduct.html" class="mobile-portal-btn">
+                    Student Portal
+                </a>
+            `;
+            mobileNavMenu.appendChild(portalWrapper);
+        }
+    }
+
+    // -----------------------------------------------------------------
+    // 13. IMMERSIVE HERO BACKGROUND IMAGE SLIDER (HOME PAGE)
+    // -----------------------------------------------------------------
+    const heroEl = document.getElementById('hero');
+    const heroSliderEl = document.querySelector('.hero-slider');
+
+    if (heroEl && heroSliderEl) {
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const heroDots = document.querySelectorAll('.slider-dot');
+        let activeSlideIdx = 0;
+        let heroSliderTimer;
+
+        function renderSlide(index) {
+            if (index >= heroSlides.length) {
+                activeSlideIdx = 0;
+            } else if (index < 0) {
+                activeSlideIdx = heroSlides.length - 1;
+            } else {
+                activeSlideIdx = index;
+            }
+
+            heroSlides.forEach(slide => slide.classList.remove('active'));
+            heroDots.forEach(dot => dot.classList.remove('active'));
+
+            heroSlides[activeSlideIdx].classList.add('active');
+            if (heroDots[activeSlideIdx]) {
+                heroDots[activeSlideIdx].classList.add('active');
+            }
+        }
+
+        window.moveHeroSlide = function(direction) {
+            restartHeroSliderTimer();
+            renderSlide(activeSlideIdx + direction);
+        };
+
+        window.setHeroSlide = function(index) {
+            restartHeroSliderTimer();
+            renderSlide(index);
+        };
+
+        function startHeroSliderTimer() {
+            heroSliderTimer = setInterval(() => {
+                renderSlide(activeSlideIdx + 1);
+            }, 5000);
+        }
+
+        function restartHeroSliderTimer() {
+            clearInterval(heroSliderTimer);
+            startHeroSliderTimer();
+        }
+
+        // Initialize Timer
+        startHeroSliderTimer();
+    }
+});

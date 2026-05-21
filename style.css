@@ -287,7 +287,7 @@ a {
 }
 .ticker-content {
     display: inline-flex;
-    animation: ticker-scroll 35s linear infinite;
+    animation: ticker-scroll 70s linear infinite;
     gap: 60px;
     padding-left: 100%;
 }
@@ -372,13 +372,21 @@ a {
     gap: 16px;
 }
 .header-top .college-logo {
-    width: 58px;
-    height: 58px;
+    width: 150px;
+    height: 150px;
+    background: #ffffff;
+    padding: 12px;
+    border: 5px solid var(--accent-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 45px rgba(212, 175, 55, 0.8), 0 0 20px rgba(255, 255, 255, 0.3);
+    object-fit: contain;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .header-top .college-name-full {
-    font-size: 1.6rem;
-    letter-spacing: 0.03em;
+    font-size: 1.8rem;
+    letter-spacing: 0.04em;
     font-weight: 800;
+    text-transform: uppercase;
 }
 .header-top .trust-name {
     font-size: 0.78rem;
@@ -410,13 +418,15 @@ a {
     gap: 12px;
 }
 .college-logo {
-    width: 50px;
-    height: 50px;
+    width: 85px;
+    height: 85px;
     object-fit: contain;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(var(--accent-gold-rgb), 0.3);
-    border: 1.5px solid var(--accent-gold);
-    transition: transform 0.4s ease;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6), 0 0 10px rgba(255, 255, 255, 0.2);
+    border: 3.5px solid var(--accent-gold);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #ffffff;
+    padding: 6px;
 }
 .logo-area:hover .college-logo {
     transform: rotate(15deg) scale(1.05);
@@ -434,6 +444,7 @@ a {
     font-weight: 700;
     color: var(--text-primary);
     line-height: 1.2;
+    text-transform: uppercase;
 }
 .trust-name {
     font-size: 0.72rem;
@@ -505,7 +516,7 @@ a {
 .hero-section {
     position: relative;
     padding: 140px 0 100px;
-    background-image: url('assets/law_library_hero.png');
+    background-image: url('assets/library/images/law_library_hero.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -560,7 +571,8 @@ a {
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 24px;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
 }
 .hero-subtitle {
     font-size: 1.25rem;
@@ -1267,15 +1279,20 @@ a {
     gap: 12px;
 }
 .footer-emblem {
-    width: 44px;
-    height: 44px;
+    width: 96px;
+    height: 96px;
     object-fit: contain;
     border-radius: 50%;
-    border: 1px solid var(--accent-gold);
+    border: 3.5px solid var(--accent-gold);
+    background: #ffffff;
+    padding: 6px;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
 }
 .footer-logo h3 {
     font-size: 1.3rem;
     color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
 }
 .footer-desc {
     color: #64748b;
@@ -1384,16 +1401,16 @@ a {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .mobile-menu-toggle {
         display: flex;
     }
     .nav-menu {
         position: fixed;
-        top: 80px;
+        top: 104px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 104px);
         background-color: var(--bg-main);
         flex-direction: column;
         padding: 40px;
@@ -1414,6 +1431,13 @@ a {
         align-items: center;
         gap: 12px;
     }
+    .logo-mobile .college-logo {
+        width: 76px;
+        height: 76px;
+        padding: 5px;
+        border: 3px solid var(--accent-gold);
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    }
     .college-name-full {
         display: none;
     }
@@ -1423,6 +1447,7 @@ a {
         font-size: 1.5rem;
         font-weight: 800;
         color: var(--text-primary);
+        text-transform: uppercase;
     }
     .banner-content {
         flex-direction: column;
@@ -1616,7 +1641,7 @@ a {
 .course-hero {
     padding: 120px 0 80px;
     background: linear-gradient(180deg, rgba(5, 9, 20, 0.85) 0%, var(--bg-main) 100%), 
-                url('assets/law_library_hero.png') no-repeat center center / cover;
+                url('assets/library/images/law_library_hero.png') no-repeat center center / cover;
     text-align: center;
     position: relative;
     border-bottom: 1px solid var(--border-color);
@@ -2126,3 +2151,387 @@ a {
     40%, 60% { transform: translate3d(4px, 0, 0); }
 }
 
+/* Mobile responsiveness overrides for Administrative Dashboard and Login Gate */
+@media (max-width: 576px) {
+    #admin-login-section {
+        padding: 60px 16px 100px !important;
+        min-height: 50vh !important;
+    }
+    
+    .login-card {
+        padding: 24px 20px !important;
+        border-radius: 16px !important;
+    }
+    
+    .login-card h2 {
+        font-size: 1.35rem !important;
+    }
+    
+    .admin-controls-card {
+        padding: 20px !important;
+    }
+    
+    .admin-utilities {
+        flex-direction: column;
+        gap: 10px !important;
+    }
+    
+    .admin-utilities button {
+        width: 100% !important;
+    }
+}
+
+
+
+/* -------------------------------------------------------------
+   16. ADDITIONAL ENHANCEMENTS (MEDIUM SCREEN WRAP, MOBILE PORTAL, HERO SLIDER)
+   ------------------------------------------------------------- */
+
+/* Prevent Navigation links overlap on medium-large desktop viewports */
+@media (min-width: 1201px) and (max-width: 1400px) {
+    .nav-menu {
+        gap: 8px;
+    }
+    .nav-link {
+        font-size: 0.82rem;
+    }
+    .header-actions {
+        gap: 8px;
+    }
+}
+
+/* Hide desktop portal button in header on mobile and tablet viewports */
+@media (max-width: 1200px) {
+    .header-actions a[href="conduct.html"] {
+        display: none !important;
+    }
+}
+
+/* Dynamic Mobile Portal Drawer Button */
+.mobile-portal-wrapper {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+@media (min-width: 1201px) {
+    .mobile-portal-wrapper {
+        display: none !important;
+    }
+}
+.mobile-portal-btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    padding: 12px 24px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    border-radius: 8px;
+    background: var(--accent-gold) !important;
+    color: #050914 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+.mobile-portal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5) !important;
+}
+
+/* Home Page Hero Immersive Image Slider */
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1.06);
+}
+.hero-slide.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1;
+}
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 4;
+    pointer-events: none;
+}
+.slider-arrow {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+.slider-arrow:hover {
+    background: var(--accent-gold);
+    color: #050914;
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 4;
+}
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+.slider-dot:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+.slider-dot.active {
+    background: var(--accent-gold);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.2);
+}
+
+/* Footer Map Visualizer Styling */
+.footer-map-wrapper {
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 120px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+.footer-map-wrapper:hover {
+    border-color: var(--accent-gold);
+}
+[data-theme="light"] .footer-map-wrapper {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .slider-controls {
+        padding: 0 15px;
+    }
+    .slider-arrow {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* -------------------------------------------------------------
+   17. SPLIT HERO GRID LAYOUT & DYNAMIC GLOWING PAGE TITLES
+   ------------------------------------------------------------- */
+
+/* Split Hero Layout */
+.hero-section.split-hero {
+    background-image: none !important;
+    background-color: var(--bg-main) !important;
+    background-attachment: scroll !important;
+    min-height: 80vh;
+    padding: 150px 0 90px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+[data-theme="light"] .hero-section.split-hero {
+    background-color: #f8fafc !important;
+}
+.hero-section.split-hero .hero-overlay {
+    display: none !important;
+}
+
+.hero-split-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.hero-split-left {
+    position: relative;
+    width: 100%;
+}
+
+.hero-slider-wrapper {
+    border: 3px solid var(--accent-gold);
+    box-shadow: 0 0 35px rgba(37, 99, 235, 0.25);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/11;
+    width: 100%;
+    background-color: #000;
+}
+
+.hero-slider-wrapper .hero-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-slider-wrapper .slider-controls {
+    padding: 0 20px;
+}
+
+.hero-slider-wrapper .slider-dots {
+    bottom: 15px;
+}
+
+.hero-split-right {
+    width: 100%;
+}
+
+/* Subpage Banners and Center-Aligned Titles */
+.hero-section.subpage-hero {
+    min-height: 30vh !important;
+    padding: 130px 0 60px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-title-wrap {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 12px;
+    cursor: default;
+    margin-bottom: 8px;
+    transition: var(--transition-smooth);
+}
+
+.page-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .page-title {
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page-title-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-gold) 0%, var(--accent-cyan) 100%);
+    border-radius: 2px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Interactive Color-Varying & Glowing Cursor Hover Effects */
+.page-title-wrap:hover .page-title {
+    transform: scale(1.04) translateY(-2px);
+    background: linear-gradient(135deg, #ffd700 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px rgba(0, 242, 254, 0.6));
+}
+
+.page-title-wrap:hover::after {
+    width: 150px;
+    background: linear-gradient(90deg, #ffd700 0%, #00f2fe 100%);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.8);
+}
+
+/* Responsiveness for Split Hero Grid */
+@media (max-width: 992px) {
+    .hero-section.split-hero {
+        padding: 120px 0 60px;
+    }
+    .hero-split-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .hero-split-left {
+        order: 1;
+    }
+    .hero-split-right {
+        order: 2;
+    }
+    .hero-split-right .hero-title {
+        font-size: 2.6rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section.split-hero {
+        padding: 100px 0 40px;
+    }
+    .hero-split-right .hero-title {
+        font-size: 2rem !important;
+    }
+    .hero-split-right .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .hero-split-right .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .page-title {
+        font-size: 1.8rem !important;
+    }
+    .page-title-wrap:hover .page-title {
+        transform: scale(1.02);
+    }
+}

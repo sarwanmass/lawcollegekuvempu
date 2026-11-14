@@ -565,24 +565,22 @@
             <div class="gallery-filter-container">
                 <button class="gallery-filter-btn active" onclick="filterGallery('all', this)">All Memories</button>
                 <button class="gallery-filter-btn" onclick="filterGallery('moot-court', this)">Moot Court</button>
-                <button class="gallery-filter-btn" onclick="filterGallery('classrooms', this)">Classrooms</button>
                 <button class="gallery-filter-btn" onclick="filterGallery('library', this)">Law Library</button>
+                <button class="gallery-filter-btn" onclick="filterGallery('classrooms', this)">Classrooms</button>
                 <button class="gallery-filter-btn" onclick="filterGallery('computer-lab', this)">Computer Lab</button>
-                <button class="gallery-filter-btn" onclick="filterGallery('legal-aid', this)">Legal Aid Outreach</button>
                 <button class="gallery-filter-btn" onclick="filterGallery('sports', this)">Sports &amp; Athletics</button>
-                <button class="gallery-filter-btn" onclick="filterGallery('cultural', this)">Cultural Seminars</button>
             </div>
 
             <!-- Masonry Grid -->
             <div class="gallery-masonry" id="gallery-grid">
                 
-                <!-- Moot Court Hall Real Photos -->
-                <div class="gallery-card size-lg" data-category="moot-court" data-title="Moot Court Hall - Judicial Bench" data-desc="The central judicial dais and trial advocacy chambers of Rashtrakavi Kuvempu College of Law, designed to simulate high court and appellate courtroom procedures." data-src="assets/gallery/images/moot-court/college_moot_court_1.png" data-icon="fa-scale-balanced">
+                <!-- 1. Moot Court Dais -->
+                <div class="gallery-card size-lg" data-category="moot-court" data-title="Moot Court Hall - Judicial Bench" data-desc="The central judicial dais and trial advocacy chambers of Rashtrakavi Kuvempu College of Law, designed to simulate high court and appellate courtroom procedures." data-src="assets/gallery/images/moot-court/auditions.png" data-icon="fa-scale-balanced">
                     <div class="gallery-img-wrapper">
                         <div class="gallery-hover-overlay">
                             <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
                         </div>
-                        <img src="assets/gallery/images/moot-court/college_moot_court_1.png" alt="Moot Court Judicial Bench" class="gallery-photo-img">
+                        <img src="assets/gallery/images/moot-court/auditions.png" alt="Moot Court Judicial Bench" class="gallery-photo-img" onerror="this.onerror=null; this.src='assets/branding/images/college_emblem.png';">
                     </div>
                     <div class="gallery-card-content">
                         <span class="gallery-card-tag">Moot Court</span>
@@ -591,12 +589,13 @@
                     </div>
                 </div>
 
-                <div class="gallery-card" data-category="moot-court" data-title="Moot Court Hall - Advocate Podiums" data-desc="Interactive advocacy arena with petitioner and respondent podiums, witness boxes, and bar member seating." data-src="assets/gallery/images/moot-court/college_moot_court_2.png" data-icon="fa-gavel">
+                <!-- 2. Moot Court Podiums -->
+                <div class="gallery-card" data-category="moot-court" data-title="Advocate Podiums &amp; Bar Chamber" data-desc="Interactive advocacy arena with petitioner and respondent podiums, witness boxes, and bar member seating." data-src="assets/gallery/images/moot-court/national_competition.png" data-icon="fa-gavel">
                     <div class="gallery-img-wrapper">
                         <div class="gallery-hover-overlay">
                             <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
                         </div>
-                        <img src="assets/gallery/images/moot-court/college_moot_court_2.png" alt="Moot Court Advocate Podiums" class="gallery-photo-img">
+                        <img src="assets/gallery/images/moot-court/national_competition.png" alt="Moot Court Advocate Podiums" class="gallery-photo-img" onerror="this.onerror=null; this.src='assets/branding/images/college_emblem.png';">
                     </div>
                     <div class="gallery-card-content">
                         <span class="gallery-card-tag">Moot Court</span>
@@ -605,70 +604,43 @@
                     </div>
                 </div>
 
-                <!-- Classrooms -->
-                <div class="gallery-card size-lg" data-category="classrooms" data-title="1st Year LL.B Lecture Hall (Sec A)" data-desc="Spacious, well-ventilated, multimedia-equipped lecture classroom for 1st Year LL.B students with ergonomic seating and academic podium." data-src="assets/gallery/images/classrooms/classroom_1st_llb_sec_a_1.png" data-icon="fa-chalkboard-user">
+                <!-- 3. Moot Court Bench -->
+                <div class="gallery-card" data-category="moot-court" data-title="High Court Style Judicial Bench" data-desc="Elevated judicial bench styled after high court proceedings to accustom law students to judicial decorum." data-src="assets/gallery/images/moot-court/court_bench.png" data-icon="fa-scale-balanced">
                     <div class="gallery-img-wrapper">
                         <div class="gallery-hover-overlay">
                             <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
                         </div>
-                        <img src="assets/gallery/images/classrooms/classroom_1st_llb_sec_a_1.png" alt="1st Year LL.B Lecture Hall" class="gallery-photo-img">
+                        <img src="assets/gallery/images/moot-court/court_bench.png" alt="Judicial Bench View" class="gallery-photo-img" onerror="this.onerror=null; this.src='assets/branding/images/college_emblem.png';">
                     </div>
                     <div class="gallery-card-content">
-                        <span class="gallery-card-tag">Classrooms</span>
-                        <h3 class="gallery-card-title">1st Year LL.B - Lecture Hall A</h3>
-                        <p class="gallery-card-desc">Bright, multimedia-enabled classroom structured for interactive lectures in Constitutional and Contract law.</p>
+                        <span class="gallery-card-tag">Moot Court</span>
+                        <h3 class="gallery-card-title">High Court Style Bench</h3>
+                        <p class="gallery-card-desc">Elevated bench arrangement training students for court decorum and formal advocacy protocol.</p>
                     </div>
                 </div>
 
-                <div class="gallery-card" data-category="classrooms" data-title="1st Year LL.B Lecture Hall (Sec B)" data-desc="Dedicated Section B lecture classroom supporting comfortable seating, acoustics, and modern pedagogical displays." data-src="assets/gallery/images/classrooms/classroom_1st_llb_sec_b_2.png" data-icon="fa-chalkboard">
+                <!-- 4. Moot Court Chamber -->
+                <div class="gallery-card" data-category="moot-court" data-title="Moot Court Litigators Chamber" data-desc="Wide angle perspective of the Moot Court Hall with seating for jury, advocates, and student observers." data-src="assets/gallery/images/moot-court/court_dais.png" data-icon="fa-landmark">
                     <div class="gallery-img-wrapper">
                         <div class="gallery-hover-overlay">
                             <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
                         </div>
-                        <img src="assets/gallery/images/classrooms/classroom_1st_llb_sec_b_2.png" alt="1st Year LL.B Lecture Hall B" class="gallery-photo-img">
+                        <img src="assets/gallery/images/moot-court/court_dais.png" alt="Moot Court Chamber View" class="gallery-photo-img" onerror="this.onerror=null; this.src='assets/branding/images/college_emblem.png';">
                     </div>
                     <div class="gallery-card-content">
-                        <span class="gallery-card-tag">Classrooms</span>
-                        <h3 class="gallery-card-title">1st Year LL.B - Lecture Hall B</h3>
-                        <p class="gallery-card-desc">Equipped with academic whiteboards, audio infrastructure, and spacious learning benches.</p>
+                        <span class="gallery-card-tag">Moot Court</span>
+                        <h3 class="gallery-card-title">Moot Court Arena Hall</h3>
+                        <p class="gallery-card-desc">Full courtroom chamber hosting trial simulations and appellate rounds.</p>
                     </div>
                 </div>
 
-                <div class="gallery-card" data-category="classrooms" data-title="2nd Year LL.B Lecture Hall (Sec A)" data-desc="Advanced legal study classroom for second-year law students focusing on Jurisprudence, Property Law, and Penal Codes." data-src="assets/gallery/images/classrooms/classroom_2nd_llb_sec_a_1.png" data-icon="fa-landmark">
+                <!-- 5. Law Library Reading Chambers -->
+                <div class="gallery-card size-lg" data-category="library" data-title="College Law Library - Reading Chambers" data-desc="Extensive law library collection comprising Central Acts, State Acts, AIR, Supreme Court Cases (SCC), and leading international treatises." data-src="assets/library/images/law_library_hero.png" data-icon="fa-book-bookmark">
                     <div class="gallery-img-wrapper">
                         <div class="gallery-hover-overlay">
                             <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
                         </div>
-                        <img src="assets/gallery/images/classrooms/classroom_2nd_llb_sec_a_1.png" alt="2nd Year LL.B Classroom" class="gallery-photo-img">
-                    </div>
-                    <div class="gallery-card-content">
-                        <span class="gallery-card-tag">Classrooms</span>
-                        <h3 class="gallery-card-title">2nd Year LL.B - Classroom A</h3>
-                        <p class="gallery-card-desc">Facilitates case-study discussions, legal doctrine debates, and statutory interpretations.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-card size-lg" data-category="classrooms" data-title="3rd Year LL.B Senior Lecture Hall" data-desc="Senior advocacy and procedural law lecture hall tailored for final-year students engaging in Civil Procedure, Evidence Law, and Taxation." data-src="assets/gallery/images/classrooms/classroom_3rd_llb_sec_a_1.png" data-icon="fa-graduation-cap">
-                    <div class="gallery-img-wrapper">
-                        <div class="gallery-hover-overlay">
-                            <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
-                        </div>
-                        <img src="assets/gallery/images/classrooms/classroom_3rd_llb_sec_a_1.png" alt="3rd Year LL.B Lecture Hall" class="gallery-photo-img">
-                    </div>
-                    <div class="gallery-card-content">
-                        <span class="gallery-card-tag">Classrooms</span>
-                        <h3 class="gallery-card-title">3rd Year LL.B - Senior Hall</h3>
-                        <p class="gallery-card-desc">Executive lecture arena dedicated to procedural advocacy, drafting, and professional ethics.</p>
-                    </div>
-                </div>
-
-                <!-- Law Library -->
-                <div class="gallery-card size-lg" data-category="library" data-title="College Law Library - Reading Chambers" data-desc="Extensive law library collection comprising Central Acts, State Acts, AIR, Supreme Court Cases (SCC), and leading international treatises." data-src="assets/gallery/images/library/college_library_1.png" data-icon="fa-book-bookmark">
-                    <div class="gallery-img-wrapper">
-                        <div class="gallery-hover-overlay">
-                            <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
-                        </div>
-                        <img src="assets/gallery/images/library/college_library_1.png" alt="Law Library Reading Chambers" class="gallery-photo-img">
+                        <img src="assets/library/images/law_library_hero.png" alt="Law Library Reading Chambers" class="gallery-photo-img" onerror="this.onerror=null; this.src='assets/branding/images/college_emblem.png';">
                     </div>
                     <div class="gallery-card-content">
                         <span class="gallery-card-tag">Law Library</span>
@@ -677,12 +649,13 @@
                     </div>
                 </div>
 
-                <div class="gallery-card" data-category="library" data-title="Law Library - Stacks &amp; Archives" data-desc="Organized book stacks categorised by legal disciplines with dedicated circulation and librarian assistance counters." data-src="assets/gallery/images/library/college_library_2.png" data-icon="fa-books">
+                <!-- 6. Library Stacks -->
+                <div class="gallery-card" data-category="library" data-title="Law Library - Stacks &amp; Archives" data-desc="Organized book stacks categorised by legal disciplines with dedicated circulation and librarian assistance counters." data-src="assets/library/images/library_stacks.png" data-icon="fa-book">
                     <div class="gallery-img-wrapper">
                         <div class="gallery-hover-overlay">
                             <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
                         </div>
-                        <img src="assets/gallery/images/library/college_library_2.png" alt="Library Stacks and Archives" class="gallery-photo-img">
+                        <img src="assets/library/images/library_stacks.png" alt="Library Stacks and Archives" class="gallery-photo-img" onerror="this.onerror=null; this.src='assets/branding/images/college_emblem.png';">
                     </div>
                     <div class="gallery-card-content">
                         <span class="gallery-card-tag">Law Library</span>
@@ -691,12 +664,13 @@
                     </div>
                 </div>
 
-                <div class="gallery-card" data-category="library" data-title="Library Circulation &amp; Study Section" data-desc="Quiet study zones and journal repositories for legal research, case digest reviews, and competitive exam preparation." data-src="assets/gallery/images/library/college_library_4.png" data-icon="fa-book-open-reader">
+                <!-- 7. Library Reading Hall -->
+                <div class="gallery-card" data-category="library" data-title="Library Periodicals &amp; Study Bays" data-desc="Quiet study zones and journal repositories for legal research, case digest reviews, and competitive exam preparation." data-src="assets/library/images/library_reading.png" data-icon="fa-book-open-reader">
                     <div class="gallery-img-wrapper">
                         <div class="gallery-hover-overlay">
                             <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
                         </div>
-                        <img src="assets/gallery/images/library/college_library_4.png" alt="Library Circulation Section" class="gallery-photo-img">
+                        <img src="assets/library/images/library_reading.png" alt="Library Periodicals Section" class="gallery-photo-img" onerror="this.onerror=null; this.src='assets/branding/images/college_emblem.png';">
                     </div>
                     <div class="gallery-card-content">
                         <span class="gallery-card-tag">Law Library</span>
@@ -705,13 +679,58 @@
                     </div>
                 </div>
 
-                <!-- Computer Lab -->
-                <div class="gallery-card size-lg" data-category="computer-lab" data-title="Digital E-Library &amp; Computer Lab" data-desc="Modern ICT research lab providing students with high-speed internet access, online legal databases (SCC Online, Manupatra), and legal computing facilities." data-src="assets/gallery/images/computer-lab/computer_lab_1.png" data-icon="fa-desktop">
+                <!-- 8. Classrooms 1st LLB -->
+                <div class="gallery-card size-lg" data-category="classrooms" data-title="1st Year LL.B Lecture Hall" data-desc="Spacious, well-ventilated, multimedia-equipped lecture classroom for 1st Year LL.B students with ergonomic seating and academic podium." data-src="assets/gallery/images/cultural/seminar.png" data-icon="fa-chalkboard-user">
                     <div class="gallery-img-wrapper">
                         <div class="gallery-hover-overlay">
                             <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
                         </div>
-                        <img src="assets/gallery/images/computer-lab/computer_lab_1.png" alt="Computer Lab Workstations" class="gallery-photo-img">
+                        <img src="assets/gallery/images/cultural/seminar.png" alt="1st Year LL.B Lecture Hall" class="gallery-photo-img" onerror="this.onerror=null; this.src='assets/branding/images/college_emblem.png';">
+                    </div>
+                    <div class="gallery-card-content">
+                        <span class="gallery-card-tag">Classrooms</span>
+                        <h3 class="gallery-card-title">1st Year LL.B - Lecture Hall</h3>
+                        <p class="gallery-card-desc">Bright, multimedia-enabled classroom structured for interactive lectures in Constitutional and Contract law.</p>
+                    </div>
+                </div>
+
+                <!-- 9. Classrooms 2nd LLB -->
+                <div class="gallery-card" data-category="classrooms" data-title="2nd Year LL.B Smart Classroom" data-desc="Advanced legal study classroom for second-year law students focusing on Jurisprudence, Property Law, and Penal Codes." data-src="assets/gallery/images/cultural/classroom_2nd_llb.png" data-icon="fa-chalkboard">
+                    <div class="gallery-img-wrapper">
+                        <div class="gallery-hover-overlay">
+                            <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <img src="assets/gallery/images/cultural/classroom_2nd_llb.png" alt="2nd Year LL.B Classroom" class="gallery-photo-img" onerror="this.onerror=null; this.src='assets/branding/images/college_emblem.png';">
+                    </div>
+                    <div class="gallery-card-content">
+                        <span class="gallery-card-tag">Classrooms</span>
+                        <h3 class="gallery-card-title">2nd Year LL.B - Classroom</h3>
+                        <p class="gallery-card-desc">Facilitates case-study discussions, legal doctrine debates, and statutory interpretations.</p>
+                    </div>
+                </div>
+
+                <!-- 10. Classrooms 3rd LLB -->
+                <div class="gallery-card" data-category="classrooms" data-title="3rd Year LL.B Senior Advocacy Hall" data-desc="Senior advocacy and procedural law lecture hall tailored for final-year students engaging in Civil Procedure, Evidence Law, and Taxation." data-src="assets/gallery/images/cultural/classroom_3rd_llb.png" data-icon="fa-graduation-cap">
+                    <div class="gallery-img-wrapper">
+                        <div class="gallery-hover-overlay">
+                            <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <img src="assets/gallery/images/cultural/classroom_3rd_llb.png" alt="3rd Year LL.B Lecture Hall" class="gallery-photo-img" onerror="this.onerror=null; this.src='assets/branding/images/college_emblem.png';">
+                    </div>
+                    <div class="gallery-card-content">
+                        <span class="gallery-card-tag">Classrooms</span>
+                        <h3 class="gallery-card-title">3rd Year LL.B - Senior Hall</h3>
+                        <p class="gallery-card-desc">Executive lecture arena dedicated to procedural advocacy, drafting, and professional ethics.</p>
+                    </div>
+                </div>
+
+                <!-- 11. Computer Lab -->
+                <div class="gallery-card size-lg" data-category="computer-lab" data-title="Digital E-Library &amp; Computer Lab" data-desc="Modern ICT research lab providing students with high-speed internet access, online legal databases (SCC Online, Manupatra), and legal computing facilities." data-src="assets/gallery/images/legal-aid/rural_camp.png" data-icon="fa-desktop">
+                    <div class="gallery-img-wrapper">
+                        <div class="gallery-hover-overlay">
+                            <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <img src="assets/gallery/images/legal-aid/rural_camp.png" alt="Computer Lab Workstations" class="gallery-photo-img" onerror="this.onerror=null; this.src='assets/branding/images/college_emblem.png';">
                     </div>
                     <div class="gallery-card-content">
                         <span class="gallery-card-tag">Computer Lab</span>
@@ -720,12 +739,13 @@
                     </div>
                 </div>
 
-                <div class="gallery-card" data-category="computer-lab" data-title="Computer Lab - Student Terminals" data-desc="Individual networked workstations allowing law students to browse judgements, submit academic assignments, and access e-learning portals." data-src="assets/gallery/images/computer-lab/computer_lab_2.png" data-icon="fa-laptop-code">
+                <!-- 12. Computer Lab Terminals -->
+                <div class="gallery-card" data-category="computer-lab" data-title="Online Database Workstations" data-desc="Individual networked workstations allowing law students to browse judgements, submit academic assignments, and access e-learning portals." data-src="assets/gallery/images/legal-aid/computer_terminals.png" data-icon="fa-laptop-code">
                     <div class="gallery-img-wrapper">
                         <div class="gallery-hover-overlay">
                             <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
                         </div>
-                        <img src="assets/gallery/images/computer-lab/computer_lab_2.png" alt="Student Terminals" class="gallery-photo-img">
+                        <img src="assets/gallery/images/legal-aid/computer_terminals.png" alt="Student Terminals" class="gallery-photo-img" onerror="this.onerror=null; this.src='assets/branding/images/college_emblem.png';">
                     </div>
                     <div class="gallery-card-content">
                         <span class="gallery-card-tag">Computer Lab</span>
@@ -734,43 +754,13 @@
                     </div>
                 </div>
 
-                <!-- Item 1 (Moot Court) -->
-                <div class="gallery-card size-lg" data-category="moot-court" data-title="Appellate Audition Simulators" data-desc="Preparing law students in advocacy briefs, trial ethics, and appellate pleadings under the scrutiny of senior jurists. Inside our custom-styled Moot Court Hall, this simulates the standard appellate legal process and trains legal scholarship with actual trials." data-src="assets/gallery/images/moot-court/auditions.png" data-icon="fa-scale-balanced">
-                    <div class="gallery-img-wrapper">
-                        <div class="gallery-hover-overlay">
-                            <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
-                        </div>
-                        <img src="assets/gallery/images/moot-court/auditions.png" alt="Appellate Audition Simulators" class="gallery-photo-img">
-                    </div>
-                    <div class="gallery-card-content">
-                        <span class="gallery-card-tag">Moot Court</span>
-                        <h3 class="gallery-card-title">Appellate Audition Simulators</h3>
-                        <p class="gallery-card-desc">Preparing law students in advocacy briefs, trial ethics, and appellate pleadings under the scrutiny of senior jurists.</p>
-                    </div>
-                </div>
-
-                <!-- Item 2 (Legal Aid) -->
-                <div class="gallery-card" data-category="legal-aid" data-title="Rural Advocacy Literacy Camp" data-desc="Bridging scholarly resources with pro-bono assistance, spreading awareness on basic consumer rights. Student volunteers organize legal advice outreach clinics in rural sectors to assist citizens with standard services." data-src="assets/gallery/images/legal-aid/rural_camp.png" data-icon="fa-hand-holding-hand">
-                    <div class="gallery-img-wrapper">
-                        <div class="gallery-hover-overlay">
-                            <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
-                        </div>
-                        <img src="assets/gallery/images/legal-aid/rural_camp.png" alt="Rural Advocacy Literacy Camp" class="gallery-photo-img">
-                    </div>
-                    <div class="gallery-card-content">
-                        <span class="gallery-card-tag">Legal Aid</span>
-                        <h3 class="gallery-card-title">Rural Advocacy Literacy Camp</h3>
-                        <p class="gallery-card-desc">Bridging scholarly resources with pro-bono assistance, spreading awareness on basic consumer rights.</p>
-                    </div>
-                </div>
-
-                <!-- Item 3 (Sports) -->
+                <!-- 13. Sports Championship -->
                 <div class="gallery-card size-lg" data-category="sports" data-title="Athletic Track &amp; Field Trophies" data-desc="Showcasing institutional sportsmanship, physical endurance, and active leadership outside standard lecture rooms during track championship relays, strategy tables, and field runs." data-src="assets/gallery/images/sports/championship.png" data-icon="fa-trophy">
                     <div class="gallery-img-wrapper">
                         <div class="gallery-hover-overlay">
                             <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
                         </div>
-                        <img src="assets/gallery/images/sports/championship.png" alt="Athletic Track &amp; Field Trophies" class="gallery-photo-img">
+                        <img src="assets/gallery/images/sports/championship.png" alt="Athletic Track &amp; Field Trophies" class="gallery-photo-img" onerror="this.onerror=null; this.src='assets/branding/images/college_emblem.png';">
                     </div>
                     <div class="gallery-card-content">
                         <span class="gallery-card-tag">Sports Meet</span>
@@ -779,43 +769,13 @@
                     </div>
                 </div>
 
-                <!-- Item 4 (Cultural) -->
-                <div class="gallery-card" data-category="cultural" data-title="NSS Unit Literacy Seminars" data-desc="Reviewing core structures of our Constitution and hosting interactive assemblies for social responsibilities. Eminent legal figures, including judges and academics, discuss modern reforms during our summits." data-src="assets/gallery/images/cultural/seminar.png" data-icon="fa-chalkboard-user">
+                <!-- 14. Chess Arena -->
+                <div class="gallery-card" data-category="sports" data-title="Indoor Chess Strategic Arenas" data-desc="Training foresight, concentration, and mental focus under the guidance of our physical education coaches during chess strategy meets." data-src="assets/gallery/images/sports/chess_arena.png" data-icon="fa-chess">
                     <div class="gallery-img-wrapper">
                         <div class="gallery-hover-overlay">
                             <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
                         </div>
-                        <img src="assets/gallery/images/cultural/seminar.png" alt="NSS Unit Literacy Seminars" class="gallery-photo-img">
-                    </div>
-                    <div class="gallery-card-content">
-                        <span class="gallery-card-tag">Cultural Seminar</span>
-                        <h3 class="gallery-card-title">NSS Unit Literacy Seminars</h3>
-                        <p class="gallery-card-desc">Reviewing core structures of our Constitution and hosting interactive assemblies for social responsibilities.</p>
-                    </div>
-                </div>
-
-                <!-- Item 5 (Moot Court Extra) -->
-                <div class="gallery-card" data-category="moot-court" data-title="National Advocacy Arenas" data-desc="Strengthening cross-examination methods, critical textual arguments, and dynamic jurisprudential analysis inside national debate championships. Our elite teams secure top positions representing Kuvempu." data-src="assets/gallery/images/moot-court/national_competition.png" data-icon="fa-gavel">
-                    <div class="gallery-img-wrapper">
-                        <div class="gallery-hover-overlay">
-                            <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
-                        </div>
-                        <img src="assets/gallery/images/moot-court/national_competition.png" alt="National Advocacy Arenas" class="gallery-photo-img">
-                    </div>
-                    <div class="gallery-card-content">
-                        <span class="gallery-card-tag">Moot Court</span>
-                        <h3 class="gallery-card-title">National Advocacy Arenas</h3>
-                        <p class="gallery-card-desc">Strengthening cross-examination methods, critical textual arguments, and dynamic jurisprudential analysis.</p>
-                    </div>
-                </div>
-
-                <!-- Item 6 (Sports Extra) -->
-                <div class="gallery-card size-lg" data-category="sports" data-title="Indoor Chess Strategic Arenas" data-desc="Training foresight, concentration, and mental focus under the guidance of our physical education coaches during chess strategy meets. Strategy and absolute concentration collide at the tables." data-src="assets/gallery/images/sports/chess_arena.png" data-icon="fa-chess">
-                    <div class="gallery-img-wrapper">
-                        <div class="gallery-hover-overlay">
-                            <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
-                        </div>
-                        <img src="assets/gallery/images/sports/chess_arena.png" alt="Indoor Chess Strategic Arenas" class="gallery-photo-img">
+                        <img src="assets/gallery/images/sports/chess_arena.png" alt="Indoor Chess Strategic Arenas" class="gallery-photo-img" onerror="this.onerror=null; this.src='assets/branding/images/college_emblem.png';">
                     </div>
                     <div class="gallery-card-content">
                         <span class="gallery-card-tag">Sports Meet</span>

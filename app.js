@@ -356,13 +356,13 @@ window.downloadMockFile = function(fileName, docTitle) {
             `/F1 11 Tf\n0 -30 Td\n(Rashtrakavi Kuvempu Education Cultural and charitable Trust R., Bengaluru) Tj\n` +
             `0 -25 Td\n(Official Academic Document: ${docTitle}) Tj\n` +
             `0 -35 Td\n(------------------------------------------------------------------------) Tj\n` +
-            `0 -25 Td\n(IMPORTANT DISCLAIMER:) Tj\n` +
-            `0 -15 Td\n(Affiliation from Karnataka State Law University, Hubballi, Karnataka and) Tj\n` +
-            `0 -15 Td\n(approval from the Bar Council of India, New Delhi are currently pending.) Tj\n` +
+            `0 -25 Td\n(Affiliated to Karnataka State Law University, Recognized by Govt. of Karnataka) Tj\n` +
+            `0 -15 Td\n(Approved by Bar Council of India) Tj\n` +
             `0 -35 Td\n(Official Registry Address:) Tj\n` +
             `0 -15 Td\n(No.10, Near Janapriya Apartment, Kadabagere, Bangalore - 562130) Tj\n` +
-            `0 -25 Td\n(Principal Desk Helpline: +91 9916246833) Tj\n` +
-            `0 -15 Td\n(Email Contact: murthyguru1987@gmail.com) Tj\n` +
+            `0 -25 Td\n(Mob: 9886129222) Tj\n` +
+            `0 -15 Td\n(Email Contact: principal@kuvempulawcollege.co.in) Tj\n` +
+            `0 -15 Td\n(Website: www.kuvempulawcollege.co.in) Tj\n` +
             `ET\nendstream\nendobj\n` +
             `5 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>\nendobj\n` +
             `xref\n0 6\n0000000000 65535 f\n0000000015 00000 n\n0000000068 00000 n\n0000000129 00000 n\n0000000262 00000 n\n0000000612 00000 n\n` +
@@ -466,12 +466,31 @@ document.addEventListener('DOMContentLoaded', () => {
             // Expand layout
             const details = card.querySelector('.timeline-details');
             if (card.classList.contains('active')) {
-                details.style.maxHeight = details.scrollHeight + 32 + 'px'; // include padding
+                details.style.maxHeight = Math.max(details.scrollHeight + 100, 3000) + 'px';
             } else {
                 details.style.maxHeight = '0';
             }
         });
     });
+
+    // Auto-expand if anchor hash is present (e.g. #affiliation-notice)
+    if (window.location.hash) {
+        const targetId = window.location.hash.substring(1);
+        const targetElem = document.getElementById(targetId);
+        if (targetElem) {
+            const card = targetElem.querySelector('.timeline-card') || targetElem;
+            if (card && card.classList.contains('timeline-card')) {
+                card.classList.add('active');
+                const details = card.querySelector('.timeline-details');
+                if (details) {
+                    details.style.maxHeight = Math.max(details.scrollHeight + 100, 3000) + 'px';
+                }
+                setTimeout(() => {
+                    targetElem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 300);
+            }
+        }
+    }
 });
 
 let currentTimelineFilter = 'all';
